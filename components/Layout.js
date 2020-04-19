@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import HeadContent from './HeadContent';
-import Header from './Header';
+import ResponsiveNavBar from './ResponsiveNavBar/ResponsiveNavBar';
 
 function Layout({ children }) {
   return (
@@ -9,7 +9,7 @@ function Layout({ children }) {
         <HeadContent />
         <title>FlixTime</title>
       </Head>
-      <Header />
+      <ResponsiveNavBar />
       {children}
     </>
   );

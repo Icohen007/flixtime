@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
-const HeaderStyled = styled.div`
-display: flex;
+const Title = styled.h1`
+  font-size: 50rem;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 function Header(props) {
   return (
-    <HeaderStyled>ss</HeaderStyled>
+      <Title> Title </Title>
   );
 }
 
