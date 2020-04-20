@@ -3,6 +3,8 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import Layout from '../components/Layout';
 import GlobalStyle from '../components/Global.style';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const theme = {
   colors: {

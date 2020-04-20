@@ -1,24 +1,22 @@
 import styled from 'styled-components';
+import Carousel from './Carousel';
 
 const CarouselContainer = styled.div`
-
+ max-width: 1130rem;
+ width: 100%;
 `;
-
 
 const LeftSideDiv = styled.div`
     color: #fff;
     font-size: 30px;
     font-weight: 500;
-    cursor: default;
 `;
 
 const RightSideDiv = styled.div`
-color: #999;
-    font-size: 17px;
-    justify-content: flex-end;
-    font-weight: 300;
-    padding-top: 2px;
+    color: #999;
+    font-size: 17rem;
     cursor: pointer;
+    align-self: flex-end;
 `;
 
 const ShowCaseContainer = styled.div`
@@ -33,12 +31,13 @@ background: transparent;
 
 const CarouselHeader = styled.div`
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding-bottom: 0;
-    margin-bottom: 35rem;
+    margin-bottom: 10rem;
     padding-right: 17rem;
     padding-left: 10rem;
+    width: 100%;
 `;
 
 
@@ -51,9 +50,8 @@ function Main(props) {
           <LeftSideDiv> Popular Shows</LeftSideDiv>
           <RightSideDiv> See All</RightSideDiv>
         </CarouselHeader>
-<Carousel>
+         <Carousel />
 
-</Carousel>
       </CarouselContainer>
     </ShowCaseContainer>
   );
