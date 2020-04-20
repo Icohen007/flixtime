@@ -4,5 +4,6 @@ export default () => (
     <meta charSet="utf-8" />
     <meta name="theme-color" content="#ffffff" />
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
   </>
 );

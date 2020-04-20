@@ -40,7 +40,6 @@ const ResponsiveNavBar = () => {
 
   return (
     <>
-      <BlankDiv />
       {isMobile ? (
         <NavBar style={barAnimation}>
           <FlexContainer>
@@ -132,10 +131,4 @@ const TitleMobile = styled.span`
     font-size: 20rem;
     user-select: none;
     cursor: pointer;
-`;
-
-const BlankDiv = styled.div`
-    width: 100%;
-    height: 65rem;
-    visibility: hidden;
 `;

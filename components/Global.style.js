@@ -7,7 +7,7 @@ html {
   padding: 0;
   height: 100%;
   width: 100%;
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
   font-size: 1px;
 }
 *, *:before, *:after {
@@ -18,7 +18,7 @@ html {
  font-family: inherit;
  }
 body {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
   font-size: 16rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,6 +28,11 @@ body {
   margin: 0;
   padding: 0;
   background: #0d0d0d;
+}
+
+#__next {
+height: 100%;
+width: 100%;
 }
 
 //html, body { // responsive nav bar is 50px height

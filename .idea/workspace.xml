@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="Global style + HeadContent + Layout + Dummy Header">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="change to rem.&#10;move packages.&#10;add responsive nav bar">
+      <change afterPath="$PROJECT_DIR$/components/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Global.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Global.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/HeadContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/HeadContent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="init" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1almns53psfDdAKatN1sqETNwTG" />
@@ -72,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
-      <workItem from="1587318729989" duration="8549000" />
+      <workItem from="1587318729989" duration="16548000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -86,7 +90,13 @@
       <option name="presentableId" value="LOCAL‎00002" />
       <updated>1587322095979</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎00003" summary="change to rem.&#10;move packages.&#10;add responsive nav bar">
+      <created>1587327875302</created>
+      <option name="number" value="LOCAL‎00003" />
+      <option name="presentableId" value="LOCAL‎00003" />
+      <updated>1587327875302</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +116,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init Commit." />
     <MESSAGE value="Global style + HeadContent + Layout + Dummy Header" />
-    <option name="LAST_COMMIT_MESSAGE" value="Global style + HeadContent + Layout + Dummy Header" />
+    <MESSAGE value="change to rem.&#10;move packages." />
+    <MESSAGE value="change to rem.&#10;move packages.&#10;add responsive nav bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="change to rem.&#10;move packages.&#10;add responsive nav bar" />
   </component>
 </project>
