@@ -15,6 +15,7 @@ const UpperText = styled.p`
     font-weight: 600;
     line-height: 1.4;
     margin: 0;
+    max-width: 168rem;
 `;
 
 const LowerText = styled.p`
@@ -23,14 +24,15 @@ color: grey;
     font-weight: 400;
     margin: 0;
     padding-top: 3rem;
+    max-width: 168rem;
 `;
 
 function ClientItem({ clientName, clientUrl }) {
   return (
     <StyledClientItem>
-      <img alt={clientName} src={clientUrl} />
+      <img alt={clientName} src={clientUrl} onContextMenu={(e) => e.preventDefault()} />
       <CarouselItemText>
-        <UpperText> Batman Vs Superman </UpperText>
+        <UpperText> {clientName} </UpperText>
         <LowerText> Action </LowerText>
       </CarouselItemText>
     </StyledClientItem>

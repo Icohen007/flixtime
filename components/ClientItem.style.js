@@ -1,26 +1,33 @@
 import styled from 'styled-components';
 
 const StyledClientItem = styled.div`
-//height: 190px;
-//width: 150px;
-//overflow: hidden;
-padding: 6rem;
 
 img {
-min-width: 168rem;
+width: 100%;
+max-width: 168rem;
 min-height: 252rem;
 max-height: 252rem;
-max-width: 13vw;
 border-radius: 8rem;
+object-fit: cover;
+user-select: none;
+cursor: pointer;
+filter: brightness(80%);
+transition: all 0.2s ease-out;
 
-
-@media only screen and (max-width: 1230px) {
-max-width: 20vw;
+&:hover {
+filter: brightness(100%);
+border: 0.8rem solid darkorange;
+padding: 0.8rem;
 }
 
-@media only screen and (max-width: 600px) {
-max-width: 40vw;
-}
+
+//@media only screen and (max-width: 1230px) {
+//max-width: 20vw;
+//}
+//
+//@media only screen and (max-width: 600px) {
+//max-width: 40vw;
+//}
 
 
 }

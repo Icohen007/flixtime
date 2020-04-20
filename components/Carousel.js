@@ -1,16 +1,17 @@
 import Slider from 'react-slick';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import _ from 'lodash';
 import ClientItem from './ClientItem';
 
-const clientsIcons = ['https://image.tmdb.org/t/p/w500//jQNOzoiaIQWxJAx8OUighnvnhRA.jpg', 'https://image.tmdb.org/t/p/w500//jQNOzoiaIQWxJAx8OUighnvnhRA.jpg', 'https://image.tmdb.org/t/p/w500//jQNOzoiaIQWxJAx8OUighnvnhRA.jpg', 'https://image.tmdb.org/t/p/w500//jQNOzoiaIQWxJAx8OUighnvnhRA.jpg', 'https://image.tmdb.org/t/p/w500//jQNOzoiaIQWxJAx8OUighnvnhRA.jpg', 'https://image.tmdb.org/t/p/w500//jQNOzoiaIQWxJAx8OUighnvnhRA.jpg', 'https://image.tmdb.org/t/p/w500//jQNOzoiaIQWxJAx8OUighnvnhRA.jpg', 'https://image.tmdb.org/t/p/w500//jQNOzoiaIQWxJAx8OUighnvnhRA.jpg', 'https://image.tmdb.org/t/p/w500//jQNOzoiaIQWxJAx8OUighnvnhRA.jpg', 'https://image.tmdb.org/t/p/w500//jQNOzoiaIQWxJAx8OUighnvnhRA.jpg', 'https://image.tmdb.org/t/p/w500//jQNOzoiaIQWxJAx8OUighnvnhRA.jpg', 'https://image.tmdb.org/t/p/w500//jQNOzoiaIQWxJAx8OUighnvnhRA.jpg'];
-
-function Carousel() {
+function Carousel({ movies }) {
   const settings = {
     dots: true,
     infinite: true,
     slidesToShow: 6,
     slidesToScroll: 1,
     // autoplay: true,
-    speed: 2000,
+    speed: 500,
     // autoplaySpeed: 2000,
     pauseOnHover: true,
     responsive: [
@@ -29,14 +30,17 @@ function Carousel() {
   };
   return (
     <Slider {...settings}>
-      {clientsIcons.map((client) => (
+      {movies.map((movie) => (
         <ClientItem
-          key={client}
-          clientName={client.split('.')[0] || client}
-          clientUrl={client}
+          key={movie.id}
+          clientName={movie.title}
+          clientUrl={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
         />
       ))}
     </Slider>
   );
 }
+
+
 export default Carousel;
+// const moviesObject = _.pick(response2.data, ['backdrop_path, title']);

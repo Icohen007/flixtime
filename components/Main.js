@@ -41,7 +41,7 @@ const CarouselHeader = styled.div`
 `;
 
 
-function Main(props) {
+function Main({ movies }) {
   return (
     <ShowCaseContainer>
       <CarouselContainer>
@@ -50,8 +50,7 @@ function Main(props) {
           <LeftSideDiv> Popular Shows</LeftSideDiv>
           <RightSideDiv> See All</RightSideDiv>
         </CarouselHeader>
-         <Carousel />
-
+        <Carousel movies={movies} />
       </CarouselContainer>
     </ShowCaseContainer>
   );
