@@ -12,12 +12,14 @@ object-fit: cover;
 user-select: none;
 cursor: pointer;
 filter: brightness(80%);
-transition: all 0.2s ease-out;
+padding: 0.8rem;
+border: 0.8rem solid transparent;
+transition: all 0.1s ease-out;
 
 &:hover {
 filter: brightness(100%);
 border: 0.8rem solid darkorange;
-padding: 0.8rem;
+
 }
 
 
