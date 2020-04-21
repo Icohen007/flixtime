@@ -1,14 +1,14 @@
 import React from 'react';
 import axios from 'axios';
-import Main from '../components/Main';
+import CarouselContent from '../components/CarouselContent';
 import CarouselTrending from '../components/CarouselTrending';
 
 function Home({ movies, shows, trending }) {
   return (
     <>
       <CarouselTrending content={trending} />
-      <Main header="Popular Movies" content={movies} />
-      <Main header="Popular Shows" content={shows} />
+      <CarouselContent header="Popular Movies" content={movies} path="/movies" />
+      <CarouselContent header="Popular Shows" content={shows} path="/shows" />
     </>
   );
 }

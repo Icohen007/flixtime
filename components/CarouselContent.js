@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Link from 'next/link';
+
 import Carousel from './Carousel';
 
 const CarouselContainer = styled.div`
@@ -17,6 +19,10 @@ const RightSideDiv = styled.div`
     font-size: 17rem;
     cursor: pointer;
     align-self: flex-end;
+    transition: filter .2s;
+    &:hover {
+        filter: brightness(1.3);
+    }
 `;
 
 const ShowCaseContainer = styled.div`
@@ -41,7 +47,7 @@ const CarouselHeader = styled.div`
 `;
 
 
-function Main({ content, header }) {
+function CarouselContent({ content, header, path }) {
   return (
     <ShowCaseContainer>
       <CarouselContainer>
@@ -49,7 +55,9 @@ function Main({ content, header }) {
           <LeftSideDiv>
             {header}
           </LeftSideDiv>
-          <RightSideDiv> See All</RightSideDiv>
+          <Link href={path}>
+            <RightSideDiv> See All</RightSideDiv>
+          </Link>
         </CarouselHeader>
         <Carousel content={content} />
       </CarouselContainer>
@@ -57,4 +65,4 @@ function Main({ content, header }) {
   );
 }
 
-export default Main;
+export default CarouselContent;
