@@ -6,16 +6,16 @@ import ContentItem from '../components/ContentItem';
 import scrollToTop from '../utils/scrollToTop';
 import * as S from '../components/PopularPage.style';
 
-function Movies({ movies }) {
+function Shows({ shows }) {
   const router = useRouter();
 
   const currentPage = router.query.page || '1';
 
   const handPageChange = (event, data) => {
     if (data.activePage === 1) {
-      router.push('/movies').then(scrollToTop(true));
+      router.push('/shows').then(scrollToTop(true));
     } else {
-      router.push(`/movies?page=${data.activePage}`).then(scrollToTop(true));
+      router.push(`/shows?page=${data.activePage}`).then(scrollToTop(true));
     }
   };
 
@@ -23,11 +23,11 @@ function Movies({ movies }) {
     <S.GridContainer>
       <S.FireText>
         <h2>
-          <span>Popular Movies</span>
+          <span>Popular Shows</span>
         </h2>
       </S.FireText>
       <S.ContentGrid>
-        {movies.map((elem) => (
+        {shows.map((elem) => (
           <ContentItem
             key={elem.id}
             clientName={elem.title}
@@ -49,13 +49,13 @@ function Movies({ movies }) {
   );
 }
 
-Movies.getInitialProps = async (ctx) => {
+Shows.getInitialProps = async (ctx) => {
   const { page = '1' } = ctx.query;
-  const responseMovies = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=c7aa33449f12a7ab44423f6eedd5b412&language&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
+  const responseShows = await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=c7aa33449f12a7ab44423f6eedd5b412&language&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
 
-  const movies = responseMovies.data.results.map((e) => ({ imageUrl: e.poster_path, title: e.original_title, id: e.id }));
+  const shows = responseShows.data.results.map((e) => ({ imageUrl: e.poster_path, title: e.original_name, id: e.id }));
 
-  return { movies };
+  return { shows };
 };
 
-export default Movies;
+export default Shows;
