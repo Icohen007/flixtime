@@ -46,6 +46,41 @@ margin: 0;
 a, a:hover, a:focus, a:active  {
 text-decoration: none !important;
 }
+
+//semantic ui
+
+.ui.pagination.menu {
+  font-size: 15rem;
+  margin-top: 45rem;
+  background: #0d0d0d;
+}
+
+.ui.pagination.menu {
+
+a.active.item {
+    background-color: #453c38;
+
+}
+
+  a.item, a.active.item {
+    color: white !important;
+    border-radius: 30% !important;
+    outline: none !important;
+  &:before {
+    background-color: rgba(34, 36, 38, .3);
+  }
+ } 
+}
+//
+//.ui.menu {
+//font-size: 18rem;
+//}
+
+
+
+
+
+
 `;
 
 export default GlobalStyle;

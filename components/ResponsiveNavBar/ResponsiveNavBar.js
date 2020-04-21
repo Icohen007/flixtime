@@ -5,20 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link';
 import BurgerButton from './BurgerButton';
 import MobileMenu from './MobileMenu';
-
-export const scrollToTop = (isSmooth = false) => () => {
-  try {
-    // trying to use new API
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: isSmooth ? 'smooth' : 'auto',
-    });
-  } catch (error) {
-    // just a fallback for older browsers
-    window.scrollTo(0, 0);
-  }
-};
+import scrollToTop from '../../utils/scrollToTop';
 
 const ResponsiveNavBar = () => {
   const [openNav, setOpenNav] = useState(false);

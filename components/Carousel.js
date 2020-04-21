@@ -1,12 +1,9 @@
 import Slider from 'react-slick';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import _ from 'lodash';
-import ClientItem from './ClientItem';
+import ContentItem from './ContentItem';
 
-function Carousel({ movies }) {
+function Carousel({ content }) {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     slidesToShow: 6,
     slidesToScroll: 1,
@@ -30,11 +27,11 @@ function Carousel({ movies }) {
   };
   return (
     <Slider {...settings}>
-      {movies.map((movie) => (
-        <ClientItem
-          key={movie.id}
-          clientName={movie.title}
-          clientUrl={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+      {content.map((elem) => (
+        <ContentItem
+          key={elem.id}
+          clientName={elem.title}
+          clientUrl={`https://image.tmdb.org/t/p/w500/${elem.imageUrl}`}
         />
       ))}
     </Slider>

@@ -6,6 +6,7 @@ import GlobalStyle from '../components/Global.style';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+
 const theme = {
   colors: {
     primary: '#e7f3e2',

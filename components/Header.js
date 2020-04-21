@@ -57,15 +57,29 @@ const PanelDiv = styled.div`
 margin-top: ${(props) => props.marginTop};
 font-size: ${(props) => props.fontSize};
 font-weight: 600;
+max-width: 50%;
 `;
 
-function Header(props) {
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+
+function Header({
+  imageUrl, title, releaseDate,
+}) {
+  let parsedDate = '';
+  try {
+    const releseDateObj = new Date(releaseDate);
+    parsedDate = `${months[releseDateObj.getMonth()]}, ${releseDateObj.getFullYear()}`;
+  } catch (err) {
+    console.log('date error', err);
+    parsedDate = releaseDate;
+  }
   return (
     <PanelContainer>
-      <FeaturedImage src="https://image.tmdb.org/t/p/original/oLma4sWjqlXVr0E3jpaXQCytuG9.jpg" />
+      <FeaturedImage src={`https://image.tmdb.org/t/p/original${imageUrl}`} />
       <Panel>
-        <PanelDiv fontSize="22rem"> 2019 </PanelDiv>
-        <PanelDiv fontSize="42rem" marginTop="15rem"> Jumanji: The Next Level </PanelDiv>
+        <PanelDiv fontSize="22rem">{parsedDate}</PanelDiv>
+        <PanelDiv fontSize="42rem" marginTop="15rem">{ title }</PanelDiv>
         <PanelDiv fontSize="16rem" marginTop="5rem"> Adventure • Comedy • Fantasy </PanelDiv>
       </Panel>
     </PanelContainer>

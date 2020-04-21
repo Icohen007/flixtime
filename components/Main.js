@@ -41,16 +41,17 @@ const CarouselHeader = styled.div`
 `;
 
 
-function Main({ movies }) {
+function Main({ content, header }) {
   return (
     <ShowCaseContainer>
       <CarouselContainer>
         <CarouselHeader>
-          {' '}
-          <LeftSideDiv> Popular Shows</LeftSideDiv>
+          <LeftSideDiv>
+            {header}
+          </LeftSideDiv>
           <RightSideDiv> See All</RightSideDiv>
         </CarouselHeader>
-        <Carousel movies={movies} />
+        <Carousel content={content} />
       </CarouselContainer>
     </ShowCaseContainer>
   );

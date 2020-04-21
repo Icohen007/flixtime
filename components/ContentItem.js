@@ -27,7 +27,7 @@ color: grey;
     max-width: 168rem;
 `;
 
-function ClientItem({ clientName, clientUrl }) {
+function ContentItem({ clientName, clientUrl }) {
   return (
     <StyledClientItem>
       <img alt={clientName} src={clientUrl} onContextMenu={(e) => e.preventDefault()} />
@@ -39,4 +39,4 @@ function ClientItem({ clientName, clientUrl }) {
   );
 }
 
-export default ClientItem;
+export default ContentItem;
