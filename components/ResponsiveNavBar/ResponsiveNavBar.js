@@ -71,6 +71,7 @@ const NavBar = styled(animated.nav)`
   top: 0;
   left: 0;
   background: transparent;
+  // #272727ab
   font-size: 16rem;
   z-index: 200;
 `;

@@ -7,8 +7,11 @@ const Cover = styled.div`
 background: linear-gradient(90deg, rgb(13, 13, 13), rgba(255, 255, 255, 0.05)), url(${(props) => `https://image.tmdb.org/t/p/original${props.imageUrl}`}) no-repeat top center / cover;
 width: 70%;
 //max-height: 60vh;
-height: 60vh;
-margin-left: auto;
+height: 70vh;
+position: absolute;
+top: 0;
+right: 0;
+z-index: -1;
 `;
 
 const MovieDetalis = styled.div`
@@ -17,9 +20,9 @@ flex-direction: column;
 `;
 
 const MovieContainer = styled.div`
-max-width: 1280rem;
+max-width: 1400rem;
 width: 100%;
-padding: 10rem 40rem 55rem;
+padding: 20rem 10rem;
 margin: 0 auto;
 color: #fff;
 `;
@@ -27,15 +30,14 @@ color: #fff;
 const MovieHeader = styled.header`
     padding-top: 50rem;
     padding-left: 70rem;
+    max-width: 900rem;
     color: #fff;
 `;
 
-const MovieTitle = styled.div`
-    display: flex;
+const MovieTitle = styled.span`
     font-weight: 700;
     font-size: 35rem;
     line-height: 1.1;
-    align-items: flex-end;
 `;
 
 const Chip = styled.div`
@@ -54,30 +56,26 @@ const Chip = styled.div`
 const GenresContainer = styled.div`
 display: flex;
 justify-content: flex-start;
-
 margin-top: 10rem;
 `;
 
 const Star = styled(Chip)`
     border-radius: 15rem;
     margin-left: 12rem;
-    color: #fb8c00;
+    color: ${(props) => props.color};
     .star.icon {
-    color: #fb8c00;
+    color: ${(props) => props.color};
     font-size: 12rem;
     }
 `;
 
 const MovieProperties = styled.div`
-display: flex;
-flex-direction: column;
     max-width: 300rem;
-    flex-shrink: 0;
-    margin-right: 65px;
+    margin-top: 20rem;
 `;
 
 const PropertyContainer = styled.div`
-margin-bottom: 15rem;
+margin-bottom: 10rem;
 font-size: 20rem;
 span {
 font-size: 15rem;
@@ -86,6 +84,79 @@ margin-left: 14rem;
 }
 
 `;
+
+const HeaderContainer = styled.div`
+height: 70vh;
+display: flex;
+align-items: center;
+position: relative;
+`;
+
+
+const CrewContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    max-width: 110px;
+    text-align: center;
+
+`;
+
+const CrewImageContainer = styled.div`
+overflow: hidden;
+    max-height: 110px;
+    max-width: 110px;
+    border-radius: 50%;
+`;
+
+const CrewImage = styled.img`
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    ${(props) => props.imageDefined && 'object-position: 0px -14.5px;'}
+`;
+
+const CrewText = styled.div`
+    margin-top: 9px;
+    padding-right: 10rem;
+    font-weight: 500;
+    font-size: 13px;
+    opacity: .85;
+    color: #bdbdbd;
+`;
+
+const CrewTitle = styled.div`
+font-size: 16rem;
+`;
+
+const CrewsContainer = styled.div`
+//display: flex;
+//flex-direction: column;
+text-align: center;
+
+
+h4 {
+font-size: 20rem;
+}
+`;
+
+const CrewList = styled.div`
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+`;
+
+const PeopleContainer = styled.div`
+display: flex;
+justify-content: space-between;
+`;
+
+
+const NOT_DEFINED_GENDER = 0;
+const FEMALE_GENDER = 1;
+const MALE_GENDER = 2;
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -100,24 +171,74 @@ function formatMinues(min) {
   return `${minutes}min`;
 }
 
-function getDirector(cast) {
-  const directors = cast.crew.filter((e) => e.job === 'Director');
-  console.log({directors});
+function getStarColor(rating) {
+  if (rating < 5) {
+    return '#f44336';
+  }
+  if (rating < 8) {
+    return '#009fb9';
+  }
+
+  return '#0fbd0fde';
+}
+
+function getDirectors(cast) {
+  const directores = cast.crew.filter((e) => e.job === 'Director');
+  return directores.slice(0, 2);
+}
+
+function getProducers(cast) {
+  const producers = cast.crew.filter((e) => e.job === 'Producer');
+  return producers.slice(0, 2);
+}
+
+function getWriters(cast) {
+  const writers = cast.crew.filter((e) => e.job === 'Writer');
+  return writers.slice(0, 2);
+}
+
+function getActors(cast) {
+  return cast.cast.slice(0, 5);
+}
+
+function Crew({
+  title, imageUrl, text, gender,
+}) {
+  let crewImage = `https://image.tmdb.org/t/p/w300_and_h450_face${imageUrl}`;
+  if (!imageUrl) {
+    if (gender === NOT_DEFINED_GENDER || gender === MALE_GENDER) {
+      crewImage = '/man-placeholder.jpg';
+    } else if (gender === FEMALE_GENDER) {
+      crewImage = '/woman-placeholder.jpg';
+    }
+  }
+
+  return (
+    <CrewContainer>
+      <CrewTitle>{title}</CrewTitle>
+      <CrewImageContainer>
+        <CrewImage src={crewImage} imageDefined={!!imageUrl} />
+      </CrewImageContainer>
+      <CrewText>{text}</CrewText>
+    </CrewContainer>
+  );
 }
 
 function Movie({ movie, cast }) {
-  getDirector(cast);
+  console.log(movie);
   return (
     <>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <HeaderContainer>
         <MovieHeader>
           <MovieTitle>
             {movie.original_title}
-            <Star>
-              <Icon name="star" />
-              {' '}
-              {movie.vote_average}
-            </Star>
+            {movie.vote_average !== 0 && (
+              <Star color={getStarColor(movie.vote_average)}>
+                <Icon name="star" />
+                {' '}
+                {movie.vote_average}
+              </Star>
+            )}
           </MovieTitle>
           <GenresContainer>
             {movie.genres.slice(0, 3).map(((genre) => <Chip key={genre.id}>{genre.name}</Chip>))}
@@ -131,23 +252,40 @@ function Movie({ movie, cast }) {
               Run Time
               <span>{formatMinues(movie.runtime)}</span>
             </PropertyContainer>
-            <PropertyContainer>
-              Bugdet
-              <span>{`${numberWithCommas(movie.budget)} $`}</span>
-            </PropertyContainer>
-            <PropertyContainer>
-              Revenue
-              <span>{`${numberWithCommas(movie.revenue)} $`}</span>
-            </PropertyContainer>
-            <PropertyContainer>
-              Release
-              <span>{getParsedDate(movie.release_date)}</span>
-            </PropertyContainer>
+            {movie.budget !== 0 && (
+              <PropertyContainer>
+                Bugdet
+                <span>{`${numberWithCommas(movie.budget)} $`}</span>
+              </PropertyContainer>
+            )}
+            {movie.revenue !== 0 && (
+              <PropertyContainer>
+                Revenue
+                <span>{`${numberWithCommas(movie.revenue)} $`}</span>
+              </PropertyContainer>
+            )}
           </MovieProperties>
         </MovieHeader>
         <Cover imageUrl={movie.backdrop_path} />
-      </div>
-      <MovieContainer />
+      </HeaderContainer>
+      <MovieContainer>
+        <PeopleContainer>
+          <CrewsContainer>
+            <h4> Crew </h4>
+            <CrewList>
+              {getDirectors(cast).map((crew) => <Crew key={crew.credit_id} title="Director" imageUrl={crew.profile_path} text={crew.name} gender={crew.gender} />)}
+              {getProducers(cast).map((crew) => <Crew key={crew.credit_id} title="Producer" imageUrl={crew.profile_path} text={crew.name} gender={crew.gender} />)}
+              {getWriters(cast).map((crew) => <Crew key={crew.credit_id} title="Writer" imageUrl={crew.profile_path} text={crew.name} gender={crew.gender} />)}
+            </CrewList>
+          </CrewsContainer>
+          <CrewsContainer style={{ flexShrink: 2 }}>
+            <h4> Cast </h4>
+            <CrewList>
+              {getActors(cast).map((crew) => <Crew key={crew.credit_id} title="Actor" imageUrl={crew.profile_path} text={`${crew.name} - ${crew.character}`} gender={crew.gender} />)}
+            </CrewList>
+          </CrewsContainer>
+        </PeopleContainer>
+      </MovieContainer>
     </>
   );
 }

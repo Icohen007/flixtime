@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 const StyledClientItem = styled.div`
 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 img {
 width: 100%;
 max-width: 168rem;
