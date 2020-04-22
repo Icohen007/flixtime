@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 import StyledClientItem from './ClientItem.style';
 
 const CarouselItemText = styled.div`
@@ -27,15 +28,19 @@ color: grey;
     max-width: 168rem;
 `;
 
-function ContentItem({ clientName, clientUrl }) {
+function ContentItem({ clientName, clientUrl, id }) {
   return (
-    <StyledClientItem>
-      <img alt={clientName} src={clientUrl} onContextMenu={(e) => e.preventDefault()} />
-      <CarouselItemText>
-        <UpperText> {clientName} </UpperText>
-        <LowerText> Action </LowerText>
-      </CarouselItemText>
-    </StyledClientItem>
+    <Link href={`/movie?id=${id}`}>
+      <StyledClientItem>
+        <img alt={clientName} src={clientUrl} />
+        <CarouselItemText>
+          <UpperText>
+            {clientName}
+          </UpperText>
+          <LowerText> Action </LowerText>
+        </CarouselItemText>
+      </StyledClientItem>
+    </Link>
   );
 }
 

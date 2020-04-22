@@ -30,7 +30,7 @@ const ResponsiveNavBar = () => {
       {isMobile ? (
         <NavBar style={barAnimation}>
           <FlexContainer>
-            <TitleMobile to="/" onClick={scrollToTop(true)} style={{ fontSize: '20rem' }}>FlixTime</TitleMobile>
+            <TitleMobile onClick={scrollToTop(true)} style={{ fontSize: '20rem' }}>FlixTime</TitleMobile>
             <BurgerWrapper>
               <BurgerButton
                 openNav={openNav}
@@ -48,9 +48,9 @@ const ResponsiveNavBar = () => {
           <NavBar style={barAnimation}>
             <FlexContainer>
               <NavLinks style={linkAnimation}>
-                <Link href="/" onClick={scrollToTop(true)} style={{ fontSize: '30rem' }}>FlixTime</Link>
-                <Link href="/">Services</Link>
-                <Link href="/">Services</Link>
+                <Link href="/" style={{ fontSize: '30rem' }}>FlixTime</Link>
+                <Link href="/movies">Movies</Link>
+                <Link href="/shows">Shows</Link>
               </NavLinks>
               <NavLinks style={linkAnimation}>
                 <Link href="/">Services</Link>

@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/PopularPage.style.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="add popular shows page">
+      <change afterPath="$PROJECT_DIR$/pages/movie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/date.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ContentItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ContentItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +40,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
+    <property name="js.last.introduce.type" value="LET" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -76,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
-      <workItem from="1587318729989" duration="44042000" />
+      <workItem from="1587318729989" duration="59656000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -132,7 +139,13 @@
       <option name="presentableId" value="LOCAL‎00009" />
       <updated>1587488270999</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎00010" summary="add popular shows page">
+      <created>1587489338454</created>
+      <option name="number" value="LOCAL‎00010" />
+      <option name="presentableId" value="LOCAL‎00010" />
+      <updated>1587489338455</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +173,7 @@
     <MESSAGE value="add movies page, + pagination" />
     <MESSAGE value="add links to CarouselContent" />
     <MESSAGE value="adds fire movies title" />
-    <option name="LAST_COMMIT_MESSAGE" value="adds fire movies title" />
+    <MESSAGE value="add popular shows page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add popular shows page" />
   </component>
 </project>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import getParsedDate from '../utils/date';
 
 const Title = styled.h1`
   font-size: 50rem;
@@ -60,20 +61,10 @@ font-weight: 600;
 max-width: 50%;
 `;
 
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-
 function Header({
   imageUrl, title, releaseDate,
 }) {
-  let parsedDate = '';
-  try {
-    const releseDateObj = new Date(releaseDate);
-    parsedDate = `${months[releseDateObj.getMonth()]}, ${releseDateObj.getFullYear()}`;
-  } catch (err) {
-    console.log('date error', err);
-    parsedDate = releaseDate;
-  }
+  const parsedDate = getParsedDate(releaseDate);
   return (
     <PanelContainer>
       <FeaturedImage src={`https://image.tmdb.org/t/p/original${imageUrl}`} />

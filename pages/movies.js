@@ -51,7 +51,7 @@ function Movies({ movies }) {
 
 Movies.getInitialProps = async (ctx) => {
   const { page = '1' } = ctx.query;
-  const responseMovies = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=c7aa33449f12a7ab44423f6eedd5b412&language&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
+  const responseMovies = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
 
   const movies = responseMovies.data.results.map((e) => ({ imageUrl: e.poster_path, title: e.original_title, id: e.id }));
 

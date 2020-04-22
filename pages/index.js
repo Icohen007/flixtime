@@ -14,13 +14,15 @@ function Home({ movies, shows, trending }) {
 }
 
 Home.getInitialProps = async () => {
-  const resposeMovies = await axios.get('https://api.themoviedb.org/3/discover/movie?api_key=c7aa33449f12a7ab44423f6eedd5b412&language&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50');
-  const responseShows = await axios.get('https://api.themoviedb.org/3/discover/tv?api_key=c7aa33449f12a7ab44423f6eedd5b412&language&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50');
-  const responseTrending = await axios.get('https://api.themoviedb.org/3/trending/movie/week?api_key=c7aa33449f12a7ab44423f6eedd5b412');
+  const resposeMovies = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
+  const responseShows = await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
+  const responseTrending = await axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.API_KEY}`);
 
   const movies = resposeMovies.data.results.map((e) => ({ imageUrl: e.poster_path, title: e.original_title, id: e.id }));
   const shows = responseShows.data.results.map((e) => ({ imageUrl: e.poster_path, title: e.original_name, id: e.id }));
-  const trending = responseTrending.data.results.map((e) => ({ imageUrl: e.backdrop_path, title: e.original_title, releaseDate: e.release_date, id: e.id }));
+  const trending = responseTrending.data.results.map((e) => ({
+    imageUrl: e.backdrop_path, title: e.original_title, releaseDate: e.release_date, id: e.id,
+  }));
 
   return { movies, shows, trending };
 };
