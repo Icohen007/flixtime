@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { animated, config, useSpring } from 'react-spring';
 import { useMediaQuery } from 'react-responsive';
@@ -7,9 +7,25 @@ import BurgerButton from './BurgerButton';
 import MobileMenu from './MobileMenu';
 import scrollToTop from '../../utils/scrollToTop';
 
+function scrollEventListener(setNavBarColor) {
+  return () => {
+    if (window.pageYOffset < 15) {
+      setNavBarColor('transparent');
+    } else {
+      setNavBarColor('#272727ab');
+    }
+  };
+}
+
 const ResponsiveNavBar = () => {
   const [openNav, setOpenNav] = useState(false);
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const [navBarColor, setNavBarColor] = useState('transparent');
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollEventListener(setNavBarColor));
+    window.removeEventListener('scroll', scrollEventListener(setNavBarColor));
+  }, []);
 
   const barAnimation = useSpring({
     from: { transform: 'translate3d(0, -100rem, 0)' },
@@ -45,7 +61,7 @@ const ResponsiveNavBar = () => {
         </NavBar>
       )
         : (
-          <NavBar style={barAnimation}>
+          <NavBar style={barAnimation} navBarColor={navBarColor}>
             <FlexContainer>
               <NavLinks style={linkAnimation}>
                 <Link href="/">FlixTime</Link>
@@ -70,10 +86,12 @@ const NavBar = styled(animated.nav)`
   width: 100%;
   top: 0;
   left: 0;
-  background: transparent;
+  background: ${(props) => props.navBarColor || 'transparent'} ;
   // #272727ab
   font-size: 16rem;
   z-index: 200;
+  
+  transition: background 0.3s ease-in;
 `;
 
 const FlexContainer = styled.div`

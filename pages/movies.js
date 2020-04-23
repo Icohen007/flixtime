@@ -30,6 +30,7 @@ function Movies({ movies }) {
         {movies.map((elem) => (
           <ContentItem
             key={elem.id}
+            id={elem.id}
             clientName={elem.title}
             clientUrl={`https://image.tmdb.org/t/p/w500/${elem.imageUrl}`}
           />
