@@ -1,6 +1,6 @@
 import axios from 'axios';
 import styled from 'styled-components';
-import { Icon } from 'semantic-ui-react';
+import { Embed, Icon } from 'semantic-ui-react';
 import getParsedDate from '../utils/date';
 
 const Cover = styled.div`
@@ -22,9 +22,14 @@ flex-direction: column;
 const MovieContainer = styled.div`
 max-width: 1400rem;
 width: 100%;
-padding: 20rem 10rem;
-margin: 0 auto;
+padding: 20rem 0 0 20rem;
+margin: 50rem auto;
 color: #fff;
+
+@media only screen and (max-width: 1150px) {
+max-width: 800rem;
+padding: 0 20rem;
+}
 `;
 
 const MovieHeader = styled.header`
@@ -43,7 +48,6 @@ const MovieTitle = styled.span`
 const Chip = styled.div`
     border-radius: 10rem;
     font-size: 15rem;
-    margin-right: 12rem;
     display: inline-block;
     line-height: 1;
     vertical-align: baseline;
@@ -51,6 +55,9 @@ const Chip = styled.div`
     padding: 0.4em 0.6em;
     color: gray;
     font-weight: 400;
+    &:not(:last-child){
+    margin-right: 12rem;
+    }
 `;
 
 const GenresContainer = styled.div`
@@ -94,14 +101,10 @@ position: relative;
 
 
 const CrewContainer = styled.div`
-    display: flex;
-    flex-direction: column;
     padding-top: 10px;
-    margin-right: 30px;
     margin-bottom: 10px;
     max-width: 110px;
-    text-align: center;
-
+    justify-self: center;
 `;
 
 const CrewImageContainer = styled.div`
@@ -120,7 +123,6 @@ const CrewImage = styled.img`
 
 const CrewText = styled.div`
     margin-top: 9px;
-    padding-right: 10rem;
     font-weight: 500;
     font-size: 13px;
     opacity: .85;
@@ -132,9 +134,19 @@ font-size: 16rem;
 `;
 
 const CrewsContainer = styled.div`
-//display: flex;
-//flex-direction: column;
+margin-bottom: 20rem;
 text-align: center;
+max-width: 420rem;
+
+@media only screen and (max-width: 1150px) {
+max-width: 800rem;
+margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+max-width: 420rem;
+margin: 0 auto;
+}
 
 
 h4 {
@@ -143,14 +155,33 @@ font-size: 20rem;
 `;
 
 const CrewList = styled.div`
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+grid-column-gap: 12px;
 `;
 
-const PeopleContainer = styled.div`
-display: flex;
+const MainContainer = styled.div`
+display: grid;
+grid-template-columns: auto 450rem;
+grid-column-gap: 70rem;
 justify-content: space-between;
+@media only screen and (max-width: 1150px) {
+grid-template-columns: auto;
+}
+`;
+
+const Overview = styled.div`
+text-align: center;
+
+div {
+color: gray;
+margin-top: 20rem;
+}
+
+h4 {
+color: white;
+font-size: 20rem;
+}
 `;
 
 
@@ -198,7 +229,12 @@ function getWriters(cast) {
 }
 
 function getActors(cast) {
-  return cast.cast.slice(0, 5);
+  return cast.cast.slice(0, 6);
+}
+
+function getTrailer(traliers) {
+  const trailer = traliers.find((trailer) => trailer.site && trailer.site.toLowerCase() === 'youtube');
+  return trailer ? trailer.key : null;
 }
 
 function Crew({
@@ -224,8 +260,27 @@ function Crew({
   );
 }
 
-function Movie({ movie, cast }) {
+function SemanticUiEmbedded({ trailerId }) {
+  return (
+    <div className="ui active embed" style={{ borderRadius: 10 }}>
+      <div className="embed">
+        <iframe
+          frameBorder="0"
+          height="100%"
+          scrolling="no"
+          src={`//www.youtube.com/embed/${trailerId}?autohide=true&amp;amp&amp;amp;color=%23444444&amp;amp;hq=true&amp;amp;jsapi=false&amp;amp;modestbranding=false&amp;amp;rel=1`}
+          title="Embedded content from youtube."
+          width="100%"
+        />
+      </div>
+    </div>
+  );
+}
+
+function Movie({ movie, cast, trailers }) {
   console.log(movie);
+
+  const trailerId = getTrailer(trailers);
   return (
     <>
       <HeaderContainer>
@@ -233,11 +288,11 @@ function Movie({ movie, cast }) {
           <MovieTitle>
             {movie.original_title}
             {movie.vote_average !== 0 && (
-              <Star color={getStarColor(movie.vote_average)}>
-                <Icon name="star" />
-                {' '}
-                {movie.vote_average}
-              </Star>
+            <Star color={getStarColor(movie.vote_average)}>
+              <Icon name="star" />
+              {' '}
+              {movie.vote_average}
+            </Star>
             )}
           </MovieTitle>
           <GenresContainer>
@@ -253,38 +308,77 @@ function Movie({ movie, cast }) {
               <span>{formatMinues(movie.runtime)}</span>
             </PropertyContainer>
             {movie.budget !== 0 && (
-              <PropertyContainer>
-                Bugdet
-                <span>{`${numberWithCommas(movie.budget)} $`}</span>
-              </PropertyContainer>
+            <PropertyContainer>
+              Bugdet
+              <span>{`${numberWithCommas(movie.budget)} $`}</span>
+            </PropertyContainer>
             )}
             {movie.revenue !== 0 && (
-              <PropertyContainer>
-                Revenue
-                <span>{`${numberWithCommas(movie.revenue)} $`}</span>
-              </PropertyContainer>
+            <PropertyContainer>
+              Revenue
+              <span>{`${numberWithCommas(movie.revenue)} $`}</span>
+            </PropertyContainer>
             )}
           </MovieProperties>
         </MovieHeader>
         <Cover imageUrl={movie.backdrop_path} />
       </HeaderContainer>
       <MovieContainer>
-        <PeopleContainer>
-          <CrewsContainer>
-            <h4> Crew </h4>
-            <CrewList>
-              {getDirectors(cast).map((crew) => <Crew key={crew.credit_id} title="Director" imageUrl={crew.profile_path} text={crew.name} gender={crew.gender} />)}
-              {getProducers(cast).map((crew) => <Crew key={crew.credit_id} title="Producer" imageUrl={crew.profile_path} text={crew.name} gender={crew.gender} />)}
-              {getWriters(cast).map((crew) => <Crew key={crew.credit_id} title="Writer" imageUrl={crew.profile_path} text={crew.name} gender={crew.gender} />)}
-            </CrewList>
-          </CrewsContainer>
-          <CrewsContainer style={{ flexShrink: 2 }}>
-            <h4> Cast </h4>
-            <CrewList>
-              {getActors(cast).map((crew) => <Crew key={crew.credit_id} title="Actor" imageUrl={crew.profile_path} text={`${crew.name} - ${crew.character}`} gender={crew.gender} />)}
-            </CrewList>
-          </CrewsContainer>
-        </PeopleContainer>
+        <MainContainer>
+          <Overview>
+            <h4>Overview</h4>
+            <div>{movie.overview}</div>
+            {trailerId && <SemanticUiEmbedded trailerId={trailerId} />}
+          </Overview>
+          <div>
+            <CrewsContainer>
+              <h4> Crew </h4>
+              <CrewList>
+                {getDirectors(cast).map((crew) => (
+                  <Crew
+                    key={crew.credit_id}
+                    title="Director"
+                    imageUrl={crew.profile_path}
+                    text={crew.name}
+                    gender={crew.gender}
+                  />
+                ))}
+                {getProducers(cast).map((crew) => (
+                  <Crew
+                    key={crew.credit_id}
+                    title="Producer"
+                    imageUrl={crew.profile_path}
+                    text={crew.name}
+                    gender={crew.gender}
+                  />
+                ))}
+                {getWriters(cast).map((crew) => (
+                  <Crew
+                    key={crew.credit_id}
+                    title="Writer"
+                    imageUrl={crew.profile_path}
+                    text={crew.name}
+                    gender={crew.gender}
+                  />
+                ))}
+              </CrewList>
+            </CrewsContainer>
+            <CrewsContainer>
+              <h4> Cast </h4>
+              <CrewList>
+                {getActors(cast).map((crew) => (
+                  <Crew
+                    key={crew.credit_id}
+                    title="Actor"
+                    imageUrl={crew.profile_path}
+                    text={`${crew.name} - ${crew.character}`}
+                    gender={crew.gender}
+                  />
+                ))}
+              </CrewList>
+            </CrewsContainer>
+          </div>
+        </MainContainer>
       </MovieContainer>
     </>
   );
@@ -312,7 +406,10 @@ Movie.getInitialProps = async (ctx) => {
 
   const movieCast = await axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.API_KEY}`);
 
-  return { movie: responseMovie.data, cast: movieCast.data };
+
+  const movieTrailer = await axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.API_KEY}&language=en-US`);
+
+  return { movie: responseMovie.data, cast: movieCast.data, trailers: movieTrailer.data.results };
 };
 
 export default Movie;

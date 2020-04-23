@@ -48,7 +48,7 @@ const ResponsiveNavBar = () => {
           <NavBar style={barAnimation}>
             <FlexContainer>
               <NavLinks style={linkAnimation}>
-                <Link href="/" style={{ fontSize: '30rem' }}>FlixTime</Link>
+                <Link href="/">FlixTime</Link>
                 <Link href="/movies">Movies</Link>
                 <Link href="/shows">Shows</Link>
               </NavLinks>
