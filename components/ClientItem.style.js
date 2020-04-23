@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 const StyledClientItem = styled.div`
-
     text-align: center;
     display: flex;
     flex-direction: column;
+    cursor: grab;
     align-items: center;
 img {
 width: 100%;

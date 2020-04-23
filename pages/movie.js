@@ -1,6 +1,6 @@
 import axios from 'axios';
 import styled from 'styled-components';
-import { Embed, Icon } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 import getParsedDate from '../utils/date';
 
 const Cover = styled.div`

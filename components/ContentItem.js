@@ -30,17 +30,19 @@ color: grey;
 
 function ContentItem({ clientName, clientUrl, id }) {
   return (
-    <Link href={`/movie?id=${id}`}>
-      <StyledClientItem>
+
+    <StyledClientItem>
+      <Link href={`/movie?id=${id}`}>
         <img alt={clientName} src={clientUrl} />
-        <CarouselItemText>
-          <UpperText>
-            {clientName}
-          </UpperText>
-          <LowerText> Action </LowerText>
-        </CarouselItemText>
-      </StyledClientItem>
-    </Link>
+      </Link>
+      <CarouselItemText>
+        <UpperText>
+          {clientName}
+        </UpperText>
+        <LowerText> Action </LowerText>
+      </CarouselItemText>
+    </StyledClientItem>
+
   );
 }
 

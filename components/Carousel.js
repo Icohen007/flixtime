@@ -6,22 +6,49 @@ function Carousel({ content }) {
     dots: false,
     infinite: true,
     slidesToShow: 6,
-    slidesToScroll: 1,
-    // autoplay: true,
+    slidesToScroll: 3,
     speed: 500,
-    // autoplaySpeed: 2000,
     pauseOnHover: true,
+    autoplay: false,
+    touchThreshold: 15,
     responsive: [
       {
         breakpoint: 1230,
         settings: {
+          slidesToShow: 5,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 930,
+        settings: {
           slidesToShow: 4,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 730,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          arrows: false,
         },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          variableWidth: true,
+          arrows: false,
         },
       }],
   };
