@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/new_logo_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/new_logo_light.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
-      <workItem from="1587318729989" duration="84591000" />
+      <workItem from="1587318729989" duration="86946000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -176,7 +177,13 @@
       <option name="presentableId" value="LOCAL‎00014" />
       <updated>1587674422068</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL‎00015" summary="add scroll event listener to nav bar on scroll.">
+      <created>1587675585380</created>
+      <option name="number" value="LOCAL‎00015" />
+      <option name="presentableId" value="LOCAL‎00015" />
+      <updated>1587675585381</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +216,7 @@
     <MESSAGE value="add cast and crew to movie page.&#10;make movies page responsive." />
     <MESSAGE value="add trailer.&#10;add responsiveness to movie page." />
     <MESSAGE value="make carousel responsive" />
-    <option name="LAST_COMMIT_MESSAGE" value="make carousel responsive" />
+    <MESSAGE value="add scroll event listener to nav bar on scroll." />
+    <option name="LAST_COMMIT_MESSAGE" value="add scroll event listener to nav bar on scroll." />
   </component>
 </project>

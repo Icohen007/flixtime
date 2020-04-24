@@ -64,7 +64,9 @@ const ResponsiveNavBar = () => {
           <NavBar style={barAnimation} navBarColor={navBarColor}>
             <FlexContainer>
               <NavLinks style={linkAnimation}>
-                <Link href="/">FlixTime</Link>
+                <Link href="/">
+                  <img src="/new_logo_dark.png" style={{ maxHeight: '40rem', cursor: 'pointer' }} />
+                </Link>
                 <Link href="/movies">Movies</Link>
                 <Link href="/shows">Shows</Link>
               </NavLinks>
@@ -109,6 +111,8 @@ const NavLinks = styled(animated.ul)`
   justify-self: end;
   list-style-type: none;
   margin: auto 0;
+  display: flex;
+  align-items: center;
 
   & a {
     color: #dfe6e9;
