@@ -1,6 +1,6 @@
 import axios from 'axios';
 import styled from 'styled-components';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Label, Segment } from 'semantic-ui-react';
 import getParsedDate from '../utils/date';
 
 const Cover = styled.div`
@@ -237,6 +237,10 @@ function getTrailer(traliers) {
   return trailer ? trailer.key : null;
 }
 
+function getReviews(reviews) {
+  return reviews.filter((review) => review.content.length < 4000 && review.content.length > 200).slice(0, 2);
+}
+
 function Crew({
   title, imageUrl, text, gender,
 }) {
@@ -277,7 +281,47 @@ function SemanticUiEmbedded({ trailerId }) {
   );
 }
 
-function Movie({ movie, cast, trailers }) {
+const ReviewAuthor = styled.div`
+font-size: 26rem;
+font-family: Luckiest Guy,sans-serif;
+letter-spacing: 1.5rem;
+padding-left: 15rem;
+`;
+
+const ReviewContent = styled.div`
+white-space: pre-wrap;
+font-style: italic;
+padding-top: 15rem;
+padding-left: 15rem;
+`;
+
+// .replace(/\\r/g, '\r')
+//           .replace(/\\n/g, '\n')
+function Review({ review }) {
+  return (
+    <Segment
+      inverted
+      raised
+      style={{
+        fontSize: '14px', padding: '20rem 0', maxWidth: '100%', margin: '20rem auto', boxShadow: '-3px 3px 5px 0 rgba(193, 196, 199, 0.28), 1px -1px 5px 0px rgba(193, 196, 199, 0.28)'
+      }}
+    >
+      <Label color="orange" ribbon style={{ fontSize: '14px', marginBottom: '20rem' }}>
+        Review
+      </Label>
+      <ReviewAuthor>
+        {`By: ${review.author}`}
+      </ReviewAuthor>
+      <ReviewContent>
+        {`"${review.content}"`}
+      </ReviewContent>
+    </Segment>
+  );
+}
+
+function Movie({
+  movie, cast, trailers, reviews,
+}) {
   console.log(movie);
 
   const trailerId = getTrailer(trailers);
@@ -379,6 +423,7 @@ function Movie({ movie, cast, trailers }) {
             </CrewsContainer>
           </div>
         </MainContainer>
+        {getReviews(reviews).map((review) => <Review review={review} />)}
       </MovieContainer>
     </>
   );
@@ -406,10 +451,16 @@ Movie.getInitialProps = async (ctx) => {
 
   const movieCast = await axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.API_KEY}`);
 
-
   const movieTrailer = await axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.API_KEY}&language=en-US`);
 
-  return { movie: responseMovie.data, cast: movieCast.data, trailers: movieTrailer.data.results };
+  const movieReviews = await axios.get(`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${process.env.API_KEY}&language=en-US&page=1`);
+
+  return {
+    movie: responseMovie.data,
+    cast: movieCast.data,
+    trailers: movieTrailer.data.results,
+    reviews: movieReviews.data.results,
+  };
 };
 
 export default Movie;
