@@ -7,8 +7,8 @@ function Home({ movies, shows, trending }) {
   return (
     <>
       <CarouselTrending content={trending} />
-      <CarouselContent header="Popular Movies" content={movies} path="/movies" />
-      <CarouselContent header="Popular Shows" content={shows} path="/shows" />
+      <CarouselContent header="Popular Movies" content={movies} mediaType="movie" />
+      <CarouselContent header="Popular Shows" content={shows} mediaType="show" />
     </>
   );
 }

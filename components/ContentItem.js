@@ -28,11 +28,13 @@ color: grey;
     max-width: 168rem;
 `;
 
-function ContentItem({ clientName, clientUrl, id }) {
+function ContentItem({
+  clientName, clientUrl, mediaType, id,
+}) {
   return (
 
     <StyledClientItem>
-      <Link href={`/movie?id=${id}`}>
+      <Link href={`/${mediaType}?id=${id}`}>
         <img alt={clientName} src={clientUrl} />
       </Link>
       <CarouselItemText>

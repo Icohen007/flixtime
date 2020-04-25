@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 import axios from 'axios';
-import HeaderDetails from '../components/MediaDetails/HeaderDetails';
 import {
-  getActors, getDirectors, getProducers, getReviews, getTrailer, getWriters,
+  getActors, getCreators, getReviews, getTrailer,
 } from '../utils/mediaDetailsGetters';
-import { formatMinutes, getParsedDate, numberWithCommas } from '../utils/formatUtils';
+import HeaderDetails from '../components/MediaDetails/HeaderDetails';
+import { formatMinutes, getParsedDate } from '../utils/formatUtils';
 import SemanticUiEmbedded from '../components/MediaDetails/SemanticUiEmbedded';
 import CreditList from '../components/MediaDetails/CreditList';
 import Credit from '../components/MediaDetails/Credit';
 import Review from '../components/MediaDetails/Review';
+
 
 const MovieContainer = styled.div`
 max-width: 1400rem;
@@ -65,42 +66,44 @@ font-size: 20rem;
 }
 `;
 
-
-function Movie({
+function Show({
   details, credits, trailers, reviews,
 }) {
   const trailerId = getTrailer(trailers);
   return (
     <>
       <HeaderDetails
-        name={details.original_title}
+        name={details.original_name}
         rating={details.vote_average}
         genres={details.genres}
         coverImage={details.backdrop_path}
       >
         <MovieProperties>
           <PropertyContainer>
-            Release
-            <span>{getParsedDate(details.release_date)}</span>
+            First Air Date
+            <span>{getParsedDate(details.first_air_date)}</span>
+          </PropertyContainer>
+          {details.episode_run_time > 0 && (
+          <PropertyContainer>
+            Episode Run Time
+            <span>{formatMinutes(details.episode_run_time)}</span>
+          </PropertyContainer>
+          )}
+          <PropertyContainer>
+            Networks
+            <span>{details.networks.map((network) => network.name).join(', ')}</span>
           </PropertyContainer>
           <PropertyContainer>
-            Run Time
-            <span>{formatMinutes(details.runtime)}</span>
+            Seasons
+            <span>{details.number_of_seasons}</span>
           </PropertyContainer>
-          {details.budget !== 0 && (
-            <PropertyContainer>
-              Bugdet
-              <span>{`${numberWithCommas(details.budget)} $`}</span>
-            </PropertyContainer>
-          )}
-          {details.revenue !== 0 && (
-            <PropertyContainer>
-              Revenue
-              <span>{`${numberWithCommas(details.revenue)} $`}</span>
-            </PropertyContainer>
-          )}
+          <PropertyContainer>
+            Episodes
+            <span>{details.number_of_episodes}</span>
+          </PropertyContainer>
         </MovieProperties>
       </HeaderDetails>
+
       <MovieContainer>
         <MainContainer>
           <Overview>
@@ -110,29 +113,10 @@ function Movie({
           </Overview>
           <div>
             <CreditList listTitle="Crew">
-
-              {getDirectors(credits).map((crew) => (
+              {getCreators(details).map((crew) => (
                 <Credit
                   key={crew.credit_id}
-                  title="Director"
-                  imageUrl={crew.profile_path}
-                  text={crew.name}
-                  gender={crew.gender}
-                />
-              ))}
-              {getProducers(credits).map((crew) => (
-                <Credit
-                  key={crew.credit_id}
-                  title="Producer"
-                  imageUrl={crew.profile_path}
-                  text={crew.name}
-                  gender={crew.gender}
-                />
-              ))}
-              {getWriters(credits).map((crew) => (
-                <Credit
-                  key={crew.credit_id}
-                  title="Writer"
+                  title="Creator"
                   imageUrl={crew.profile_path}
                   text={crew.name}
                   gender={crew.gender}
@@ -158,9 +142,9 @@ function Movie({
   );
 }
 
-Movie.getInitialProps = async (ctx) => {
+Show.getInitialProps = async (ctx) => {
   const { id } = ctx.query;
-  const mediaType = 'movie';
+  const mediaType = 'tv';
 
   const responseDetails = await axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}?api_key=${process.env.API_KEY}&language=en-US`);
   const responseCredits = await axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}/credits?api_key=${process.env.API_KEY}`);
@@ -175,4 +159,11 @@ Movie.getInitialProps = async (ctx) => {
   };
 };
 
-export default Movie;
+export default Show;
+
+// const movieGenres = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_KEY}&language=en-US`);
+//
+// const genresMovieMap = movieGenres.data.genres.reduce((acc, cur) => {
+//   acc[cur.id] = cur.name;
+//   return acc;
+// }, {});

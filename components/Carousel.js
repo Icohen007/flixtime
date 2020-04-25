@@ -1,7 +1,7 @@
 import Slider from 'react-slick';
 import ContentItem from './ContentItem';
 
-function Carousel({ content }) {
+function Carousel({ content, mediaType }) {
   const settings = {
     dots: false,
     infinite: true,
@@ -59,6 +59,7 @@ function Carousel({ content }) {
           key={elem.id}
           id={elem.id}
           clientName={elem.title}
+          mediaType={mediaType}
           clientUrl={`https://image.tmdb.org/t/p/w500/${elem.imageUrl}`}
         />
       ))}

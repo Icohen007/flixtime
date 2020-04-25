@@ -46,8 +46,14 @@ const CarouselHeader = styled.div`
     width: 100%;
 `;
 
+const mapMediaTypeToPath = {
+  movie: '/movies',
+  show: '/shows',
+};
 
-function CarouselContent({ content, header, path }) {
+function CarouselContent({
+  content, header, mediaType,
+}) {
   return (
     <ShowCaseContainer>
       <CarouselContainer>
@@ -55,11 +61,11 @@ function CarouselContent({ content, header, path }) {
           <LeftSideDiv>
             {header}
           </LeftSideDiv>
-          <Link href={path}>
+          <Link href={mapMediaTypeToPath[mediaType]}>
             <RightSideDiv> See All</RightSideDiv>
           </Link>
         </CarouselHeader>
-        <Carousel content={content} />
+        <Carousel content={content} mediaType={mediaType} />
       </CarouselContainer>
     </ShowCaseContainer>
   );

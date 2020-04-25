@@ -1,18 +1,5 @@
 import styled from 'styled-components';
-import getParsedDate from '../utils/date';
-
-const Title = styled.h1`
-  font-size: 50rem;
-  color: ${({ theme }) => theme.colors.primary};
-`;
-
-const HeaderContainer = styled.div`
-display: block;
-align-items: center;
-position: relative;
-width: 100%;
-height: 100%;
-`;
+import { getParsedDate } from '../utils/formatUtils';
 
 const FeaturedImage = styled.img`
 width: 100%;
