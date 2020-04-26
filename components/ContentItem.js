@@ -17,6 +17,12 @@ const UpperText = styled.p`
     line-height: 1.4;
     margin: 0;
     max-width: 168rem;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 `;
 
 const LowerText = styled.p`

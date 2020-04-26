@@ -9,7 +9,7 @@ function CarouselTrending({ content }) {
     slidesToScroll: 1,
     autoplay: true,
     speed: 700,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 5000,
     pauseOnHover: false,
     arrows: false,
   };

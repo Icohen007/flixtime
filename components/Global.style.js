@@ -104,5 +104,12 @@ background: linear-gradient(45deg,rgb(255,112,0) ,rgba(132,22,22,0.8));
     border-top-right-radius: 22rem;
     border-bottom-right-radius: 22rem;
 }
+
+
+.slick-prev, .slick-next {
+top: 128rem;
+font-size: 25rem;
+}
+
 `;
 export default GlobalStyle;

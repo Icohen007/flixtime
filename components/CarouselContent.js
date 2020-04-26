@@ -3,11 +3,12 @@ import Link from 'next/link';
 
 import Carousel from './Carousel';
 import FancyButton from './FancyButton/FancyButton';
+import SwipeSVG from './SwipeSVG';
 
 const CarouselContainer = styled.div`
  max-width: 1130rem;
  width: 100%;
- padding-bottom: 80rem;
+ padding-bottom: 25rem;
 `;
 
 const LeftSideDiv = styled.div`
@@ -35,6 +36,7 @@ background: transparent;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
+    min-height: 500rem;
 `;
 
 const CarouselHeader = styled.div`
@@ -53,6 +55,7 @@ const mapMediaTypeToPath = {
   show: '/shows',
 };
 
+
 function CarouselContent({
   content, header, mediaType,
 }) {
@@ -69,6 +72,7 @@ function CarouselContent({
           </Link>
         </CarouselHeader>
         <Carousel content={content} mediaType={mediaType} />
+        <SwipeSVG className="onlyMobile" />
       </CarouselContainer>
     </ShowCaseContainer>
   );

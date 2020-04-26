@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { getYearAndMonth } from '../utils/formatUtils';
 import FeaturedButton from './FeaturedButton';
+import SwipeSVG from './SwipeSVG';
 
 const FeaturedImage = styled.img`
 width: 100%;
@@ -60,9 +61,10 @@ function Header({
         <PanelDiv fontSize="22rem">{parsedDate}</PanelDiv>
         <PanelDiv fontSize="42rem" marginTop="15rem">{ title }</PanelDiv>
         <PanelDiv fontSize="16rem" marginTop="5rem"> Adventure • Comedy • Fantasy </PanelDiv>
-          <FeaturedButton id={id}>
-            Check it out!
-          </FeaturedButton>
+        <FeaturedButton id={id}>
+          Check it out!
+        </FeaturedButton>
+        <SwipeSVG className="cover" />
       </Panel>
 
     </PanelContainer>
