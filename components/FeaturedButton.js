@@ -3,35 +3,29 @@ import Link from 'next/link';
 
 const FeaturedButtonStyled = styled.div`
     background: rgba(96,54,171,0.85);
-    border: 1.5px solid #bf6f00;
-    border-radius: 100px;
-    padding: 12px 35px;
+    border: 1.5rem solid #bf6f00;
+    border-radius: 100rem;
+    padding: 8rem 20rem;
     color: #fff;
     text-decoration: none;
     font-size: 16rem;
     margin: 10px 0;
     cursor: pointer;
 
-/* Hover state animation applied here */
 &:hover {
     animation: hover 2200ms linear 2 alternate;
 }
 
-/* Active state animation applied here */
 &:active {
     animation: active 1200ms ease 1 alternate;
     background: rgba(63,45,126,0.85);
 }
-
-/* Active state animation keyframes below */
 
 @keyframes active {
     0% {transform: scale(1,1);}
     90% {transform: scale(.9,.88);}
     100% {transform: scale(.92,.9);}
 }
-
-/* Hover state animation keyframes below */
 
 @keyframes hover {
     0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }

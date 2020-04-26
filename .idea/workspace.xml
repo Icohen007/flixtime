@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/SwipeSVG.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/swipe.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/CarouselContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/CarouselTrending.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselTrending.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ContentItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ContentItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ClientItem.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ClientItem.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FeaturedButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Global.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Global.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/PopularPage.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PopularPage.style.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="23836000" />
+      <workItem from="1587841277492" duration="24848000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -217,7 +215,13 @@
       <option name="presentableId" value="LOCAL‎00019" />
       <updated>1587908900535</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL‎00020" summary="add swipe icon&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick">
+      <created>1587923815991</created>
+      <option name="number" value="LOCAL‎00020" />
+      <option name="presentableId" value="LOCAL‎00020" />
+      <updated>1587923815991</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +261,8 @@
     <MESSAGE value="add show details page + Big refactor to movies + show page.&#10;&#10;extract functions and components." />
     <MESSAGE value="add FancyButton to See All&#10;&#10;add FeaturedButton&#10;&#10;add dates to shows and movies.&#10;&#10;fix links" />
     <MESSAGE value="add main buttons to choose between shows and movies" />
-    <option name="LAST_COMMIT_MESSAGE" value="add main buttons to choose between shows and movies" />
+    <MESSAGE value="add swipe icone&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick" />
+    <MESSAGE value="add swipe icon&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick" />
+    <option name="LAST_COMMIT_MESSAGE" value="add swipe icon&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick" />
   </component>
 </project>

@@ -46,7 +46,7 @@ export const GridContainer = styled.div`
    max-width: 1150px;
    width: 100%;
    margin: auto;
-   padding: 10rem;
+   padding: 10rem 10rem 50rem 10rem;
    justify-content: center;
    text-align: center;
 `;

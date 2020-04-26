@@ -4,7 +4,6 @@ const StyledClientItem = styled.div`
     text-align: center;
     display: flex;
     flex-direction: column;
-    cursor: grab;
     align-items: center;
     position: relative;
 img {

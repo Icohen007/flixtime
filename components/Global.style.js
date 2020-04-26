@@ -54,8 +54,11 @@ text-decoration: none !important;
   margin-top: 45rem;
   background: #0d0d0d;
 }
-
 .ui.pagination.menu {
+
+a.item:hover{
+background: rgba(193, 182, 182, 0.52);
+}
 
 a.active.item {
     background-color: #453c38;

@@ -9,6 +9,10 @@ const CarouselContainer = styled.div`
  max-width: 1130rem;
  width: 100%;
  padding-bottom: 25rem;
+ 
+ .slick-slider {
+ cursor: grab;
+ }
 `;
 
 const LeftSideDiv = styled.div`
@@ -33,7 +37,6 @@ background: transparent;
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 40px;
     display: flex;
     flex-direction: column;
     min-height: 500rem;
