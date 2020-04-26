@@ -62,7 +62,7 @@ make it thinner, then set it to again wrap around the entire parent element.
 */
 
 `;
-
+//TODO : add link
 function FancyButton() {
   return (
     <FancyButtonStyled>
@@ -70,7 +70,7 @@ function FancyButton() {
         <rect id="shape" height="35" width="110" />
       </svg>
       <div id="text">
-        <a href=""> //TODO : add link
+        <a href="">
           <span className="spot" />
           See All
         </a>

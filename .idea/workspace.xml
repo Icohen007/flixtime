@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="add show details page + Big refactor to movies + show page.&#10;&#10;extract functions and components.">
-      <change afterPath="$PROJECT_DIR$/components/FancyButton/FancyButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/FancyButton/fancyButton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/FeaturedButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Ribbon.js" afterDir="false" />
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Carousel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/CarouselContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/CarouselTrending.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselTrending.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ClientItem.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ClientItem.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ContentItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ContentItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FancyButton/FancyButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/FancyButton/FancyButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FeaturedButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Global.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Global.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MediaDetails/Review.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MediaDetails/Review.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MediaDetails/Credit.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MediaDetails/Credit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/show.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/show.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/formatUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/formatUtils.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="16645000" />
+      <workItem from="1587841277492" duration="20241000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -217,7 +207,13 @@
       <option name="presentableId" value="LOCAL‎00017" />
       <updated>1587847774815</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL‎00018" summary="add FancyButton to See All&#10;&#10;add FeaturedButton&#10;&#10;add dates to shows and movies.&#10;&#10;fix links">
+      <created>1587905047296</created>
+      <option name="number" value="LOCAL‎00018" />
+      <option name="presentableId" value="LOCAL‎00018" />
+      <updated>1587905047296</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +251,7 @@
     <MESSAGE value="add scroll event listener to nav bar on scroll." />
     <MESSAGE value="add logo to navbar" />
     <MESSAGE value="add show details page + Big refactor to movies + show page.&#10;&#10;extract functions and components." />
-    <option name="LAST_COMMIT_MESSAGE" value="add show details page + Big refactor to movies + show page.&#10;&#10;extract functions and components." />
+    <MESSAGE value="add FancyButton to See All&#10;&#10;add FeaturedButton&#10;&#10;add dates to shows and movies.&#10;&#10;fix links" />
+    <option name="LAST_COMMIT_MESSAGE" value="add FancyButton to See All&#10;&#10;add FeaturedButton&#10;&#10;add dates to shows and movies.&#10;&#10;fix links" />
   </component>
 </project>

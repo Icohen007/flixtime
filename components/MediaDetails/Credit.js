@@ -51,7 +51,7 @@ function Credit({
 
   return (
     <CreditContainer>
-      <CreditTitle>{title}</CreditTitle>
+      {title && <CreditTitle>{title}</CreditTitle>}
       <CreditImageContainer>
         <CreditImage src={crewImage} imageDefined={!!imageUrl} />
       </CreditImageContainer>

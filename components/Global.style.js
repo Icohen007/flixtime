@@ -77,10 +77,32 @@ a.active.item {
 //}
 
 
+.ui.buttons .ui.button {
+font-size: 18rem;
+background: #4a4a4a;
+color: white;
+transition: all 0.2s ease-in-out;
+padding: 0.785714em 2.5em .78571429em;
 
+&:hover {
+background: linear-gradient(45deg,rgba(255,112,0,0.3) ,rgb(132, 22, 22, 0.3));
+transition: all 0.2s ease-in-out;
+}
+}
 
+.ui.buttons .ui.active.button {
+background: linear-gradient(45deg,rgb(255,112,0) ,rgba(132,22,22,0.8));
+}
 
+.ui.buttons .button:first-child {
+    border-top-left-radius: 22rem;
+    border-bottom-left-radius: 22rem;
+    border-right: 1px #323232 solid;
+}
 
+.ui.buttons .button:last-child {
+    border-top-right-radius: 22rem;
+    border-bottom-right-radius: 22rem;
+}
 `;
-
 export default GlobalStyle;

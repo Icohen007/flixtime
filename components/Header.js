@@ -61,7 +61,7 @@ function Header({
         <PanelDiv fontSize="42rem" marginTop="15rem">{ title }</PanelDiv>
         <PanelDiv fontSize="16rem" marginTop="5rem"> Adventure • Comedy • Fantasy </PanelDiv>
           <FeaturedButton id={id}>
-            Check it out
+            Check it out!
           </FeaturedButton>
       </Panel>
 

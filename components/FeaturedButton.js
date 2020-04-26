@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 const FeaturedButtonStyled = styled.div`
-    background: #6036ab;
+    background: rgba(96,54,171,0.85);
+    border: 1.5px solid #bf6f00;
     border-radius: 100px;
     padding: 12px 35px;
     color: #fff;
@@ -19,7 +20,7 @@ const FeaturedButtonStyled = styled.div`
 /* Active state animation applied here */
 &:active {
     animation: active 1200ms ease 1 alternate;
-    background: #3f2d7e;
+    background: rgba(63,45,126,0.85);
 }
 
 /* Active state animation keyframes below */

@@ -127,7 +127,6 @@ function Show({
               {getActors(credits).map((crew) => (
                 <Credit
                   key={crew.credit_id}
-                  title="Actor"
                   imageUrl={crew.profile_path}
                   text={`${crew.name} - ${crew.character}`}
                   gender={crew.gender}

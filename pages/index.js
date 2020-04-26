@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import { Button } from 'semantic-ui-react';
+import styled from 'styled-components';
 import CarouselContent from '../components/CarouselContent';
 import CarouselTrending from '../components/CarouselTrending';
 
+
+const ButtonGroupContainer = styled.div`
+display: flex;
+justify-content: center;
+margin-top: 60rem;
+`;
+
 function Home({ movies, shows, trending }) {
+  const [showMovies, setShowMovies] = useState(true);
   return (
     <>
       <CarouselTrending content={trending} />
-      <CarouselContent header="Popular Movies" content={movies} mediaType="movie" />
-      <CarouselContent header="Popular Shows" content={shows} mediaType="show" />
+      <ButtonGroupContainer>
+        <Button.Group>
+          <Button active={showMovies} onClick={() => setShowMovies(true)}>Movies</Button>
+          <Button active={!showMovies} onClick={() => setShowMovies(false)}>Shows</Button>
+        </Button.Group>
+      </ButtonGroupContainer>
+      {showMovies && <CarouselContent header="Popular Movies" content={movies} mediaType="movie" />}
+      {!showMovies && <CarouselContent header="Popular Shows" content={shows} mediaType="show" />}
     </>
   );
 }

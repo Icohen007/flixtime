@@ -7,6 +7,7 @@ import FancyButton from './FancyButton/FancyButton';
 const CarouselContainer = styled.div`
  max-width: 1130rem;
  width: 100%;
+ padding-bottom: 80rem;
 `;
 
 const LeftSideDiv = styled.div`
