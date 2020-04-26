@@ -1,13 +1,13 @@
 import Slider from 'react-slick';
 import Header from './Header';
 
-function CarouselTrending({ content }) {
+function CarouselTrending({ content, genresMovieMap }) {
   const settings = {
     dots: false,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 700,
     autoplaySpeed: 5000,
     pauseOnHover: false,
@@ -19,6 +19,8 @@ function CarouselTrending({ content }) {
         <Header
           key={elem.id}
           id={elem.id}
+          genreIds={elem.genreIds}
+          genresMovieMap={genresMovieMap}
           imageUrl={elem.imageUrl}
           title={elem.title}
           releaseDate={elem.releaseDate}

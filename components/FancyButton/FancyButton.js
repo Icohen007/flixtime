@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const FancyButtonStyled = styled.div`
 
@@ -11,6 +12,7 @@ const FancyButtonStyled = styled.div`
     border-radius: 3px;
     margin-left: 5px;
     margin-right: 5px;
+    cursor: pointer;
 
 &:hover #shape {
     stroke-dasharray: 50 0;
@@ -25,6 +27,7 @@ const FancyButtonStyled = styled.div`
     height: 100%;
     top: 0;
     left: 0;
+    z-index: -1;
 }
 /*
     This is the outer svg wrapper that the SVG itself will
@@ -49,9 +52,10 @@ const FancyButtonStyled = styled.div`
 #text {
     margin-top: -35px;
     text-align: center;
+    user-select: none;
 }
 
-#text a {
+#text p {
     color: #9f9f9f;
     text-decoration: none;
     font-size: 16px;
@@ -62,20 +66,22 @@ make it thinner, then set it to again wrap around the entire parent element.
 */
 
 `;
-//TODO : add link
-function FancyButton() {
+function FancyButton({ linkTo }) {
   return (
-    <FancyButtonStyled>
-      <svg height="35" width="110" xmlns="http://www.w3.org/2000/svg">
-        <rect id="shape" height="35" width="110" />
-      </svg>
-      <div id="text">
-        <a href="">
-          <span className="spot" />
-          See All
-        </a>
-      </div>
-    </FancyButtonStyled>
+    <Link href={linkTo}>
+      <FancyButtonStyled>
+        <svg height="35" width="110" xmlns="http://www.w3.org/2000/svg">
+          <rect id="shape" height="35" width="110" />
+        </svg>
+
+        <div id="text">
+          <p>
+            <span className="spot" />
+            See All
+          </p>
+        </div>
+      </FancyButtonStyled>
+    </Link>
   );
 }
 

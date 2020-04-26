@@ -160,9 +160,3 @@ Show.getInitialProps = async (ctx) => {
 
 export default Show;
 
-// const movieGenres = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_KEY}&language=en-US`);
-//
-// const genresMovieMap = movieGenres.data.genres.reduce((acc, cur) => {
-//   acc[cur.id] = cur.name;
-//   return acc;
-// }, {});

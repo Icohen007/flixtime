@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="add text-border + genres">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/CarouselContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ClientItem.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ClientItem.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/FeaturedButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Global.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Global.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/PopularPage.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PopularPage.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/CarouselTrending.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselTrending.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FancyButton/FancyButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/FancyButton/FancyButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/show.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/show.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="24848000" />
+      <workItem from="1587841277492" duration="27276000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -221,7 +222,13 @@
       <option name="presentableId" value="LOCAL‎00020" />
       <updated>1587923815991</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL‎00021" summary="add styling to pagination.&#10;&#10;add cursor grab to slick slider">
+      <created>1587941145290</created>
+      <option name="number" value="LOCAL‎00021" />
+      <option name="presentableId" value="LOCAL‎00021" />
+      <updated>1587941145290</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +270,7 @@
     <MESSAGE value="add main buttons to choose between shows and movies" />
     <MESSAGE value="add swipe icone&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick" />
     <MESSAGE value="add swipe icon&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick" />
-    <option name="LAST_COMMIT_MESSAGE" value="add swipe icon&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick" />
+    <MESSAGE value="add styling to pagination.&#10;&#10;add cursor grab to slick slider" />
+    <option name="LAST_COMMIT_MESSAGE" value="add styling to pagination.&#10;&#10;add cursor grab to slick slider" />
   </component>
 </project>

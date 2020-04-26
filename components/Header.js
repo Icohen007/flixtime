@@ -48,19 +48,24 @@ margin-top: ${(props) => props.marginTop};
 font-size: ${(props) => props.fontSize};
 font-weight: 600;
 max-width: 50%;
+
+-webkit-text-stroke-width: ${(props) => props.textBorder};
+-webkit-text-stroke-color: #000;
 `;
 
 function Header({
-  imageUrl, title, releaseDate, id,
+  imageUrl, title, releaseDate, id, genreIds, genresMovieMap,
 }) {
   const parsedDate = getYearAndMonth(releaseDate);
   return (
     <PanelContainer>
       <FeaturedImage src={`https://image.tmdb.org/t/p/original${imageUrl}`} />
       <Panel>
-        <PanelDiv fontSize="22rem">{parsedDate}</PanelDiv>
-        <PanelDiv fontSize="42rem" marginTop="15rem">{ title }</PanelDiv>
-        <PanelDiv fontSize="16rem" marginTop="5rem"> Adventure • Comedy • Fantasy </PanelDiv>
+        <PanelDiv fontSize="22rem" textBorder="0.6rem">{parsedDate}</PanelDiv>
+        <PanelDiv fontSize="44rem" marginTop="10rem" textBorder="2rem">{ title }</PanelDiv>
+        <PanelDiv fontSize="17rem" marginTop="5rem">
+          {genreIds.slice(0, 3).map((genre) => genresMovieMap[genre]).join(' • ')}
+        </PanelDiv>
         <FeaturedButton id={id}>
           Check it out!
         </FeaturedButton>

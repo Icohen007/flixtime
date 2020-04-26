@@ -12,11 +12,15 @@ justify-content: center;
 margin-top: 60rem;
 `;
 
-function Home({ movies, shows, trending }) {
+
+function Home({
+  movies, shows, trending, genresMovieMap,
+}) {
   const [showMovies, setShowMovies] = useState(true);
+
   return (
     <>
-      <CarouselTrending content={trending} />
+      <CarouselTrending content={trending} genresMovieMap={genresMovieMap} />
       <ButtonGroupContainer>
         <Button.Group>
           <Button active={showMovies} onClick={() => setShowMovies(true)}>Movies</Button>
@@ -41,10 +45,19 @@ Home.getInitialProps = async () => {
     imageUrl: e.poster_path, title: e.original_name, id: e.id, runningDate: e.first_air_date,
   }));
   const trending = responseTrending.data.results.map((e) => ({
-    imageUrl: e.backdrop_path, title: e.original_title, releaseDate: e.release_date, id: e.id,
+    imageUrl: e.backdrop_path, title: e.original_title, releaseDate: e.release_date, id: e.id, genreIds: e.genre_ids,
   }));
 
-  return { movies, shows, trending };
+  const movieGenres = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_KEY}&language=en-US`);
+
+  const genresMovieMap = movieGenres.data.genres.reduce((acc, cur) => {
+    acc[cur.id] = cur.name;
+    return acc;
+  }, {});
+
+  return {
+    movies, shows, trending, genresMovieMap,
+  };
 };
 
 export default Home;

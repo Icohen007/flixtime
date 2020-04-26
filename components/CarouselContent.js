@@ -21,17 +21,6 @@ const LeftSideDiv = styled.div`
     font-weight: 500;
 `;
 
-const RightSideDiv = styled.div`
-    color: #999;
-    font-size: 17rem;
-    cursor: pointer;
-    align-self: flex-end;
-    transition: filter .2s;
-    &:hover {
-        filter: brightness(1.3);
-    }
-`;
-
 const ShowCaseContainer = styled.div`
 background: transparent;
     align-items: center;
@@ -69,10 +58,7 @@ function CarouselContent({
           <LeftSideDiv>
             {header}
           </LeftSideDiv>
-          <Link href={mapMediaTypeToPath[mediaType]}>
-            {/* <RightSideDiv> See All</RightSideDiv> */}
-            <FancyButton />
-          </Link>
+          <FancyButton linkTo={mapMediaTypeToPath[mediaType]} />
         </CarouselHeader>
         <Carousel content={content} mediaType={mediaType} />
         <SwipeSVG className="onlyMobile" />
