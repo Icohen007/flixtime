@@ -4,7 +4,7 @@ import {
   getActors, getCreators, getReviews, getTrailer,
 } from '../utils/mediaDetailsGetters';
 import HeaderDetails from '../components/MediaDetails/HeaderDetails';
-import { formatMinutes, getParsedDate } from '../utils/formatUtils';
+import { formatMinutes, getYearAndMonth } from '../utils/formatUtils';
 import SemanticUiEmbedded from '../components/MediaDetails/SemanticUiEmbedded';
 import CreditList from '../components/MediaDetails/CreditList';
 import Credit from '../components/MediaDetails/Credit';
@@ -81,7 +81,7 @@ function Show({
         <MovieProperties>
           <PropertyContainer>
             First Air Date
-            <span>{getParsedDate(details.first_air_date)}</span>
+            <span>{getYearAndMonth(details.first_air_date)}</span>
           </PropertyContainer>
           {details.episode_run_time > 0 && (
           <PropertyContainer>

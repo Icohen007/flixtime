@@ -18,6 +18,7 @@ function CarouselTrending({ content }) {
       {content.map((elem) => (
         <Header
           key={elem.id}
+          id={elem.id}
           imageUrl={elem.imageUrl}
           title={elem.title}
           releaseDate={elem.releaseDate}

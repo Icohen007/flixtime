@@ -5,8 +5,9 @@ import { Icon, Pagination } from 'semantic-ui-react';
 import ContentItem from '../components/ContentItem';
 import scrollToTop from '../utils/scrollToTop';
 import * as S from '../components/PopularPage.style';
+import { getYear } from '../utils/formatUtils';
 
-function Movies({ movies }) {
+function Movies({ movies, mediaType }) {
   const router = useRouter();
 
   const currentPage = router.query.page || '1';
@@ -32,6 +33,8 @@ function Movies({ movies }) {
             key={elem.id}
             id={elem.id}
             clientName={elem.title}
+            mediaType={mediaType}
+            runningDate={getYear(elem.releaseDate)}
             clientUrl={`https://image.tmdb.org/t/p/w500/${elem.imageUrl}`}
           />
         ))}
@@ -54,9 +57,11 @@ Movies.getInitialProps = async (ctx) => {
   const { page = '1' } = ctx.query;
   const responseMovies = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
 
-  const movies = responseMovies.data.results.map((e) => ({ imageUrl: e.poster_path, title: e.original_title, id: e.id }));
+  const movies = responseMovies.data.results.map((e) => ({
+    imageUrl: e.poster_path, title: e.original_title, id: e.id, releaseDate: e.release_date,
+  }));
 
-  return { movies };
+  return { movies, mediaType: 'movie' };
 };
 
 export default Movies;

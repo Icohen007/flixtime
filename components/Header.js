@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { getParsedDate } from '../utils/formatUtils';
+import { getYearAndMonth } from '../utils/formatUtils';
+import FeaturedButton from './FeaturedButton';
 
 const FeaturedImage = styled.img`
 width: 100%;
@@ -49,9 +50,9 @@ max-width: 50%;
 `;
 
 function Header({
-  imageUrl, title, releaseDate,
+  imageUrl, title, releaseDate, id,
 }) {
-  const parsedDate = getParsedDate(releaseDate);
+  const parsedDate = getYearAndMonth(releaseDate);
   return (
     <PanelContainer>
       <FeaturedImage src={`https://image.tmdb.org/t/p/original${imageUrl}`} />
@@ -59,7 +60,11 @@ function Header({
         <PanelDiv fontSize="22rem">{parsedDate}</PanelDiv>
         <PanelDiv fontSize="42rem" marginTop="15rem">{ title }</PanelDiv>
         <PanelDiv fontSize="16rem" marginTop="5rem"> Adventure • Comedy • Fantasy </PanelDiv>
+          <FeaturedButton id={id}>
+            Check it out
+          </FeaturedButton>
       </Panel>
+
     </PanelContainer>
   );
 }

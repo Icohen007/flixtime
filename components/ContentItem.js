@@ -29,10 +29,9 @@ color: grey;
 `;
 
 function ContentItem({
-  clientName, clientUrl, mediaType, id,
+  clientName, clientUrl, mediaType, runningDate, id,
 }) {
   return (
-
     <StyledClientItem>
       <Link href={`/${mediaType}?id=${id}`}>
         <img alt={clientName} src={clientUrl} />
@@ -41,7 +40,9 @@ function ContentItem({
         <UpperText>
           {clientName}
         </UpperText>
-        <LowerText> Action </LowerText>
+        <LowerText>
+          {runningDate}
+        </LowerText>
       </CarouselItemText>
     </StyledClientItem>
 

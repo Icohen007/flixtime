@@ -6,6 +6,7 @@ const StyledClientItem = styled.div`
     flex-direction: column;
     cursor: grab;
     align-items: center;
+    position: relative;
 img {
 width: 100%;
 max-width: 168rem;

@@ -5,8 +5,9 @@ import { Icon, Pagination } from 'semantic-ui-react';
 import ContentItem from '../components/ContentItem';
 import scrollToTop from '../utils/scrollToTop';
 import * as S from '../components/PopularPage.style';
+import { getYear } from '../utils/formatUtils';
 
-function Shows({ shows }) {
+function Shows({ shows, mediaType }) {
   const router = useRouter();
 
   const currentPage = router.query.page || '1';
@@ -30,7 +31,10 @@ function Shows({ shows }) {
         {shows.map((elem) => (
           <ContentItem
             key={elem.id}
+            id={elem.id}
             clientName={elem.title}
+            runningDate={getYear(elem.runningDate)}
+            mediaType={mediaType}
             clientUrl={`https://image.tmdb.org/t/p/w500/${elem.imageUrl}`}
           />
         ))}
@@ -53,9 +57,11 @@ Shows.getInitialProps = async (ctx) => {
   const { page = '1' } = ctx.query;
   const responseShows = await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
 
-  const shows = responseShows.data.results.map((e) => ({ imageUrl: e.poster_path, title: e.original_name, id: e.id }));
+  const shows = responseShows.data.results.map((e) => ({
+    imageUrl: e.poster_path, title: e.original_name, id: e.id, runningDate: e.first_air_date,
+  }));
 
-  return { shows };
+  return { shows, mediaType: 'show' };
 };
 
 export default Shows;

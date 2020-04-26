@@ -4,7 +4,7 @@ import HeaderDetails from '../components/MediaDetails/HeaderDetails';
 import {
   getActors, getDirectors, getProducers, getReviews, getTrailer, getWriters,
 } from '../utils/mediaDetailsGetters';
-import { formatMinutes, getParsedDate, numberWithCommas } from '../utils/formatUtils';
+import { formatMinutes, getYearAndMonth, numberWithCommas } from '../utils/formatUtils';
 import SemanticUiEmbedded from '../components/MediaDetails/SemanticUiEmbedded';
 import CreditList from '../components/MediaDetails/CreditList';
 import Credit from '../components/MediaDetails/Credit';
@@ -81,7 +81,7 @@ function Movie({
         <MovieProperties>
           <PropertyContainer>
             Release
-            <span>{getParsedDate(details.release_date)}</span>
+            <span>{getYearAndMonth(details.release_date)}</span>
           </PropertyContainer>
           <PropertyContainer>
             Run Time

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 import Carousel from './Carousel';
+import FancyButton from './FancyButton/FancyButton';
 
 const CarouselContainer = styled.div`
  max-width: 1130rem;
@@ -62,7 +63,8 @@ function CarouselContent({
             {header}
           </LeftSideDiv>
           <Link href={mapMediaTypeToPath[mediaType]}>
-            <RightSideDiv> See All</RightSideDiv>
+            {/* <RightSideDiv> See All</RightSideDiv> */}
+            <FancyButton />
           </Link>
         </CarouselHeader>
         <Carousel content={content} mediaType={mediaType} />

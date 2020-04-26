@@ -1,5 +1,6 @@
 import Slider from 'react-slick';
 import ContentItem from './ContentItem';
+import { getYear } from '../utils/formatUtils';
 
 function Carousel({ content, mediaType }) {
   const settings = {
@@ -59,6 +60,7 @@ function Carousel({ content, mediaType }) {
           key={elem.id}
           id={elem.id}
           clientName={elem.title}
+          runningDate={getYear(elem.runningDate)}
           mediaType={mediaType}
           clientUrl={`https://image.tmdb.org/t/p/w500/${elem.imageUrl}`}
         />
