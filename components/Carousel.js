@@ -48,7 +48,6 @@ function Carousel({ content, mediaType }) {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          variableWidth: true,
           arrows: false,
         },
       }],

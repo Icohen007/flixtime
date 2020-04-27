@@ -9,7 +9,7 @@ import CarouselTrending from '../components/CarouselTrending';
 const ButtonGroupContainer = styled.div`
 display: flex;
 justify-content: center;
-margin-top: 60rem;
+margin: 40rem 0;
 `;
 
 

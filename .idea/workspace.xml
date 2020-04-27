@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Carousel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="38219000" />
+      <workItem from="1587841277492" duration="39377000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -241,7 +242,13 @@
       <option name="presentableId" value="LOCAL‎00024" />
       <updated>1587996757577</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL‎00025" summary="boost performance with axios.all">
+      <created>1587997949892</created>
+      <option name="number" value="LOCAL‎00025" />
+      <option name="presentableId" value="LOCAL‎00025" />
+      <updated>1587997949892</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +268,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Global style + HeadContent + Layout + Dummy Header" />
     <MESSAGE value="change to rem.&#10;move packages." />
     <MESSAGE value="change to rem.&#10;move packages.&#10;add responsive nav bar" />
     <MESSAGE value="change font and add Header to Carousel" />
@@ -286,6 +292,7 @@
     <MESSAGE value="add text-border + genres in homepage" />
     <MESSAGE value="fix responsivness of movie\show page" />
     <MESSAGE value="add topRated + trending" />
-    <option name="LAST_COMMIT_MESSAGE" value="add topRated + trending" />
+    <MESSAGE value="boost performance with axios.all" />
+    <option name="LAST_COMMIT_MESSAGE" value="boost performance with axios.all" />
   </component>
 </project>
