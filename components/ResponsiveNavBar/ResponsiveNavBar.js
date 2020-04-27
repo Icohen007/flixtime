@@ -5,7 +5,6 @@ import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link';
 import BurgerButton from './BurgerButton';
 import MobileMenu from './MobileMenu';
-import scrollToTop from '../../utils/scrollToTop';
 
 function scrollEventListener(setNavBarColor) {
   return () => {
@@ -44,9 +43,11 @@ const ResponsiveNavBar = () => {
   return (
     <>
       {isMobile ? (
-        <NavBar style={barAnimation} navBarColor={navBarColor}>
+        <NavBar style={barAnimation} navBarColor="rgba(0, 0, 0, 0.87);">
           <FlexContainer>
-            <img src="/new_logo_dark.png" alt="FlixTime" style={{ maxHeight: '40rem', cursor: 'pointer' }} onClick={scrollToTop(true)}/>
+            <Link href="/">
+              <img src="/new_logo_dark.png" alt="FlixTime" style={{ maxHeight: '30rem', cursor: 'pointer' }} />
+            </Link>
             <BurgerWrapper>
               <BurgerButton
                 openNav={openNav}
@@ -133,12 +134,4 @@ const NavLinks = styled(animated.ul)`
 const BurgerWrapper = styled.div`
   margin: auto 0;
   user-select: none;
-`;
-
-const TitleMobile = styled.span`
-    color: #dfe6e9;
-    font-weight: 600;
-    font-size: 20rem;
-    user-select: none;
-    cursor: pointer;
 `;

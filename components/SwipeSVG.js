@@ -23,6 +23,10 @@ display: none;
 width: 40rem;
 }
 
+    @media only screen and (max-width: 768px) {
+    display: none;
+    }
+
 }
 
 `;

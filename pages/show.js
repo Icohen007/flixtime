@@ -22,6 +22,10 @@ color: #fff;
 max-width: 800rem;
 padding: 0 20rem;
 }
+
+@media only screen and (max-width: 768px) {
+margin: 20rem auto 50rem;
+}
 `;
 
 
@@ -159,4 +163,3 @@ Show.getInitialProps = async (ctx) => {
 };
 
 export default Show;
-

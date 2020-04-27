@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const FireText = styled.div`
-width: 700rem;
 margin: 100rem auto 30rem;
+width: 80%;
 
 h2 {
 color: #fff;
@@ -12,6 +12,10 @@ font-weight: 400;
 font-family: Luckiest Guy, sans-serif;
 text-transform: uppercase;
 letter-spacing: 2rem;
+
+@media only screen and (max-width: 768px) {
+font-size: 50rem;
+}
 
 span{
 display: block;

@@ -18,13 +18,13 @@ const MobileMenu = ({ toggleNav, openNav }) => {
       >
         <NavLinks>
           <li>
-            <Link href="/" onClick={toggleNav}>Home</Link>
+            <Link href="/"><span onClick={toggleNav}>Home</span></Link>
           </li>
           <li>
-            <Link href="/" onClick={toggleNav}>Home</Link>
+            <Link href="/movies"><span onClick={toggleNav}>Movies</span></Link>
           </li>
           <li>
-            <Link href="/" onClick={toggleNav}>Home</Link>
+            <Link href="/shows"><span onClick={toggleNav}>Shows</span></Link>
           </li>
         </NavLinks>
       </CollapseWrapper>
@@ -47,6 +47,7 @@ const CollapseWrapper = styled(animated.div)`
 const NavLinks = styled.ul`
   list-style-type: none;
   padding: 0 15rem;
+  margin: 5rem;
 
   & li {
     text-align: center;
@@ -58,7 +59,7 @@ const NavLinks = styled.ul`
     }
   }
 
-  & a {
+  & span {
     font-size: 14rem;
     line-height: 2;
     color: #dfe6e9;

@@ -9,8 +9,7 @@ const StyledClientItem = styled.div`
 img {
 width: 100%;
 max-width: 168rem;
-min-height: 252rem;
-max-height: 252rem;
+height: 252rem;
 border-radius: 8rem;
 object-fit: cover;
 user-select: none;
@@ -19,6 +18,11 @@ filter: brightness(80%);
 padding: 0.8rem;
 border: 0.8rem solid transparent;
 transition: all 0.1s ease-out;
+
+@media only screen and (max-width: 768px) {
+max-width: 140rem;
+height: 210rem;
+}
 
 &:hover {
 filter: brightness(100%);

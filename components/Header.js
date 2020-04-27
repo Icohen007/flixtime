@@ -13,13 +13,6 @@ filter: brightness(50%);
 position: absolute;
 z-index: -1;
 margin: 0 auto;
-
-@media only screen and (max-width: 786px) {
-width: 90%;
-border-radius: 10%;
-margin: 65rem auto 0;
-}
-
 `;
 
 const Panel = styled.div`
@@ -32,6 +25,11 @@ position: absolute;
     display: flex;
     flex-direction: column;
     color: ${({ theme }) => theme.colors.primary};
+    
+    @media only screen and (max-width: 768px) {
+    align-items: center;
+    margin-top:15rem;
+    }
 `;
 
 const PanelContainer = styled.div`
@@ -41,16 +39,48 @@ const PanelContainer = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
+     @media only screen and (max-width: 768px) {
+    margin-top: 65rem;
+    }   
+.panel-date {
+font-size: 22rem;
+    @media only screen and (max-width: 768px) {
+    display: none;
+    }
+}
+
+.panel-title {
+
+@media only screen and (min-width: 769px) {
+font-size: 44rem;
+margin-top: 10rem;
+-webkit-text-stroke-width: 2rem;
+-webkit-text-stroke-color: #000;
+}
+
+@media only screen and (max-width: 768px) {
+max-width: 90%;
+font-size: 21rem;
+}
+
+}
+
+.panel-genres {
+font-size: 17rem;
+margin-top: 5rem;
+    @media only screen and (max-width: 768px) {
+    display: none;
+    }
+}
 `;
 
 const PanelDiv = styled.div`
-margin-top: ${(props) => props.marginTop};
-font-size: ${(props) => props.fontSize};
 font-weight: 600;
 max-width: 50%;
 
--webkit-text-stroke-width: ${(props) => props.textBorder};
--webkit-text-stroke-color: #000;
+@media only screen and (max-width: 768px) {
+max-width: 90%;
+}
 `;
 
 function Header({
@@ -61,9 +91,9 @@ function Header({
     <PanelContainer>
       <FeaturedImage src={`https://image.tmdb.org/t/p/original${imageUrl}`} />
       <Panel>
-        <PanelDiv fontSize="22rem" textBorder="0.6rem">{parsedDate}</PanelDiv>
-        <PanelDiv fontSize="44rem" marginTop="10rem" textBorder="2rem">{ title }</PanelDiv>
-        <PanelDiv fontSize="17rem" marginTop="5rem">
+        <PanelDiv className="panel-date">{parsedDate}</PanelDiv>
+        <PanelDiv className="panel-title">{ title }</PanelDiv>
+        <PanelDiv className="panel-genres">
           {genreIds.slice(0, 3).map((genre) => genresMovieMap[genre]).join(' • ')}
         </PanelDiv>
         <FeaturedButton id={id}>
