@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Carousel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/CarouselTrending.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselTrending.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MediaDetails/HeaderDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MediaDetails/HeaderDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="54145000" />
+      <workItem from="1587841277492" duration="55246000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -316,7 +316,13 @@
       <option name="presentableId" value="LOCAL‎00036" />
       <updated>1588019369744</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL‎00037" summary="add responsiveness to cover trending picture">
+      <created>1588021690154</created>
+      <option name="number" value="LOCAL‎00037" />
+      <option name="presentableId" value="LOCAL‎00037" />
+      <updated>1588021690154</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +342,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add cast and crew to movie page.&#10;make movies page responsive." />
     <MESSAGE value="add trailer.&#10;add responsiveness to movie page." />
     <MESSAGE value="make carousel responsive" />
     <MESSAGE value="add scroll event listener to nav bar on scroll." />
@@ -361,6 +366,7 @@
     <MESSAGE value="fix images sizes." />
     <MESSAGE value="change pagination" />
     <MESSAGE value="change top rated shows" />
-    <option name="LAST_COMMIT_MESSAGE" value="change top rated shows" />
+    <MESSAGE value="add responsiveness to cover trending picture" />
+    <option name="LAST_COMMIT_MESSAGE" value="add responsiveness to cover trending picture" />
   </component>
 </project>

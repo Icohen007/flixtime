@@ -24,11 +24,11 @@ function Carousel({ content, mediaType }) {
         breakpoint: 930,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 2,
+          slidesToScroll: 3,
         },
       },
       {
-        breakpoint: 730,
+        breakpoint: 680,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 2,
@@ -36,15 +36,7 @@ function Carousel({ content, mediaType }) {
         },
       },
       {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 450,
+        breakpoint: 420,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,

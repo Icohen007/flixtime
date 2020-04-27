@@ -16,9 +16,9 @@ function Movies({ movies, mediaType, totalPages }) {
 
   const handPageChange = (event, data) => {
     if (data.activePage === 1) {
-      router.push('/movies').then(scrollToTop(true));
+      router.push('/movies').then(scrollToTop());
     } else {
-      router.push(`/movies?page=${data.activePage}`).then(scrollToTop(true));
+      router.push(`/movies?page=${data.activePage}`).then(scrollToTop());
     }
   };
 
