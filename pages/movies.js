@@ -45,9 +45,11 @@ function Movies({ movies, mediaType, totalPages }) {
         defaultActivePage={currentPage}
         totalPages={totalPages}
         onPageChange={handPageChange}
-        ellipsisItem={{ content: <Icon name="ellipsis horizontal" />, icon: true }}
-        firstItem={{ content: <Icon name="angle double left" />, icon: true }}
-        lastItem={{ content: <Icon name="angle double right" />, icon: true }}
+        siblingRange={2}
+        boundaryRange={0}
+        ellipsisItem={null}
+        firstItem={null}
+        lastItem={null}
         prevItem={{ content: <Icon name="angle left" />, icon: true }}
         nextItem={{ content: <Icon name="angle right" />, icon: true }}
       />
