@@ -21,7 +21,7 @@ function CarouselTrending({ content, genresMovieMap }) {
           id={elem.id}
           genreIds={elem.genreIds}
           genresMovieMap={genresMovieMap}
-          imageUrl={elem.imageUrl}
+          imageUrl={elem.coverImageUrl}
           title={elem.title}
           runningDate={elem.runningDate}
         />

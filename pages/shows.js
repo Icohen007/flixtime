@@ -35,7 +35,7 @@ function Shows({ shows, mediaType }) {
             clientName={elem.title}
             runningDate={getYear(elem.runningDate)}
             mediaType={mediaType}
-            clientUrl={`https://image.tmdb.org/t/p/w500/${elem.imageUrl}`}
+            clientUrl={`https://image.tmdb.org/t/p/w300/${elem.imageUrl}`}
           />
         ))}
       </S.ContentGrid>

@@ -9,6 +9,8 @@ import SemanticUiEmbedded from '../components/MediaDetails/SemanticUiEmbedded';
 import CreditList from '../components/MediaDetails/CreditList';
 import Credit from '../components/MediaDetails/Credit';
 import Review from '../components/MediaDetails/Review';
+import baseUrl from "../utils/baseUrl";
+import {DETAILS_ROUTE} from "./api/routes";
 
 
 const MovieContainer = styled.div`
@@ -147,19 +149,9 @@ function Show({
 
 Show.getInitialProps = async (ctx) => {
   const { id } = ctx.query;
-  const mediaType = 'tv';
 
-  const responseDetails = await axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}?api_key=${process.env.API_KEY}&language=en-US`);
-  const responseCredits = await axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}/credits?api_key=${process.env.API_KEY}`);
-  const responseTrailers = await axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}/videos?api_key=${process.env.API_KEY}&language=en-US`);
-  const responseReviews = await axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}/reviews?api_key=${process.env.API_KEY}&language=en-US&page=1`);
-
-  return {
-    details: responseDetails.data,
-    credits: responseCredits.data,
-    trailers: responseTrailers.data.results,
-    reviews: responseReviews.data.results,
-  };
+  const responseShow = await axios.get(`${baseUrl}/api?route=${DETAILS_ROUTE}&mediaType=tv&id=${id}`);
+  return responseShow.data;
 };
 
 export default Show;

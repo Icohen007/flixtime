@@ -10,7 +10,7 @@ import CreditList from '../components/MediaDetails/CreditList';
 import Credit from '../components/MediaDetails/Credit';
 import Review from '../components/MediaDetails/Review';
 import baseUrl from '../utils/baseUrl';
-import { ALL_ROUTE, MOVIE_ROUTE } from './api/routes';
+import {ALL_ROUTE, DETAILS_ROUTE} from './api/routes';
 
 const MovieContainer = styled.div`
 max-width: 1400rem;
@@ -167,7 +167,7 @@ function Movie({
 Movie.getInitialProps = async (ctx) => {
   const { id } = ctx.query;
 
-  const responseMovie = await axios.get(`${baseUrl}/api?route=${MOVIE_ROUTE}&mediaType=movie&id=${id}`);
+  const responseMovie = await axios.get(`${baseUrl}/api?route=${DETAILS_ROUTE}&mediaType=movie&id=${id}`);
   return responseMovie.data;
 };
 
