@@ -6,8 +6,10 @@ import ContentItem from '../components/ContentItem';
 import scrollToTop from '../utils/scrollToTop';
 import * as S from '../components/PopularPage.style';
 import { getYear } from '../utils/formatUtils';
+import baseUrl from '../utils/baseUrl';
+import { POPULAR_ROUTE } from './api/routes';
 
-function Shows({ shows, mediaType }) {
+function Shows({ shows, mediaType, totalPages }) {
   const router = useRouter();
 
   const currentPage = router.query.page || '1';
@@ -41,7 +43,7 @@ function Shows({ shows, mediaType }) {
       </S.ContentGrid>
       <Pagination
         defaultActivePage={currentPage}
-        totalPages={7}
+        totalPages={totalPages}
         onPageChange={handPageChange}
         ellipsisItem={{ content: <Icon name="ellipsis horizontal" />, icon: true }}
         firstItem={{ content: <Icon name="angle double left" />, icon: true }}
@@ -55,13 +57,9 @@ function Shows({ shows, mediaType }) {
 
 Shows.getInitialProps = async (ctx) => {
   const { page = '1' } = ctx.query;
-  const responseShows = await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
-
-  const shows = responseShows.data.results.map((e) => ({
-    imageUrl: e.poster_path, title: e.original_name, id: e.id, runningDate: e.first_air_date,
-  }));
-
-  return { shows, mediaType: 'show' };
+  const responsePopular = await axios.get(`${baseUrl}/api?route=${POPULAR_ROUTE}&mediaType=tv&page=${page}`);
+  const mediaType = 'show';
+  return { shows: responsePopular.data, mediaType, totalPages: Math.min(responsePopular.data.total_pages, 10) };
 };
 
 export default Shows;

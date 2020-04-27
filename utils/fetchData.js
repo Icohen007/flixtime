@@ -83,6 +83,24 @@ export async function getDetails(id, mediaType) {
   };
 }
 
+export async function getPopular(page, mediaType) {
+  const responsePopular = await axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
+
+  let popular;
+
+  if (mediaType === 'movie') {
+    popular = responsePopular.data.results.map((e) => ({
+      imageUrl: e.poster_path, title: e.original_title, id: e.id, releaseDate: e.release_date,
+    }));
+  } else {
+    popular = responsePopular.data.results.map((e) => ({
+      imageUrl: e.poster_path, title: e.original_name, id: e.id, runningDate: e.first_air_date,
+    }));
+  }
+
+  return popular;
+}
+
 // export async function getMovie() {
 //
 // }

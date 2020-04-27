@@ -166,8 +166,9 @@ function Movie({
 
 Movie.getInitialProps = async (ctx) => {
   const { id } = ctx.query;
+  const mediaType = 'movie';
 
-  const responseMovie = await axios.get(`${baseUrl}/api?route=${DETAILS_ROUTE}&mediaType=movie&id=${id}`);
+  const responseMovie = await axios.get(`${baseUrl}/api?route=${DETAILS_ROUTE}&mediaType=${mediaType}&id=${id}`);
   return responseMovie.data;
 };
 

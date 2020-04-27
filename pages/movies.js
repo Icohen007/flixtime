@@ -6,8 +6,10 @@ import ContentItem from '../components/ContentItem';
 import scrollToTop from '../utils/scrollToTop';
 import * as S from '../components/PopularPage.style';
 import { getYear } from '../utils/formatUtils';
+import baseUrl from '../utils/baseUrl';
+import { POPULAR_ROUTE } from './api/routes';
 
-function Movies({ movies, mediaType }) {
+function Movies({ movies, mediaType, totalPages }) {
   const router = useRouter();
 
   const currentPage = router.query.page || '1';
@@ -35,13 +37,13 @@ function Movies({ movies, mediaType }) {
             clientName={elem.title}
             mediaType={mediaType}
             runningDate={getYear(elem.releaseDate)}
-            clientUrl={`https://image.tmdb.org/t/p/w500/${elem.imageUrl}`}
+            clientUrl={`https://image.tmdb.org/t/p/w300/${elem.imageUrl}`}
           />
         ))}
       </S.ContentGrid>
       <Pagination
         defaultActivePage={currentPage}
-        totalPages={7}
+        totalPages={totalPages}
         onPageChange={handPageChange}
         ellipsisItem={{ content: <Icon name="ellipsis horizontal" />, icon: true }}
         firstItem={{ content: <Icon name="angle double left" />, icon: true }}
@@ -53,15 +55,12 @@ function Movies({ movies, mediaType }) {
   );
 }
 
+
 Movies.getInitialProps = async (ctx) => {
   const { page = '1' } = ctx.query;
-  const responseMovies = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
-
-  const movies = responseMovies.data.results.map((e) => ({
-    imageUrl: e.poster_path, title: e.original_title, id: e.id, releaseDate: e.release_date,
-  }));
-
-  return { movies, mediaType: 'movie' };
+  const mediaType = 'movie';
+  const responsePopular = await axios.get(`${baseUrl}/api?route=${POPULAR_ROUTE}&mediaType=${mediaType}&page=${page}`);
+  return { movies: responsePopular.data, mediaType, totalPages: Math.min(responsePopular.data.total_pages, 10) };
 };
 
 export default Movies;

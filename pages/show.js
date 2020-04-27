@@ -149,8 +149,9 @@ function Show({
 
 Show.getInitialProps = async (ctx) => {
   const { id } = ctx.query;
+  const mediaType = 'tv';
 
-  const responseShow = await axios.get(`${baseUrl}/api?route=${DETAILS_ROUTE}&mediaType=tv&id=${id}`);
+  const responseShow = await axios.get(`${baseUrl}/api?route=${DETAILS_ROUTE}&mediaType=${mediaType}&id=${id}`);
   return responseShow.data;
 };
 
