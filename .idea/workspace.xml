@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/fetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/fetchData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="49422000" />
+      <workItem from="1587841277492" duration="49602000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -280,7 +278,13 @@
       <option name="presentableId" value="LOCAL‎00030" />
       <updated>1588016031635</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL‎00031" summary="fix pagination">
+      <created>1588016733931</created>
+      <option name="number" value="LOCAL‎00031" />
+      <option name="presentableId" value="LOCAL‎00031" />
+      <updated>1588016733931</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +304,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add movies page, + pagination" />
     <MESSAGE value="add links to CarouselContent" />
     <MESSAGE value="adds fire movies title" />
     <MESSAGE value="add popular shows page" />
@@ -325,6 +328,7 @@
     <MESSAGE value="move api calls into nextjs routes.&#10;* all route + route query param (because there's a limit in now deployment)" />
     <MESSAGE value="add movie/show route (details)" />
     <MESSAGE value="add movies/shows routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="add movies/shows routes" />
+    <MESSAGE value="fix pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix pagination" />
   </component>
 </project>

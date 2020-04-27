@@ -71,10 +71,10 @@ const ResponsiveNavBar = () => {
                 <Link href="/movies">Movies</Link>
                 <Link href="/shows">Shows</Link>
               </NavLinks>
-              <NavLinks style={linkAnimation}>
-                <Link href="/">Services</Link>
-                <Link href="/">Services</Link>
-              </NavLinks>
+              {/* <NavLinks style={linkAnimation}> */}
+              {/*  <Link href="/">Services</Link> */}
+              {/*  <Link href="/">Services</Link> */}
+              {/* </NavLinks> */}
             </FlexContainer>
           </NavBar>
         )}
