@@ -46,12 +46,28 @@ function Home({
 }
 
 Home.getInitialProps = async () => {
-  const responsePopularMovies = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
-  const responseTopRatedMovies = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`);
-  const responsePopularShows = await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
-  const responseTopRatedShows = await axios.get(`https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`);
-  const responseTrendingMovies = await axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.API_KEY}&language=en-US&page=1`);
-  const responseTrendingShows = await axios.get(`https://api.themoviedb.org/3/trending/tv/week?api_key=${process.env.API_KEY}&language=en-US&page=1`);
+  const requestPopularMovies = axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
+  const requestTopRatedMovies = axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`);
+  const requestTrendingMovies = axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.API_KEY}&language=en-US&page=1`);
+  const requestPopularShows = axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
+  const requestTopRatedShows = axios.get(`https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`);
+  const requestTrendingShows = axios.get(`https://api.themoviedb.org/3/trending/tv/week?api_key=${process.env.API_KEY}&language=en-US&page=1`);
+
+  const axiosResponse = await axios.all([
+    requestPopularMovies,
+    requestTopRatedMovies,
+    requestTrendingMovies,
+    requestPopularShows,
+    requestTopRatedShows,
+    requestTrendingShows,
+  ]);
+
+  const responsePopularMovies = axiosResponse[0];
+  const responseTopRatedMovies = axiosResponse[1];
+  const responseTrendingMovies = axiosResponse[2];
+  const responsePopularShows = axiosResponse[3];
+  const responseTopRatedShows = axiosResponse[4];
+  const responseTrendingShows = axiosResponse[5];
 
   const popularMovies = responsePopularMovies.data.results.map((e) => ({
     imageUrl: e.poster_path, title: e.original_title, id: e.id, runningDate: e.release_date,
