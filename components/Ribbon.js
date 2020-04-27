@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+// https://codepen.io/nxworld/pen/oLdoWb
 const RibbonStyled = styled.div`
 
   width: 150px;

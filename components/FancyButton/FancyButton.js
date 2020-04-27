@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 
+// https://codepen.io/Gingernaut/pen/qOgMLy
 const FancyButtonStyled = styled.div`
 
     margin-top: 0;
     position: relative;
     width: 110px;
-    /*make sure to use same height/width as in the html*/
     height: 35px;
     display: inline-block;
     border-radius: 3px;
@@ -29,12 +29,6 @@ const FancyButtonStyled = styled.div`
     left: 0;
     z-index: -1;
 }
-/*
-    This is the outer svg wrapper that the SVG itself will
-    fill. Multiple svg-wrapper classes can be put side by side.
-*/
-
-
 
 #shape {
     stroke-width: 6px;
@@ -44,10 +38,6 @@ const FancyButtonStyled = styled.div`
     stroke-dashoffset: -165;
     transition: 1s all ease;
 }
-/*
-    Pushing the text up into the SVG. Without this the
-    text would be below the div's.
-*/
 
 #text {
     margin-top: -35px;
@@ -60,10 +50,6 @@ const FancyButtonStyled = styled.div`
     text-decoration: none;
     font-size: 16px;
 }
-/*
-    Changing the shape on hover. I change the color of the stroke,
-make it thinner, then set it to again wrap around the entire parent element.
-*/
 
 `;
 function FancyButton({ linkTo }) {

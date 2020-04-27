@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/api/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/baseUrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/fetchData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/CarouselContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/PopularPage.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PopularPage.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SwipeSVG.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/SwipeSVG.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FancyButton/FancyButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/FancyButton/FancyButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Ribbon.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Ribbon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movie.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +57,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -70,6 +76,7 @@
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\FancyButton" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\utils" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\public" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\pages" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components" />
@@ -98,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="40653000" />
+      <workItem from="1587841277492" duration="43910000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -256,7 +263,13 @@
       <option name="presentableId" value="LOCAL‎00026" />
       <updated>1587999185714</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL‎00027" summary="SwipeSvg smaller.&#10;fix grid popular page.&#10;responsive carousel title.">
+      <created>1588007551814</created>
+      <option name="number" value="LOCAL‎00027" />
+      <option name="presentableId" value="LOCAL‎00027" />
+      <updated>1588007551814</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +289,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change to rem.&#10;move packages.&#10;add responsive nav bar" />
     <MESSAGE value="change font and add Header to Carousel" />
     <MESSAGE value="add carousel." />
     <MESSAGE value="getInitialProps for Carousel" />
@@ -301,6 +313,7 @@
     <MESSAGE value="add topRated + trending" />
     <MESSAGE value="boost performance with axios.all" />
     <MESSAGE value="try remove variable width" />
-    <option name="LAST_COMMIT_MESSAGE" value="try remove variable width" />
+    <MESSAGE value="SwipeSvg smaller.&#10;fix grid popular page.&#10;responsive carousel title." />
+    <option name="LAST_COMMIT_MESSAGE" value="SwipeSvg smaller.&#10;fix grid popular page.&#10;responsive carousel title." />
   </component>
 </project>
