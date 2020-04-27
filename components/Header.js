@@ -3,32 +3,37 @@ import { getYearAndMonth } from '../utils/formatUtils';
 import FeaturedButton from './FeaturedButton';
 import SwipeSVG from './SwipeSVG';
 
-const FeaturedImage = styled.img`
+const FeaturedImage = styled.div`
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${(props) => `https://image.tmdb.org/t/p/original${props.imageUrl}`}) no-repeat top center / cover;
 width: 100%;
-max-height: 100vh;
-height: auto;
-object-fit: cover;
-object-position: top;
-filter: brightness(50%);
+height: 100%;
 position: absolute;
 z-index: -1;
 margin: 0 auto;
+
+@media only screen and (max-width: 768px) {
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${(props) => `https://image.tmdb.org/t/p/w1280${props.imageUrl}`}) no-repeat top center / cover;
+}
+
+@media only screen and (max-width: 500px) {
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${(props) => `https://image.tmdb.org/t/p/w780${props.imageUrl}`}) no-repeat top center / cover;
+}
 `;
 
 const Panel = styled.div`
 position: absolute;
-    max-width: 80vw;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    color: ${({ theme }) => theme.colors.primary};
-    
-    @media only screen and (max-width: 768px) {
-    align-items: center;
-    margin-top:15rem;
+max-width: 80vw;
+width: 100%;
+height: 100%;
+justify-content: center;
+align-items: flex-start;
+display: flex;
+flex-direction: column;
+color: ${({ theme }) => theme.colors.primary};
+
+@media only screen and (max-width: 768px) {
+align-items: center;
+margin-top:15rem;
     }
 `;
 
@@ -89,7 +94,7 @@ function Header({
   const parsedDate = getYearAndMonth(runningDate);
   return (
     <PanelContainer>
-      <FeaturedImage src={`https://image.tmdb.org/t/p/original${imageUrl}`} />
+      <FeaturedImage imageUrl={imageUrl} />
       <Panel>
         <PanelDiv className="panel-date">{parsedDate}</PanelDiv>
         <PanelDiv className="panel-title">{ title }</PanelDiv>

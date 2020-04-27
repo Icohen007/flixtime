@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/utils/fetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/fetchData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/CarouselTrending.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselTrending.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MediaDetails/HeaderDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MediaDetails/HeaderDetails.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="51844000" />
+      <workItem from="1587841277492" duration="54145000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -307,7 +310,13 @@
       <option name="presentableId" value="LOCAL‎00035" />
       <updated>1588019204357</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL‎00036" summary="change top rated shows">
+      <created>1588019369744</created>
+      <option name="number" value="LOCAL‎00036" />
+      <option name="presentableId" value="LOCAL‎00036" />
+      <updated>1588019369744</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +336,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add movie page.&#10;&#10;export date parsing.&#10;use linke in carousel to movie page.&#10;use API_KEY." />
     <MESSAGE value="add cast and crew to movie page.&#10;make movies page responsive." />
     <MESSAGE value="add trailer.&#10;add responsiveness to movie page." />
     <MESSAGE value="make carousel responsive" />
@@ -352,6 +360,7 @@
     <MESSAGE value="remove right side links." />
     <MESSAGE value="fix images sizes." />
     <MESSAGE value="change pagination" />
-    <option name="LAST_COMMIT_MESSAGE" value="change pagination" />
+    <MESSAGE value="change top rated shows" />
+    <option name="LAST_COMMIT_MESSAGE" value="change top rated shows" />
   </component>
 </project>

@@ -65,7 +65,7 @@ background: linear-gradient(0deg,#0d0d0d91,rgba(255, 255, 255, 0.05)), url(${(pr
     height: 50vh;
 }
 
-@media only screen and (max-width: 502px) {
+@media only screen and (max-width: 500px) {
 background: linear-gradient(0deg,#0d0d0d91,rgba(255, 255, 255, 0.05)), url(${(props) => `https://image.tmdb.org/t/p/w780${props.imageUrl}`}) no-repeat top center / cover;
 }
 `;

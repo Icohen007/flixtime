@@ -7,7 +7,7 @@ function CarouselTrending({ content, genresMovieMap }) {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 700,
     autoplaySpeed: 5000,
     pauseOnHover: false,
