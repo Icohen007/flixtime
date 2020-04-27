@@ -15,7 +15,7 @@ function CarouselTrending({ content, genresMovieMap }) {
   };
   return (
     <Slider {...settings}>
-      {content.map((elem) => (
+      {content.slice(0, 10).map((elem) => (
         <Header
           key={elem.id}
           id={elem.id}

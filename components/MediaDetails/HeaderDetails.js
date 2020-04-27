@@ -48,7 +48,7 @@ height: auto;
 const Cover = styled.div`
 
 @media only screen and (min-width: 769px) {
-background: linear-gradient(90deg, rgb(13, 13, 13), rgba(255, 255, 255, 0.05)), url(${(props) => `https://image.tmdb.org/t/p/original${props.imageUrl}`}) no-repeat top center / cover;
+background: linear-gradient(90deg, rgb(13, 13, 13), rgba(255, 255, 255, 0.05)), url(${(props) => `https://image.tmdb.org/t/p/w1280${props.imageUrl}`}) no-repeat top center / cover;
 width: 70%;
 //max-height: 60vh;
 height: 70vh;
@@ -59,10 +59,14 @@ z-index: -1;
 }
 
 @media only screen and (max-width: 768px) {
-background: linear-gradient(0deg,#0d0d0d91,rgba(255, 255, 255, 0.05)), url(${(props) => `https://image.tmdb.org/t/p/original${props.imageUrl}`}) no-repeat top center / cover;
+background: linear-gradient(0deg,#0d0d0d91,rgba(255, 255, 255, 0.05)), url(${(props) => `https://image.tmdb.org/t/p/w1280${props.imageUrl}`}) no-repeat top center / cover;
     width: 100%;
     margin-top: 65rem;
     height: 50vh;
+}
+
+@media only screen and (max-width: 502px) {
+background: linear-gradient(0deg,#0d0d0d91,rgba(255, 255, 255, 0.05)), url(${(props) => `https://image.tmdb.org/t/p/w780${props.imageUrl}`}) no-repeat top center / cover;
 }
 `;
 
