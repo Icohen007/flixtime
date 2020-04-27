@@ -17,8 +17,12 @@ const CarouselContainer = styled.div`
 
 const LeftSideDiv = styled.div`
     color: #fff;
-    font-size: 30px;
+    font-size: 30rem;
     font-weight: 500;
+    
+    @media only screen and (max-width: 768px) {
+        font-size: 25rem;
+    }
 `;
 
 const ShowCaseContainer = styled.div`

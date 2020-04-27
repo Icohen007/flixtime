@@ -37,7 +37,7 @@ background-position: 100% -50%;
 
 export const ContentGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-column-gap: 15px;
   grid-row-gap: 30px;
   align-items: baseline;

@@ -31,14 +31,14 @@ function Home({
         <>
           <CarouselContent header="Popular Movies" content={popularMovies} mediaType="movie" />
           <CarouselContent header="Top Rated Movies" content={topRatedMovies} mediaType="movie" />
-          <CarouselContent header="Trending Movies This Week" content={trendingMovies} mediaType="movie" />
+          <CarouselContent header="Trending Movies" content={trendingMovies} mediaType="movie" />
         </>
       )
         : (
           <>
             <CarouselContent header="Popular Shows" content={popularShows} mediaType="show" />
             <CarouselContent header="Top Rated Shows" content={topRatedShows} mediaType="show" />
-            <CarouselContent header="Trending Shows This Week" content={trendingShows} mediaType="show" />
+            <CarouselContent header="Trending Shows" content={trendingShows} mediaType="show" />
           </>
         )}
     </>

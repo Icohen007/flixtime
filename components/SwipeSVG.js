@@ -7,7 +7,7 @@ justify-content: center;
 width: 100%;
 
 svg {
-width: 35rem;
+width: 30rem;
 }
 
 &.onlyMobile {
