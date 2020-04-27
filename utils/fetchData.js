@@ -5,7 +5,7 @@ export async function getAll() {
   const requestTopRatedMovies = axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language=en-US&region=US&sort_by=vote_average.desc&include_adult=false&include_video=false&vote_count.gte=2000&with_original_language=en&page=1`);
   const requestTrendingMovies = axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.API_KEY}&language=en-US&page=1`);
   const requestPopularShows = axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
-  const requestTopRatedShows = axios.get(`https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1&region=US`);
+  const requestTopRatedShows = axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language=en-US&region=US&sort_by=vote_average.desc&include_adult=false&include_video=false&vote_count.gte=2000&with_original_language=en&page=1`);
   const requestTrendingShows = axios.get(`https://api.themoviedb.org/3/trending/tv/week?api_key=${process.env.API_KEY}&language=en-US&page=1`);
   const requestMovieGenres = axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_KEY}&language=en-US`);
 

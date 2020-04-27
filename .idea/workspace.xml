@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/PopularPage.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PopularPage.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/fetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/fetchData.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="51706000" />
+      <workItem from="1587841277492" duration="51844000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -303,7 +301,13 @@
       <option name="presentableId" value="LOCAL‎00034" />
       <updated>1588018950268</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL‎00035" summary="change pagination">
+      <created>1588019204357</created>
+      <option name="number" value="LOCAL‎00035" />
+      <option name="presentableId" value="LOCAL‎00035" />
+      <updated>1588019204357</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
