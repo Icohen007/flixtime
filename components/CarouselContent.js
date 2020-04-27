@@ -28,7 +28,6 @@ background: transparent;
     width: 100%;
     display: flex;
     flex-direction: column;
-    min-height: 500rem;
 `;
 
 const CarouselHeader = styled.div`

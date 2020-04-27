@@ -84,9 +84,9 @@ max-width: 90%;
 `;
 
 function Header({
-  imageUrl, title, releaseDate, id, genreIds, genresMovieMap,
+  imageUrl, title, runningDate, id, genreIds, genresMovieMap,
 }) {
-  const parsedDate = getYearAndMonth(releaseDate);
+  const parsedDate = getYearAndMonth(runningDate);
   return (
     <PanelContainer>
       <FeaturedImage src={`https://image.tmdb.org/t/p/original${imageUrl}`} />
