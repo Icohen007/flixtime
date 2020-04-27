@@ -58,8 +58,9 @@ function Shows({ shows, mediaType, totalPages }) {
 Shows.getInitialProps = async (ctx) => {
   const { page = '1' } = ctx.query;
   const responsePopular = await axios.get(`${baseUrl}/api?route=${POPULAR_ROUTE}&mediaType=tv&page=${page}`);
+  const { popular, totalPages } = responsePopular.data;
   const mediaType = 'show';
-  return { shows: responsePopular.data, mediaType, totalPages: Math.min(responsePopular.data.total_pages, 10) };
+  return { shows: popular, mediaType, totalPages: Math.min(totalPages, 10) };
 };
 
 export default Shows;

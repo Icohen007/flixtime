@@ -98,7 +98,7 @@ export async function getPopular(page, mediaType) {
     }));
   }
 
-  return popular;
+  return { popular, totalPages: responsePopular.data.total_pages };
 }
 
 // export async function getMovie() {

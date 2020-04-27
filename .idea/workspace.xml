@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="add movie/show route (details)">
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movie.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/show.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/show.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/fetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/fetchData.js" afterDir="false" />
     </list>
@@ -102,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="48545000" />
+      <workItem from="1587841277492" duration="49422000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -278,7 +274,13 @@
       <option name="presentableId" value="LOCAL‎00029" />
       <updated>1588014001532</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL‎00030" summary="add movies/shows routes">
+      <created>1588016031635</created>
+      <option name="number" value="LOCAL‎00030" />
+      <option name="presentableId" value="LOCAL‎00030" />
+      <updated>1588016031635</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +300,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="getInitialProps for Carousel" />
     <MESSAGE value="add movies page, + pagination" />
     <MESSAGE value="add links to CarouselContent" />
     <MESSAGE value="adds fire movies title" />
@@ -323,6 +324,7 @@
     <MESSAGE value="SwipeSvg smaller.&#10;fix grid popular page.&#10;responsive carousel title." />
     <MESSAGE value="move api calls into nextjs routes.&#10;* all route + route query param (because there's a limit in now deployment)" />
     <MESSAGE value="add movie/show route (details)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add movie/show route (details)" />
+    <MESSAGE value="add movies/shows routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="add movies/shows routes" />
   </component>
 </project>
