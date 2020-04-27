@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/PopularPage.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PopularPage.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="51387000" />
+      <workItem from="1587841277492" duration="51706000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -296,7 +297,13 @@
       <option name="presentableId" value="LOCAL‎00033" />
       <updated>1588017916076</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL‎00034" summary="change pagination">
+      <created>1588018950268</created>
+      <option name="number" value="LOCAL‎00034" />
+      <option name="presentableId" value="LOCAL‎00034" />
+      <updated>1588018950268</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +323,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add popular shows page" />
     <MESSAGE value="add movie page.&#10;&#10;export date parsing.&#10;use linke in carousel to movie page.&#10;use API_KEY." />
     <MESSAGE value="add cast and crew to movie page.&#10;make movies page responsive." />
     <MESSAGE value="add trailer.&#10;add responsiveness to movie page." />
@@ -341,6 +347,7 @@
     <MESSAGE value="fix pagination" />
     <MESSAGE value="remove right side links." />
     <MESSAGE value="fix images sizes." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix images sizes." />
+    <MESSAGE value="change pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="change pagination" />
   </component>
 </project>
