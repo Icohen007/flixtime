@@ -141,7 +141,7 @@ function Show({
             </CreditList>
           </div>
         </MainContainer>
-        {getReviews(reviews).map((review) => <Review review={review} />)}
+        {getReviews(reviews).map((review) => <Review key={review.id} review={review} />)}
       </MovieContainer>
     </>
   );

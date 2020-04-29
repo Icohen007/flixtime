@@ -12,24 +12,20 @@ if (!redisStatus.isOk) {
       redisStatus.isOk = false;
       return;
     }
+    console.log({ response });
     redisStatus.isOk = true;
   });
 }
 
 function cacheApi() {
   return (req, res, next) => {
-    // req.redisStatus = redisStatus;
-    // if (!redisStatus.isOk) {
-    //   next();
-    // }
     const { url: key } = req;
 
     redisClient.get(key, (err, data) => {
       if (err) {
         console.log(err);
         redisStatus.isOk = false;
-        res.status(500).send(err);
-        return;
+        next();
       }
       if (data !== null) {
         console.log(`cache hit at ${key}`);

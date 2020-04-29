@@ -9,16 +9,16 @@ function onError(err, req, res) {
 }
 
 const handler = nextConnect({ onError });
-if (redisStatus.isOk) {
-  handler.use(cacheApi());
-}
-let response;
+handler.use(cacheApi());
+
 
 handler.get(async (req, res) => {
   const { url: key } = req;
   const {
     id, mediaType, page, route,
   } = req.query;
+
+  let response;
 
   switch (route) {
     case ALL_ROUTE:
