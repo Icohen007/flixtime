@@ -16,7 +16,13 @@ margin: 40rem 0;
 
 
 function Home({
-  popularMovies, topRatedMovies, trendingMovies, popularShows, topRatedShows, trendingShows, genresMovieMap,
+  popularMovies,
+  topRatedMovies,
+  trendingMovies,
+  popularShows,
+  topRatedShows,
+  trendingShows,
+  genresMovieMap,
 }) {
   const [showMovies, setShowMovies] = useState(true);
 

@@ -10,7 +10,7 @@ import CreditList from '../components/MediaDetails/CreditList';
 import Credit from '../components/MediaDetails/Credit';
 import Review from '../components/MediaDetails/Review';
 import baseUrl from '../utils/baseUrl';
-import {ALL_ROUTE, DETAILS_ROUTE} from './api/routes';
+import { DETAILS_ROUTE } from './api/routes';
 
 const MovieContainer = styled.div`
 max-width: 1400rem;
@@ -158,7 +158,7 @@ function Movie({
             </CreditList>
           </div>
         </MainContainer>
-        {getReviews(reviews).map((review) => <Review review={review} />)}
+        {getReviews(reviews).map((review) => <Review key={review.id} review={review} />)}
       </MovieContainer>
     </>
   );

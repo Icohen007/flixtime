@@ -9,8 +9,8 @@ import SemanticUiEmbedded from '../components/MediaDetails/SemanticUiEmbedded';
 import CreditList from '../components/MediaDetails/CreditList';
 import Credit from '../components/MediaDetails/Credit';
 import Review from '../components/MediaDetails/Review';
-import baseUrl from "../utils/baseUrl";
-import {DETAILS_ROUTE} from "./api/routes";
+import baseUrl from '../utils/baseUrl';
+import { DETAILS_ROUTE } from './api/routes';
 
 
 const MovieContainer = styled.div`

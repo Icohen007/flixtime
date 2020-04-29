@@ -59,8 +59,7 @@ font-size: 22rem;
 @media only screen and (min-width: 769px) {
 font-size: 44rem;
 margin-top: 10rem;
--webkit-text-stroke-width: 2rem;
--webkit-text-stroke-color: #000;
+text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -72,7 +71,10 @@ font-size: 21rem;
 
 .panel-genres {
 font-size: 17rem;
-margin-top: 5rem;
+margin-top: 3rem;
+color: #ffc67e;
+text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
     @media only screen and (max-width: 768px) {
     display: none;
     }

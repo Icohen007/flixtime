@@ -9,7 +9,7 @@ const FeaturedButtonStyled = styled.div`
     color: #fff;
     text-decoration: none;
     font-size: 16rem;
-    margin: 10px 0;
+    margin-top: 15rem;
     cursor: pointer;
 
 &:hover {

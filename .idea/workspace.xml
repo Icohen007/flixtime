@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="add redis cache middleware to api calls">
+      <change afterPath="$PROJECT_DIR$/pages/api/middlewares/cacheApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/CarouselTrending.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselTrending.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FeaturedButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/show.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/show.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +106,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="55246000" />
+      <workItem from="1587841277492" duration="62697000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -322,7 +330,13 @@
       <option name="presentableId" value="LOCAL‎00037" />
       <updated>1588021690154</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL‎00038" summary="change carousel breakpoints">
+      <created>1588026539584</created>
+      <option name="number" value="LOCAL‎00038" />
+      <option name="presentableId" value="LOCAL‎00038" />
+      <updated>1588026539584</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,8 +356,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add trailer.&#10;add responsiveness to movie page." />
-    <MESSAGE value="make carousel responsive" />
     <MESSAGE value="add scroll event listener to nav bar on scroll." />
     <MESSAGE value="add logo to navbar" />
     <MESSAGE value="add show details page + Big refactor to movies + show page.&#10;&#10;extract functions and components." />
@@ -367,6 +379,8 @@
     <MESSAGE value="change pagination" />
     <MESSAGE value="change top rated shows" />
     <MESSAGE value="add responsiveness to cover trending picture" />
-    <option name="LAST_COMMIT_MESSAGE" value="add responsiveness to cover trending picture" />
+    <MESSAGE value="change carousel breakpoints" />
+    <MESSAGE value="add redis cache middleware to api calls" />
+    <option name="LAST_COMMIT_MESSAGE" value="add redis cache middleware to api calls" />
   </component>
 </project>

@@ -16,9 +16,9 @@ function Shows({ shows, mediaType, totalPages }) {
 
   const handPageChange = (event, data) => {
     if (data.activePage === 1) {
-      router.push('/shows').then(scrollToTop(true));
+      router.push('/shows').then(scrollToTop());
     } else {
-      router.push(`/shows?page=${data.activePage}`).then(scrollToTop(true));
+      router.push(`/shows?page=${data.activePage}`).then(scrollToTop());
     }
   };
 
