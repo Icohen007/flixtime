@@ -5,11 +5,12 @@ const StyledClientItem = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
+
 img {
-width: 100%;
+
 max-width: 168rem;
 height: 252rem;
+width: 100%;
 border-radius: 8rem;
 object-fit: cover;
 user-select: none;

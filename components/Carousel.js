@@ -1,8 +1,13 @@
-import Slider from 'react-slick';
+import dynamic from 'next/dynamic';
 import ContentItem from './ContentItem';
 import { getYear } from '../utils/formatUtils';
+import {useEffect, useState} from "react";
 
 function Carousel({ content, mediaType }) {
+  const [isServer, setServerState] = useState(true);
+  const Slider = dynamic(import('react-slick'), {ssr: isServer});
+  useEffect(() => setServerState(false), []);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -18,6 +23,7 @@ function Carousel({ content, mediaType }) {
         settings: {
           slidesToShow: 5,
           slidesToScroll: 2,
+          infinite: false,
         },
       },
       {
@@ -25,6 +31,7 @@ function Carousel({ content, mediaType }) {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 3,
+          infinite: false,
         },
       },
       {
