@@ -1,7 +1,7 @@
 import nextConnect from 'next-connect';
 import { getAll, getDetails, getPopular } from '../../utils/fetchData';
 import { ALL_ROUTE, DETAILS_ROUTE, POPULAR_ROUTE } from './routes';
-import cacheApi, { redisClient } from './middlewares/cacheApi';
+import cacheApi, { redisSet, redisStatus } from './middlewares/cacheApi';
 
 function onError(err, req, res) {
   console.log(err);
@@ -9,7 +9,9 @@ function onError(err, req, res) {
 }
 
 const handler = nextConnect({ onError });
-handler.use(cacheApi());
+if (redisStatus.isOk) {
+  handler.use(cacheApi());
+}
 let response;
 
 handler.get(async (req, res) => {
@@ -33,7 +35,9 @@ handler.get(async (req, res) => {
       return;
   }
   console.log(`cache miss at ${key}, setting data`);
-  redisClient.setex(key, 3600, JSON.stringify(response));
+  if (redisStatus.isOk) {
+    redisSet(key, response);
+  }
   // res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate');
   res.status(200).json(response);
 });
