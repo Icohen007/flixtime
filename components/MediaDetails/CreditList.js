@@ -8,12 +8,11 @@ max-width: 420rem;
 
 @media only screen and (max-width: 1150px) {
 max-width: 800rem;
-margin: 0 auto;
+margin: 20rem auto;
 }
 
 @media only screen and (max-width: 768px) {
 max-width: 420rem;
-margin: 0 auto;
 }
 
 

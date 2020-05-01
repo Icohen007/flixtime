@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MediaDetails/HeaderDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MediaDetails/HeaderDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MediaDetails/CreditList.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MediaDetails/CreditList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="78646000" />
+      <workItem from="1587841277492" duration="80375000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -354,7 +352,13 @@
       <option name="presentableId" value="LOCAL‎00042" />
       <updated>1588184312637</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL‎00043" summary="fix cover size">
+      <created>1588269269173</created>
+      <option name="number" value="LOCAL‎00043" />
+      <option name="presentableId" value="LOCAL‎00043" />
+      <updated>1588269269173</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +378,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add show details page + Big refactor to movies + show page.&#10;&#10;extract functions and components." />
     <MESSAGE value="add FancyButton to See All&#10;&#10;add FeaturedButton&#10;&#10;add dates to shows and movies.&#10;&#10;fix links" />
     <MESSAGE value="add main buttons to choose between shows and movies" />
     <MESSAGE value="add swipe icone&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick" />
@@ -399,6 +402,7 @@
     <MESSAGE value="add redis cache middleware to api calls" />
     <MESSAGE value="fix react-slick bug with ssr" />
     <MESSAGE value="add redisStatus check." />
-    <option name="LAST_COMMIT_MESSAGE" value="add redisStatus check." />
+    <MESSAGE value="fix cover size" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix cover size" />
   </component>
 </project>
