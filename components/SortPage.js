@@ -74,12 +74,13 @@ function SortPage({
           <span>{mediaPath(mediaType)}</span>
         </h2>
       </S.FireText>
-      <span style={{ color: 'white' }}> Sort By </span>
+      <div style={{ color: 'white', marginBottom: '7rem' }}>Sort By:</div>
       <Select
         styles={customStyles}
         options={sortOptions}
         value={dropdownValue}
         onChange={handleDropdownChange}
+        isSearchable={false}
         placeholder="Sort by..."
       />
       <S.ContentGrid>

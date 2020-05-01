@@ -6,7 +6,7 @@ width: 80%;
 
 h2 {
 color: #fff;
-font-size: 80rem;
+font-size: 90rem;
 text-align: center;
 font-weight: 400;
 font-family: Luckiest Guy, sans-serif;
@@ -14,7 +14,7 @@ text-transform: uppercase;
 letter-spacing: 2rem;
 
 @media only screen and (max-width: 768px) {
-font-size: 50rem;
+font-size: 60rem;
 }
 
 span{
@@ -23,7 +23,7 @@ background-image: url(/fire.jpg);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 backface-visibility: hidden;
-animation: fire 5s linear infinite;
+animation: fire 7s linear infinite;
 }
 
 @keyframes fire {
