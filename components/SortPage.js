@@ -74,7 +74,7 @@ function SortPage({
           <span>{mediaPath(mediaType)}</span>
         </h2>
       </S.FireText>
-      <div style={{ color: 'white', marginBottom: '7rem' }}>Sort By:</div>
+      <div style={{ color: '#d2d2d2', marginBottom: '7rem', fontSize: '15rem' }}>Sort By:</div>
       <Select
         styles={customStyles}
         options={sortOptions}

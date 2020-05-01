@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="- add sorting to movies and shows.&#10;- create shared SortPage.&#10;- change runningDate -&gt; releaseDate.&#10;&#10;&#10;// TODO: &#10;* homepage links.&#10;* homepage carousel content.&#10;* drop down design.&#10;* add genre.&#10;* add search.">
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="fix dropdown ui&#10;make it not searchable.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/PopularPage.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PopularPage.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/CarouselContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselContent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/SortPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/SortPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -98,7 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="90418000" />
+      <workItem from="1587841277492" duration="91871000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -370,7 +371,13 @@
       <option name="presentableId" value="LOCAL‎00045" />
       <updated>1588345839681</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL‎00046" summary="fix dropdown ui&#10;make it not searchable.">
+      <created>1588346796058</created>
+      <option name="number" value="LOCAL‎00046" />
+      <option name="presentableId" value="LOCAL‎00046" />
+      <updated>1588346796058</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +397,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add swipe icone&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick" />
     <MESSAGE value="add swipe icon&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick" />
     <MESSAGE value="add styling to pagination.&#10;&#10;add cursor grab to slick slider" />
     <MESSAGE value="add text-border + genres in homepage" />
@@ -415,6 +421,7 @@
     <MESSAGE value="fix cover size" />
     <MESSAGE value="fix margin credits" />
     <MESSAGE value="- add sorting to movies and shows.&#10;- create shared SortPage.&#10;- change runningDate -&gt; releaseDate.&#10;&#10;&#10;// TODO: &#10;* homepage links.&#10;* homepage carousel content.&#10;* drop down design.&#10;* add genre.&#10;* add search." />
-    <option name="LAST_COMMIT_MESSAGE" value="- add sorting to movies and shows.&#10;- create shared SortPage.&#10;- change runningDate -&gt; releaseDate.&#10;&#10;&#10;// TODO: &#10;* homepage links.&#10;* homepage carousel content.&#10;* drop down design.&#10;* add genre.&#10;* add search." />
+    <MESSAGE value="fix dropdown ui&#10;make it not searchable." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix dropdown ui&#10;make it not searchable." />
   </component>
 </project>

@@ -11,45 +11,26 @@ function Carousel({ content, mediaType }) {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 6,
     slidesToScroll: 3,
     speed: 500,
     pauseOnHover: true,
     autoplay: false,
     touchThreshold: 15,
+    variableWidth: true,
     responsive: [
       {
-        breakpoint: 1230,
+        breakpoint: 1020,
         settings: {
-          slidesToShow: 5,
           slidesToScroll: 2,
-          infinite: false,
-        },
-      },
-      {
-        breakpoint: 930,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 3,
-          infinite: false,
         },
       },
       {
         breakpoint: 680,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
           arrows: false,
         },
       },
-      {
-        breakpoint: 420,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          arrows: false,
-        },
-      }],
+    ],
   };
   return (
     <Slider {...settings}>
@@ -66,7 +47,6 @@ function Carousel({ content, mediaType }) {
     </Slider>
   );
 }
-
 
 export default Carousel;
 // const moviesObject = _.pick(response2.data, ['backdrop_path, title']);

@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 
-import Carousel from './Carousel';
 import FancyButton from './FancyButton/FancyButton';
 import SwipeSVG from './SwipeSVG';
+import Carousel from './Carousel';
 
 const CarouselContainer = styled.div`
  max-width: 1130rem;
@@ -64,7 +63,7 @@ function CarouselContent({
           <FancyButton linkTo={mapMediaTypeToPath[mediaType]} />
         </CarouselHeader>
         <Carousel content={content} mediaType={mediaType} />
-        <SwipeSVG className="onlyMobile" />
+        {/* <SwipeSVG className="onlyMobile" /> */}
       </CarouselContainer>
     </ShowCaseContainer>
   );
