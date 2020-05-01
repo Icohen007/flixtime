@@ -28,28 +28,28 @@ export async function getAll() {
   const responseMovieGenres = axiosResponse[6];
 
   const popularMovies = responsePopularMovies.data.results.map((e) => ({
-    imageUrl: e.poster_path, title: e.original_title, id: e.id, runningDate: e.release_date,
+    imageUrl: e.poster_path, title: e.original_title, id: e.id, releaseDate: e.release_date,
   }));
 
   const topRatedMovies = responseTopRatedMovies.data.results.map((e) => ({
-    imageUrl: e.poster_path, title: e.original_title, id: e.id, runningDate: e.release_date,
+    imageUrl: e.poster_path, title: e.original_title, id: e.id, releaseDate: e.release_date,
   }));
   const trendingMovies = responseTrendingMovies.data.results.map((e) => ({
     coverImageUrl: e.backdrop_path,
     imageUrl: e.poster_path,
     title: e.original_title,
-    runningDate: e.release_date,
+    releaseDate: e.release_date,
     id: e.id,
     genreIds: e.genre_ids,
   }));
   const popularShows = responsePopularShows.data.results.map((e) => ({
-    imageUrl: e.poster_path, title: e.original_name, runningDate: e.first_air_date, id: e.id,
+    imageUrl: e.poster_path, title: e.original_name, releaseDate: e.first_air_date, id: e.id,
   }));
   const topRatedShows = responseTopRatedShows.data.results.map((e) => ({
-    imageUrl: e.poster_path, title: e.original_name, runningDate: e.first_air_date, id: e.id,
+    imageUrl: e.poster_path, title: e.original_name, releaseDate: e.first_air_date, id: e.id,
   }));
   const trendingShows = responseTrendingShows.data.results.map((e) => ({
-    imageUrl: e.backdrop_path, title: e.original_name, runningDate: e.first_air_date, id: e.id,
+    imageUrl: e.backdrop_path, title: e.original_name, releaseDate: e.first_air_date, id: e.id,
   }));
 
   const genresMovieMap = responseMovieGenres.data.genres.reduce((acc, cur) => {
@@ -58,7 +58,13 @@ export async function getAll() {
   }, {});
 
   return {
-    popularMovies, topRatedMovies, popularShows, trendingMovies, topRatedShows, trendingShows, genresMovieMap,
+    popularMovies,
+    topRatedMovies,
+    popularShows,
+    trendingMovies,
+    topRatedShows,
+    trendingShows,
+    genresMovieMap,
   };
 }
 
@@ -68,7 +74,13 @@ export async function getDetails(id, mediaType) {
   const requestTrailers = axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}/videos?api_key=${process.env.API_KEY}&language=en-US`);
   const requestReviews = axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}/reviews?api_key=${process.env.API_KEY}&language=en-US&page=1`);
 
-  const axiosResponse = await axios.all([requestDetails, requestCredits, requestTrailers, requestReviews]);
+  const axiosResponse = await axios.all(
+    [requestDetails,
+      requestCredits,
+      requestTrailers,
+      requestReviews,
+    ],
+  );
 
   const responseDetails = axiosResponse[0];
   const responseCredits = axiosResponse[1];
@@ -83,22 +95,22 @@ export async function getDetails(id, mediaType) {
   };
 }
 
-export async function getPopular(page, mediaType) {
-  const responsePopular = await axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
-
-  let popular;
+export async function getList(page, sortBy, mediaType) {
+  const responseSorted = await axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=${sortBy}&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
+  console.log(responseSorted.data.results);
+  let sorted;
 
   if (mediaType === 'movie') {
-    popular = responsePopular.data.results.map((e) => ({
+    sorted = responseSorted.data.results.map((e) => ({
       imageUrl: e.poster_path, title: e.original_title, id: e.id, releaseDate: e.release_date,
     }));
   } else {
-    popular = responsePopular.data.results.map((e) => ({
-      imageUrl: e.poster_path, title: e.original_name, id: e.id, runningDate: e.first_air_date,
+    sorted = responseSorted.data.results.map((e) => ({
+      imageUrl: e.poster_path, title: e.original_name, id: e.id, releaseDate: e.first_air_date,
     }));
   }
 
-  return { popular, totalPages: responsePopular.data.total_pages };
+  return { sorted, totalPages: responseSorted.data.total_pages };
 }
 
 // export async function getMovie() {

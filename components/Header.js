@@ -91,9 +91,9 @@ max-width: 90%;
 `;
 
 function Header({
-  imageUrl, title, runningDate, id, genreIds, genresMovieMap,
+  imageUrl, title, releaseDate, id, genreIds, genresMovieMap,
 }) {
-  const parsedDate = getYearAndMonth(runningDate);
+  const parsedDate = getYearAndMonth(releaseDate);
   return (
     <PanelContainer>
       <FeaturedImage imageUrl={imageUrl} />

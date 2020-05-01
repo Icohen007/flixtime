@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="- add sorting to movies and shows.&#10;- create shared SortPage.&#10;- change runningDate -&gt; releaseDate.&#10;&#10;&#10;// TODO: &#10;* homepage links.&#10;* homepage carousel content.&#10;* drop down design.&#10;* add genre.&#10;* add search.">
+      <change afterPath="$PROJECT_DIR$/components/SortPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/redirect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/useDidMountEffect.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MediaDetails/CreditList.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MediaDetails/CreditList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/CarouselTrending.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselTrending.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ContentItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ContentItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/middlewares/cacheApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/middlewares/cacheApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/fetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/fetchData.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +61,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -68,8 +80,8 @@
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\FancyButton" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\utils" />
+      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\public" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\pages" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components" />
@@ -98,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
-      <workItem from="1587841277492" duration="80375000" />
+      <workItem from="1587841277492" duration="89487000" />
     </task>
     <task id="LOCAL‎00001" summary="Init Commit.">
       <created>1587319498627</created>
@@ -358,7 +370,13 @@
       <option name="presentableId" value="LOCAL‎00043" />
       <updated>1588269269173</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL‎00044" summary="fix margin credits">
+      <created>1588336782676</created>
+      <option name="number" value="LOCAL‎00044" />
+      <option name="presentableId" value="LOCAL‎00044" />
+      <updated>1588336782678</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,8 +396,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add FancyButton to See All&#10;&#10;add FeaturedButton&#10;&#10;add dates to shows and movies.&#10;&#10;fix links" />
-    <MESSAGE value="add main buttons to choose between shows and movies" />
     <MESSAGE value="add swipe icone&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick" />
     <MESSAGE value="add swipe icon&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick" />
     <MESSAGE value="add styling to pagination.&#10;&#10;add cursor grab to slick slider" />
@@ -403,6 +419,8 @@
     <MESSAGE value="fix react-slick bug with ssr" />
     <MESSAGE value="add redisStatus check." />
     <MESSAGE value="fix cover size" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix cover size" />
+    <MESSAGE value="fix margin credits" />
+    <MESSAGE value="- add sorting to movies and shows.&#10;- create shared SortPage.&#10;- change runningDate -&gt; releaseDate.&#10;&#10;&#10;// TODO: &#10;* homepage links.&#10;* homepage carousel content.&#10;* drop down design.&#10;* add genre.&#10;* add search." />
+    <option name="LAST_COMMIT_MESSAGE" value="- add sorting to movies and shows.&#10;- create shared SortPage.&#10;- change runningDate -&gt; releaseDate.&#10;&#10;&#10;// TODO: &#10;* homepage links.&#10;* homepage carousel content.&#10;* drop down design.&#10;* add genre.&#10;* add search." />
   </component>
 </project>

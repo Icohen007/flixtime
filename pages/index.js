@@ -14,7 +14,6 @@ justify-content: center;
 margin: 40rem 0;
 `;
 
-
 function Home({
   popularMovies,
   topRatedMovies,

@@ -35,7 +35,7 @@ color: grey;
 `;
 
 function ContentItem({
-  clientName, clientUrl, mediaType, runningDate, id,
+  clientName, clientUrl, mediaType, releaseDate, id,
 }) {
   return (
     <StyledClientItem>
@@ -47,7 +47,7 @@ function ContentItem({
           {clientName}
         </UpperText>
         <LowerText>
-          {runningDate}
+          {releaseDate}
         </LowerText>
       </CarouselItemText>
     </StyledClientItem>

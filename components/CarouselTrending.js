@@ -23,7 +23,7 @@ function CarouselTrending({ content, genresMovieMap }) {
           genresMovieMap={genresMovieMap}
           imageUrl={elem.coverImageUrl}
           title={elem.title}
-          runningDate={elem.runningDate}
+          releaseDate={elem.releaseDate}
         />
       ))}
     </Slider>

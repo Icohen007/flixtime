@@ -58,7 +58,7 @@ function Carousel({ content, mediaType }) {
           key={elem.id}
           id={elem.id}
           clientName={elem.title}
-          runningDate={getYear(elem.runningDate)}
+          releaseDate={getYear(elem.releaseDate)}
           mediaType={mediaType}
           clientUrl={`https://image.tmdb.org/t/p/w300/${elem.imageUrl}`}
         />

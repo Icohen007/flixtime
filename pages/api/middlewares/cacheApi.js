@@ -1,19 +1,24 @@
 import redis from 'redis';
 
-const redisClient = redis.createClient({ port: process.env.REDIS_PORT, host: process.env.REDIS_HOST });
+const redisClient = redis.createClient({
+  port: process.env.REDIS_PORT,
+  host: process.env.REDIS_HOST,
+});
 
 export const redisSet = (key, data) => redisClient.setex(key, 3600, JSON.stringify(data));
 
 export const redisStatus = { isOk: false };
 
 if (!redisStatus.isOk) {
-  redisClient.auth(process.env.REDIS_PASSWORD, (err, response) => {
+  redisClient.auth(process.env.REDIS_PASSWORD, (err) => {
     if (err) {
       redisStatus.isOk = false;
       return;
     }
-    console.log({ response });
     redisStatus.isOk = true;
+    // redisClient.flushdb((err, succeeded) => {
+    //   console.log(succeeded); // will be true if successfull
+    // });
   });
 }
 
@@ -23,7 +28,7 @@ function cacheApi() {
 
     redisClient.get(key, (err, data) => {
       if (err) {
-        console.log(err);
+        console.log('redis get error: ', err);
         redisStatus.isOk = false;
         next();
       }
