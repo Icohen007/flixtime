@@ -28,6 +28,7 @@ function Carousel({ content, mediaType }) {
         breakpoint: 680,
         settings: {
           arrows: false,
+          infinite: false,
         },
       },
     ],
