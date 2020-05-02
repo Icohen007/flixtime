@@ -4,10 +4,7 @@ import Link from 'next/link';
 import StyledClientItem from './ClientItem.style';
 
 const CarouselItemText = styled.div`
-background-color: transparent;
-    margin-top: 8px;
-    display: flex;
-    flex-direction: column;
+margin-top: 8px;
 `;
 
 const UpperText = styled.p`

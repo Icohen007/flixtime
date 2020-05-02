@@ -13,23 +13,40 @@ function Carousel({ content, mediaType }) {
     infinite: true,
     slidesToScroll: 3,
     speed: 500,
-    pauseOnHover: true,
     autoplay: false,
     touchThreshold: 15,
     variableWidth: true,
     responsive: [
-      {
-        breakpoint: 1020,
-        settings: {
-          slidesToScroll: 2,
+        {
+            breakpoint: 768,
+            settings: {
+                arrows: false,
+                infinite: false,
+                variableWidth: false,
+                slidesToShow: 5,
+                slidesToScroll: 2,
+            }
         },
-      },
-      {
-        breakpoint: 680,
-        settings: {
-          arrows: false,
-          infinite: false,
+
+        {
+            breakpoint: 700,
+            settings: {
+                arrows: false,
+                infinite: false,
+                variableWidth: false,
+                slidesToShow: 4,
+                slidesToScroll: 2,
+            }
         },
+        {
+            breakpoint: 550,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 2,
+                variableWidth: false,
+                arrows: false,
+                infinite: false,
+            },
       },
     ],
   };
