@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
-import FancyButton from './FancyButton/FancyButton';
-import SwipeSVG from './SwipeSVG';
 import Carousel from './Carousel';
+import FancyButton from './FancyButton/FancyButton';
 
 const CarouselContainer = styled.div`
  max-width: 1130rem;
@@ -44,14 +43,8 @@ const CarouselHeader = styled.div`
     width: 100%;
 `;
 
-const mapMediaTypeToPath = {
-  movie: '/movies',
-  show: '/shows',
-};
-
-
 function CarouselContent({
-  content, header, mediaType,
+  content, header, mediaType, linkPath,
 }) {
   return (
     <ShowCaseContainer>
@@ -60,7 +53,7 @@ function CarouselContent({
           <LeftSideDiv>
             {header}
           </LeftSideDiv>
-          <FancyButton linkTo={mapMediaTypeToPath[mediaType]} />
+          <FancyButton linkTo={linkPath} />
         </CarouselHeader>
         <Carousel content={content} mediaType={mediaType} />
         {/* <SwipeSVG className="onlyMobile" /> */}

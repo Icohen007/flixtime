@@ -18,9 +18,11 @@ function Home({
   popularMovies,
   topRatedMovies,
   trendingMovies,
+  newReleaseMovies,
   popularShows,
   topRatedShows,
-  trendingShows,
+  // trendingShows,
+  newReleaseShows,
   genresMovieMap,
 }) {
   const [showMovies, setShowMovies] = useState(true);
@@ -36,16 +38,18 @@ function Home({
       </ButtonGroupContainer>
       {showMovies ? (
         <>
-          <CarouselContent header="Popular Movies" content={popularMovies} mediaType="movie" />
-          <CarouselContent header="Top Rated Movies" content={topRatedMovies} mediaType="movie" />
-          <CarouselContent header="Trending Movies" content={trendingMovies} mediaType="movie" />
+          <CarouselContent header="Popular Movies" linkPath="/movies" content={popularMovies} mediaType="movie" />
+          <CarouselContent header="Top Rated Movies" linkPath="/movies?sortBy=vote_average.desc&page=1" content={topRatedMovies} mediaType="movie" />
+          {/* <CarouselContent header="Trending Movies" content={trendingMovies} mediaType="movie" /> */}
+          <CarouselContent header="New Release Movies" linkPath="/movies?sortBy=primary_release_date.desc&page=1" content={newReleaseMovies} mediaType="movie" />
         </>
       )
         : (
           <>
-            <CarouselContent header="Popular Shows" content={popularShows} mediaType="show" />
-            <CarouselContent header="Top Rated Shows" content={topRatedShows} mediaType="show" />
-            <CarouselContent header="Trending Shows" content={trendingShows} mediaType="show" />
+            <CarouselContent header="Popular Shows" linkPath="/shows" content={popularShows} mediaType="show" />
+            <CarouselContent header="Top Rated Shows" linkPath="/shows?sortBy=vote_average.desc&page=1" content={topRatedShows} mediaType="show" />
+            {/* <CarouselContent header="Trending Shows" content={trendingShows} mediaType="show" /> */}
+            <CarouselContent header="New Release Shows" linkPath="shows?sortBy=primary_release_date.desc&page=1" content={newReleaseShows} mediaType="show" />
           </>
         )}
     </>

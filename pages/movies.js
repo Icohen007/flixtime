@@ -7,6 +7,7 @@ import redirect from '../utils/redirect';
 export const sortOptions = [
   { label: 'Popularity', value: 'popularity.desc' },
   { label: 'Release date', value: 'primary_release_date.desc' },
+  { label: 'Rating', value: 'vote_average.desc' },
   { label: 'Revenue', value: 'revenue.desc' },
 ];
 

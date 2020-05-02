@@ -32,4 +32,3 @@ function CarouselTrending({ content, genresMovieMap }) {
 
 
 export default CarouselTrending;
-// const moviesObject = _.pick(response2.data, ['backdrop_path, title']);

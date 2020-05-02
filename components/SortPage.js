@@ -91,7 +91,7 @@ function SortPage({
             clientName={elem.title}
             mediaType={mediaType}
             releaseDate={getYear(elem.releaseDate)}
-            clientUrl={`https://image.tmdb.org/t/p/w300/${elem.imageUrl}`}
+            clientUrl={elem.imageUrl ? `https://image.tmdb.org/t/p/w300/${elem.imageUrl}` : '/not_available.png'}
           />
         ))}
       </S.ContentGrid>

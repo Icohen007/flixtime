@@ -2,30 +2,36 @@ import axios from 'axios';
 
 export async function getAll() {
   const requestPopularMovies = axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
-  const requestTopRatedMovies = axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language=en-US&region=US&sort_by=vote_average.desc&include_adult=false&include_video=false&vote_count.gte=2000&with_original_language=en&page=1`);
+  const requestTopRatedMovies = axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=vote_average.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=2000&with_original_language=en&page=1`);
+  const requestNewReleaseMovies = axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=primary_release_date.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
+
   const requestTrendingMovies = axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.API_KEY}&language=en-US&page=1`);
   const requestPopularShows = axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
-  const requestTopRatedShows = axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language=en-US&region=US&sort_by=vote_average.desc&include_adult=false&include_video=false&vote_count.gte=2000&with_original_language=en&page=1`);
-  const requestTrendingShows = axios.get(`https://api.themoviedb.org/3/trending/tv/week?api_key=${process.env.API_KEY}&language=en-US&page=1`);
+  const requestTopRatedShows = axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=vote_average.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=2000&with_original_language=en&page=1`);
+  const requestNewReleaseShows = axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=primary_release_date.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
+  // const requestTrendingShows = axios.get(`https://api.themoviedb.org/3/trending/tv/week?api_key=${process.env.API_KEY}&language=en-US&page=1`);
   const requestMovieGenres = axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_KEY}&language=en-US`);
 
   const axiosResponse = await axios.all([
     requestPopularMovies,
     requestTopRatedMovies,
     requestTrendingMovies,
+    requestNewReleaseMovies,
     requestPopularShows,
     requestTopRatedShows,
-    requestTrendingShows,
+    // requestTrendingShows,
+    requestNewReleaseShows,
     requestMovieGenres,
   ]);
 
   const responsePopularMovies = axiosResponse[0];
   const responseTopRatedMovies = axiosResponse[1];
   const responseTrendingMovies = axiosResponse[2];
-  const responsePopularShows = axiosResponse[3];
-  const responseTopRatedShows = axiosResponse[4];
-  const responseTrendingShows = axiosResponse[5];
-  const responseMovieGenres = axiosResponse[6];
+  const responseNewReleaseMovies = axiosResponse[3];
+  const responsePopularShows = axiosResponse[4];
+  const responseTopRatedShows = axiosResponse[5];
+  const responseNewReleaseShows = axiosResponse[6];
+  const responseMovieGenres = axiosResponse[7];
 
   const popularMovies = responsePopularMovies.data.results.map((e) => ({
     imageUrl: e.poster_path, title: e.original_title, id: e.id, releaseDate: e.release_date,
@@ -34,6 +40,7 @@ export async function getAll() {
   const topRatedMovies = responseTopRatedMovies.data.results.map((e) => ({
     imageUrl: e.poster_path, title: e.original_title, id: e.id, releaseDate: e.release_date,
   }));
+
   const trendingMovies = responseTrendingMovies.data.results.map((e) => ({
     coverImageUrl: e.backdrop_path,
     imageUrl: e.poster_path,
@@ -42,15 +49,23 @@ export async function getAll() {
     id: e.id,
     genreIds: e.genre_ids,
   }));
+
+  const newReleaseMovies = responseNewReleaseMovies.data.results.map((e) => ({
+    imageUrl: e.poster_path, title: e.original_title, id: e.id, releaseDate: e.release_date,
+  }));
+
   const popularShows = responsePopularShows.data.results.map((e) => ({
     imageUrl: e.poster_path, title: e.original_name, releaseDate: e.first_air_date, id: e.id,
   }));
   const topRatedShows = responseTopRatedShows.data.results.map((e) => ({
     imageUrl: e.poster_path, title: e.original_name, releaseDate: e.first_air_date, id: e.id,
   }));
-  const trendingShows = responseTrendingShows.data.results.map((e) => ({
-    imageUrl: e.backdrop_path, title: e.original_name, releaseDate: e.first_air_date, id: e.id,
+  const newReleaseShows = responseNewReleaseShows.data.results.map((e) => ({
+    imageUrl: e.poster_path, title: e.original_name, releaseDate: e.first_air_date, id: e.id,
   }));
+  // const trendingShows = responseTrendingShows.data.results.map((e) => ({
+  //   imageUrl: e.backdrop_path, title: e.original_name, releaseDate: e.first_air_date, id: e.id,
+  // }));
 
   const genresMovieMap = responseMovieGenres.data.genres.reduce((acc, cur) => {
     acc[cur.id] = cur.name;
@@ -60,10 +75,12 @@ export async function getAll() {
   return {
     popularMovies,
     topRatedMovies,
-    popularShows,
     trendingMovies,
+    newReleaseMovies,
+    popularShows,
     topRatedShows,
-    trendingShows,
+    newReleaseShows,
+    // trendingShows,
     genresMovieMap,
   };
 }
@@ -96,8 +113,12 @@ export async function getDetails(id, mediaType) {
 }
 
 export async function getList(page, sortBy, mediaType) {
-  const responseSorted = await axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=${sortBy}&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
-  console.log(responseSorted.data.results);
+  let responseSorted;
+  if (sortBy !== 'vote_average.desc') {
+    responseSorted = await axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=${sortBy}&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
+  } else {
+    responseSorted = await axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=${sortBy}&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=2000&with_original_language=en`);
+  }
   let sorted;
 
   if (mediaType === 'movie') {

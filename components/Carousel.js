@@ -27,7 +27,6 @@ function Carousel({ content, mediaType }) {
                 slidesToScroll: 2,
             }
         },
-
         {
             breakpoint: 700,
             settings: {
@@ -67,4 +66,3 @@ function Carousel({ content, mediaType }) {
 }
 
 export default Carousel;
-// const moviesObject = _.pick(response2.data, ['backdrop_path, title']);
