@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="fix get all api.&#10;remove trending.&#10;add not_available placeholder.">
-      <change afterPath="$PROJECT_DIR$/public/not_available.png" afterDir="false" />
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/CarouselContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/CarouselTrending.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/CarouselTrending.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/SortPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/SortPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/fetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/fetchData.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -105,13 +100,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="6643000" />
-    </task>
-    <task id="LOCAL‎00001" summary="Init Commit.">
-      <created>1587319498627</created>
-      <option name="number" value="LOCAL‎00001" />
-      <option name="presentableId" value="LOCAL‎00001" />
-      <updated>1587319498627</updated>
+      <workItem from="1588440412404" duration="8307000" />
     </task>
     <task id="LOCAL‎00002" summary="Global style + HeadContent + Layout + Dummy Header">
       <created>1587322095979</created>
@@ -401,7 +390,13 @@
       <option name="presentableId" value="LOCAL‎00049" />
       <updated>1588450982998</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL‎00050" summary="fix get all api.&#10;remove trending.&#10;add not_available placeholder.">
+      <created>1588454990635</created>
+      <option name="number" value="LOCAL‎00050" />
+      <option name="presentableId" value="LOCAL‎00050" />
+      <updated>1588454990636</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

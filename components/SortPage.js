@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Select from 'react-select';
 import { Icon, Pagination } from 'semantic-ui-react';
@@ -60,6 +60,12 @@ function SortPage({
       router.push(`/${mediaPath(mediaType)}?sortBy=${sortBy}&page=${data.activePage}`).then(scrollToTop());
     }
   };
+
+  useEffect(() => {
+    router.beforePopState(({ as }) => {
+      location.href = as;
+    });
+  }, []);
 
   const handleDropdownChange = (selectedOption) => setDropdownValue(selectedOption);
 

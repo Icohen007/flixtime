@@ -117,7 +117,7 @@ export async function getList(page, sortBy, mediaType) {
   if (sortBy !== 'vote_average.desc') {
     responseSorted = await axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=${sortBy}&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
   } else {
-    responseSorted = await axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=${sortBy}&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=2000&with_original_language=en`);
+    responseSorted = await axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=${sortBy}&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=200&with_original_language=en`);
   }
   let sorted;
 
