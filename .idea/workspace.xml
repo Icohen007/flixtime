@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/PopularPage.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PopularPage.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/fetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/fetchData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SortPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/SortPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,13 +99,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="14655000" />
-    </task>
-    <task id="LOCAL‎00004" summary="change font and add Header to Carousel">
-      <created>1587397346430</created>
-      <option name="number" value="LOCAL‎00004" />
-      <option name="presentableId" value="LOCAL‎00004" />
-      <updated>1587397346430</updated>
+      <workItem from="1588440412404" duration="15757000" />
     </task>
     <task id="LOCAL‎00005" summary="add carousel.">
       <created>1587400589180</created>
@@ -398,7 +389,13 @@
       <option name="presentableId" value="LOCAL‎00052" />
       <updated>1588487372411</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL‎00053" summary="add search - api + ui (without bar yet).">
+      <created>1588494211853</created>
+      <option name="number" value="LOCAL‎00053" />
+      <option name="presentableId" value="LOCAL‎00053" />
+      <updated>1588494211853</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,7 +415,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="try remove variable width" />
     <MESSAGE value="SwipeSvg smaller.&#10;fix grid popular page.&#10;responsive carousel title." />
     <MESSAGE value="move api calls into nextjs routes.&#10;* all route + route query param (because there's a limit in now deployment)" />
     <MESSAGE value="add movie/show route (details)" />
@@ -443,6 +439,7 @@
     <MESSAGE value="fix get all api.&#10;remove trending.&#10;add not_available placeholder." />
     <MESSAGE value="fix back button." />
     <MESSAGE value="fix back button.&#10;remove state from drop down." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix back button.&#10;remove state from drop down." />
+    <MESSAGE value="add search - api + ui (without bar yet)." />
+    <option name="LAST_COMMIT_MESSAGE" value="add search - api + ui (without bar yet)." />
   </component>
 </project>

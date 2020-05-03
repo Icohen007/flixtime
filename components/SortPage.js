@@ -91,7 +91,7 @@ function SortPage({
         ))}
       </S.ContentGrid>
       <Pagination
-        defaultActivePage={page}
+        activePage={page}
         totalPages={totalPages}
         onPageChange={handPageChange}
         siblingRange={2}

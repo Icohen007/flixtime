@@ -43,7 +43,7 @@ const ResponsiveNavBar = () => {
   return (
     <>
       {isMobile ? (
-        <NavBar style={barAnimation} color="rgba(0, 0, 0, 0.87);">
+        <NavBar style={barAnimation}>
           <FlexContainer>
             <Link href="/">
               <img src="/new_logo_dark.png" alt="FlixTime" style={{ maxHeight: '30rem', cursor: 'pointer' }} />
@@ -89,7 +89,7 @@ const NavBar = styled(animated.nav)`
   width: 100%;
   top: 0;
   left: 0;
-  background: ${(props) => props.color || 'transparent'} ;
+  background: ${(props) => props.color || 'rgba(0, 0, 0, 0.87);'} ;
   // #272727ab
   font-size: 16rem;
   z-index: 200;
