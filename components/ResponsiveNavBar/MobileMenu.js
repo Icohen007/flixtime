@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { useSpring, animated } from 'react-spring';
 import Link from 'next/link';
+import Search from '../Search';
 
 const MobileMenu = ({ toggleNav, openNav }) => {
   const { open } = useSpring({ open: openNav ? 0 : 1 });
@@ -25,6 +26,9 @@ const MobileMenu = ({ toggleNav, openNav }) => {
           </li>
           <li>
             <Link href="/shows"><span onClick={toggleNav}>Shows</span></Link>
+          </li>
+          <li>
+            <Search />
           </li>
         </NavLinks>
       </CollapseWrapper>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="add search on desktop + mobile.">
+      <change afterPath="$PROJECT_DIR$/components/Search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SortPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/SortPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,13 +100,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="15757000" />
-    </task>
-    <task id="LOCAL‎00005" summary="add carousel.">
-      <created>1587400589180</created>
-      <option name="number" value="LOCAL‎00005" />
-      <option name="presentableId" value="LOCAL‎00005" />
-      <updated>1587400589180</updated>
+      <workItem from="1588440412404" duration="20521000" />
     </task>
     <task id="LOCAL‎00006" summary="getInitialProps for Carousel">
       <created>1587412273932</created>
@@ -395,7 +390,13 @@
       <option name="presentableId" value="LOCAL‎00053" />
       <updated>1588494211853</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL‎00054" summary="fix pagination + navbar mobile">
+      <created>1588495612227</created>
+      <option name="number" value="LOCAL‎00054" />
+      <option name="presentableId" value="LOCAL‎00054" />
+      <updated>1588495612227</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,8 +416,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="SwipeSvg smaller.&#10;fix grid popular page.&#10;responsive carousel title." />
-    <MESSAGE value="move api calls into nextjs routes.&#10;* all route + route query param (because there's a limit in now deployment)" />
     <MESSAGE value="add movie/show route (details)" />
     <MESSAGE value="add movies/shows routes" />
     <MESSAGE value="fix pagination" />
@@ -440,6 +439,8 @@
     <MESSAGE value="fix back button." />
     <MESSAGE value="fix back button.&#10;remove state from drop down." />
     <MESSAGE value="add search - api + ui (without bar yet)." />
-    <option name="LAST_COMMIT_MESSAGE" value="add search - api + ui (without bar yet)." />
+    <MESSAGE value="fix pagination + navbar mobile" />
+    <MESSAGE value="add search on desktop + mobile." />
+    <option name="LAST_COMMIT_MESSAGE" value="add search on desktop + mobile." />
   </component>
 </project>

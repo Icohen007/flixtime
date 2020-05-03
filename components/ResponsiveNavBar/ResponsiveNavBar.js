@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { animated, config, useSpring } from 'react-spring';
 import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link';
+import Search from '../Search';
 import BurgerButton from './BurgerButton';
 import MobileMenu from './MobileMenu';
 
@@ -71,10 +72,9 @@ const ResponsiveNavBar = () => {
                 <Link href="/movies"><a>Movies</a></Link>
                 <Link href="/shows"><a>Shows</a></Link>
               </NavLinks>
-              {/* <NavLinks style={linkAnimation}> */}
-              {/*  <Link href="/">Services</Link> */}
-              {/*  <Link href="/">Services</Link> */}
-              {/* </NavLinks> */}
+              <NavLinks style={linkAnimation}>
+                <Search />
+              </NavLinks>
             </FlexContainer>
           </NavBar>
         )}
