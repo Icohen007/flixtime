@@ -28,7 +28,7 @@ const MobileMenu = ({ toggleNav, openNav }) => {
             <Link href="/shows"><span onClick={toggleNav}>Shows</span></Link>
           </li>
           <li>
-            <Search />
+            <Search onSearch={toggleNav} />
           </li>
         </NavLinks>
       </CollapseWrapper>

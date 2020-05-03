@@ -13,7 +13,7 @@ function onError(err, req, res) {
 }
 
 const handler = nextConnect({ onError });
-// handler.use(cacheApi());
+handler.use(cacheApi());
 
 handler.get(async (req, res) => {
   const { url: key } = req;

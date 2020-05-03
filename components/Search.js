@@ -30,7 +30,7 @@ color:#000000 !important;
 }
 `;
 
-function Search() {
+function Search({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
   const router = useRouter();
 
@@ -38,18 +38,23 @@ function Search() {
     setSearchTerm(value);
   };
 
-  const searchAction = () => searchTerm && router.push(`/${SEARCH_ROUTE}?term=${searchTerm}`).then(scrollToTop());
+  const innerOnSearch = () => {
+    if (searchTerm) {
+      router.push(`/${SEARCH_ROUTE}?term=${searchTerm}`).then(scrollToTop());
+      onSearch();
+    }
+  };
 
   const handleKeyDown = (e) => {
     if (e.keyCode === 13 && searchTerm) { // enter
-      searchAction();
+      innerOnSearch();
     }
   };
 
   return (
     <SearchContainer>
       <Input
-        icon={<Icon name="search" onClick={() => searchAction()} circular link />}
+        icon={<Icon name="search" onClick={() => innerOnSearch()} circular link />}
         placeholder="Search..."
         value={searchTerm}
         onChange={handleChange}
@@ -58,5 +63,9 @@ function Search() {
     </SearchContainer>
   );
 }
+
+Search.defaultProps = {
+  onSearch: () => {},
+};
 
 export default Search;

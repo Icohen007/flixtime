@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="added spinner between routes.">
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SortPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/SortPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/fetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/fetchData.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,13 +100,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="26607000" />
-    </task>
-    <task id="LOCAL‎00008" summary="add links to CarouselContent">
-      <created>1587485399398</created>
-      <option name="number" value="LOCAL‎00008" />
-      <option name="presentableId" value="LOCAL‎00008" />
-      <updated>1587485399398</updated>
+      <workItem from="1588440412404" duration="27324000" />
     </task>
     <task id="LOCAL‎00009" summary="adds fire movies title">
       <created>1587488270999</created>
@@ -398,7 +390,13 @@
       <option name="presentableId" value="LOCAL‎00056" />
       <updated>1588533378778</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL‎00057" summary="add filter by genre.">
+      <created>1588537801887</created>
+      <option name="number" value="LOCAL‎00057" />
+      <option name="presentableId" value="LOCAL‎00057" />
+      <updated>1588537801891</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,7 +416,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add movies/shows routes" />
     <MESSAGE value="fix pagination" />
     <MESSAGE value="remove right side links." />
     <MESSAGE value="fix images sizes." />
@@ -443,6 +440,7 @@
     <MESSAGE value="fix pagination + navbar mobile" />
     <MESSAGE value="add search on desktop + mobile." />
     <MESSAGE value="added spinner between routes." />
-    <option name="LAST_COMMIT_MESSAGE" value="added spinner between routes." />
+    <MESSAGE value="add filter by genre." />
+    <option name="LAST_COMMIT_MESSAGE" value="add filter by genre." />
   </component>
 </project>
