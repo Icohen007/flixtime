@@ -4,8 +4,6 @@
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/SortPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/SortPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/fetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/fetchData.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,13 +98,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="8307000" />
-    </task>
-    <task id="LOCAL‎00002" summary="Global style + HeadContent + Layout + Dummy Header">
-      <created>1587322095979</created>
-      <option name="number" value="LOCAL‎00002" />
-      <option name="presentableId" value="LOCAL‎00002" />
-      <updated>1587322095979</updated>
+      <workItem from="1588440412404" duration="9428000" />
     </task>
     <task id="LOCAL‎00003" summary="change to rem.&#10;move packages.&#10;add responsive nav bar">
       <created>1587327875302</created>
@@ -396,7 +388,13 @@
       <option name="presentableId" value="LOCAL‎00050" />
       <updated>1588454990636</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL‎00051" summary="fix back button.">
+      <created>1588459314488</created>
+      <option name="number" value="LOCAL‎00051" />
+      <option name="presentableId" value="LOCAL‎00051" />
+      <updated>1588459314488</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +414,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add topRated + trending" />
     <MESSAGE value="boost performance with axios.all" />
     <MESSAGE value="try remove variable width" />
     <MESSAGE value="SwipeSvg smaller.&#10;fix grid popular page.&#10;responsive carousel title." />
@@ -441,6 +438,7 @@
     <MESSAGE value="infinite false for mobile" />
     <MESSAGE value="fix carousel responsiveness" />
     <MESSAGE value="fix get all api.&#10;remove trending.&#10;add not_available placeholder." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix get all api.&#10;remove trending.&#10;add not_available placeholder." />
+    <MESSAGE value="fix back button." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix back button." />
   </component>
 </project>

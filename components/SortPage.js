@@ -51,7 +51,6 @@ function SortPage({
   const router = useRouter();
   const { page = '1', sortBy = sortOptions[0].value } = router.query;
   const sortOption = getOption(sortOptions, sortBy);
-  const [dropdownValue, setDropdownValue] = useState(sortOption || sortOptions[0]);
 
   const handPageChange = (event, data) => {
     if (data.activePage === 1 && sortBy === sortOptions[0].value) {
@@ -61,17 +60,7 @@ function SortPage({
     }
   };
 
-  useEffect(() => {
-    router.beforePopState(({ as }) => {
-      location.href = as;
-    });
-  }, []);
-
-  const handleDropdownChange = (selectedOption) => setDropdownValue(selectedOption);
-
-  useDidMountEffect(() => {
-    router.push(`/${mediaPath(mediaType)}?sortBy=${dropdownValue.value}&page=1`).then(scrollToTop());
-  }, [dropdownValue]);
+  const handleDropdownChange = (selectedOption) => router.push(`/${mediaPath(mediaType)}?sortBy=${selectedOption.value}&page=1`).then(scrollToTop());
 
   return (
     <S.GridContainer>
@@ -84,7 +73,7 @@ function SortPage({
       <Select
         styles={customStyles}
         options={sortOptions}
-        value={dropdownValue}
+        value={sortOption || sortOptions[0]}
         onChange={handleDropdownChange}
         isSearchable={false}
         placeholder="Sort by..."
