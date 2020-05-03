@@ -1,20 +1,17 @@
-import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Select from 'react-select';
 import { Icon, Pagination } from 'semantic-ui-react';
+import styled from 'styled-components';
 
 import scrollToTop from '../utils/scrollToTop';
 import * as S from './PopularPage.style';
 import ContentItem from './ContentItem';
 import { getYear } from '../utils/formatUtils';
-import useDidMountEffect from '../utils/useDidMountEffect';
 
 const customStyles = {
   container: (provided) => ({
     ...provided,
     marginBottom: '40rem',
-    display: 'flex',
-    justifyContent: 'center',
   }),
   option: (provided, state) => ({
     ...provided,
@@ -42,25 +39,51 @@ const customStyles = {
   }),
 };
 
+const FiltersContainer = styled.div`
+display: flex;
+justify-content: space-between;
+max-width: 500rem;
+margin: 0 auto;
+padding: 0 15rem;
+align-items: center;
+
+@media only screen and (max-width: 470px) {
+flex-direction: column;
+}
+`;
+
+
+const FilterContainer = styled.div`
+
+.title {
+color: #d2d2d2;
+margin-bottom: 7rem;
+font-size: 15rem;
+}
+
+`;
+
 const mediaPath = (mediaType) => (mediaType === 'movie' ? 'movies' : 'shows');
 export const getOption = (options, value) => options.find((option) => option.value === value);
 
 function SortPage({
-  results, sortOptions, mediaType, totalPages,
+  results, sortOptions, mediaType, totalPages, genresOptions,
 }) {
   const router = useRouter();
-  const { page = '1', sortBy = sortOptions[0].value } = router.query;
+  const { page = '1', sortBy = sortOptions[0].value, genre = '' } = router.query;
   const sortOption = getOption(sortOptions, sortBy);
+  const genreOption = getOption(genresOptions, Number(genre));
 
   const handPageChange = (event, data) => {
-    if (data.activePage === 1 && sortBy === sortOptions[0].value) {
+    if (data.activePage === 1 && sortBy === sortOptions[0].value && !genre) {
       router.push(`/${mediaPath(mediaType)}`).then(scrollToTop());
     } else {
-      router.push(`/${mediaPath(mediaType)}?sortBy=${sortBy}&page=${data.activePage}`).then(scrollToTop());
+      router.push(`/${mediaPath(mediaType)}?sortBy=${sortBy}${genre ? `&genre=${genre}` : ''}&page=${data.activePage}`).then(scrollToTop());
     }
   };
 
-  const handleDropdownChange = (selectedOption) => router.push(`/${mediaPath(mediaType)}?sortBy=${selectedOption.value}&page=1`).then(scrollToTop());
+  const handleSortDropdownChange = (selectedOption) => router.push(`/${mediaPath(mediaType)}?sortBy=${selectedOption.value}${genre ? `&genre=${genre}` : ''}&page=1`).then(scrollToTop());
+  const handleGenreDropdownChange = (selectedOption) => router.push(`/${mediaPath(mediaType)}?sortBy=${sortBy}${selectedOption ? `&genre=${selectedOption.value}` : ''}&page=1`).then(scrollToTop());
 
   return (
     <S.GridContainer>
@@ -69,15 +92,31 @@ function SortPage({
           <span>{mediaPath(mediaType)}</span>
         </h2>
       </S.FireText>
-      <div style={{ color: '#d2d2d2', marginBottom: '7rem', fontSize: '15rem' }}>Sort By:</div>
-      <Select
-        styles={customStyles}
-        options={sortOptions}
-        value={sortOption || sortOptions[0]}
-        onChange={handleDropdownChange}
-        isSearchable={false}
-        placeholder="Sort by..."
-      />
+      <FiltersContainer>
+        <FilterContainer>
+          <div className="title">Sort By:</div>
+          <Select
+            styles={customStyles}
+            options={sortOptions}
+            value={sortOption || sortOptions[0]}
+            onChange={handleSortDropdownChange}
+            isSearchable={false}
+            placeholder="Sort by..."
+          />
+        </FilterContainer>
+        <FilterContainer>
+          <div className="title">Genre:</div>
+          <Select
+            styles={customStyles}
+            options={genresOptions}
+            value={genreOption || null}
+            onChange={handleGenreDropdownChange}
+            isSearchable={false}
+            placeholder="Choose genre"
+            isClearable
+          />
+        </FilterContainer>
+      </FiltersContainer>
       <S.ContentGrid>
         {results.map((elem) => (
           <ContentItem

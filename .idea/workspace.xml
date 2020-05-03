@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/Spinner.js" afterDir="false" />
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="added spinner between routes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SortPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/SortPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/fetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/fetchData.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,13 +102,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="22216000" />
-    </task>
-    <task id="LOCAL‎00007" summary="add movies page, + pagination">
-      <created>1587428861554</created>
-      <option name="number" value="LOCAL‎00007" />
-      <option name="presentableId" value="LOCAL‎00007" />
-      <updated>1587428861555</updated>
+      <workItem from="1588440412404" duration="26607000" />
     </task>
     <task id="LOCAL‎00008" summary="add links to CarouselContent">
       <created>1587485399398</created>
@@ -396,7 +392,13 @@
       <option name="presentableId" value="LOCAL‎00055" />
       <updated>1588531628737</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL‎00056" summary="added spinner between routes.">
+      <created>1588533378778</created>
+      <option name="number" value="LOCAL‎00056" />
+      <option name="presentableId" value="LOCAL‎00056" />
+      <updated>1588533378778</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +418,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add movie/show route (details)" />
     <MESSAGE value="add movies/shows routes" />
     <MESSAGE value="fix pagination" />
     <MESSAGE value="remove right side links." />
@@ -441,6 +442,7 @@
     <MESSAGE value="add search - api + ui (without bar yet)." />
     <MESSAGE value="fix pagination + navbar mobile" />
     <MESSAGE value="add search on desktop + mobile." />
-    <option name="LAST_COMMIT_MESSAGE" value="add search on desktop + mobile." />
+    <MESSAGE value="added spinner between routes." />
+    <option name="LAST_COMMIT_MESSAGE" value="added spinner between routes." />
   </component>
 </project>

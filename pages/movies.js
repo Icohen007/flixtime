@@ -11,27 +11,35 @@ export const sortOptions = [
   { label: 'Revenue', value: 'revenue.desc' },
 ];
 
-function Movies({ movies, mediaType, totalPages }) {
+function Movies({
+  movies, mediaType, totalPages, genresOptions,
+}) {
   return (
     <SortPage
       results={movies}
       sortOptions={sortOptions}
       mediaType={mediaType}
       totalPages={totalPages}
+      genresOptions={genresOptions}
     />
   );
 }
 
 Movies.getInitialProps = async (ctx) => {
-  const { page = '1', sortBy = 'popularity.desc' } = ctx.query;
+  const { page = '1', sortBy = 'popularity.desc', genre = '' } = ctx.query;
   const sortOption = getOption(sortOptions, sortBy);
   if (!sortOption) {
     redirect(ctx, '/movies');
   }
-  const responseSorted = await axios.get(`${baseUrl}/api?route=${LIST_ROUTE}&mediaType=movie&sortBy=${sortOption.value}&page=${page}`);
-  const { sorted, totalPages } = responseSorted.data;
+  const responseSorted = await axios.get(`${baseUrl}/api?route=${LIST_ROUTE}&mediaType=movie&sortBy=${sortOption.value}${genre ? `&genre=${genre}` : ''}&page=${page}`);
+  const { sorted, genresOptions, totalPages } = responseSorted.data;
+  if (!sorted.length) {
+    redirect(ctx, '/movies');
+  }
   const mediaType = 'movie';
-  return { movies: sorted, mediaType, totalPages: Math.min(totalPages, 10) };
+  return {
+    movies: sorted, mediaType, totalPages: Math.min(totalPages, 10), genresOptions,
+  };
 };
 
 export default Movies;

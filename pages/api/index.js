@@ -13,12 +13,12 @@ function onError(err, req, res) {
 }
 
 const handler = nextConnect({ onError });
-handler.use(cacheApi());
+// handler.use(cacheApi());
 
 handler.get(async (req, res) => {
   const { url: key } = req;
   const {
-    id, mediaType, page, route, sortBy, term,
+    id, mediaType, page, route, sortBy, term, genre = '',
   } = req.query;
 
   let response;
@@ -31,7 +31,7 @@ handler.get(async (req, res) => {
       response = await getDetails(id, mediaType);
       break;
     case LIST_ROUTE:
-      response = await getList(page, sortBy, mediaType);
+      response = await getList(page, sortBy, genre, mediaType);
       break;
     case SEARCH_ROUTE:
       response = await getSearch(term);

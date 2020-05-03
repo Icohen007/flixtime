@@ -112,13 +112,21 @@ export async function getDetails(id, mediaType) {
   };
 }
 
-export async function getList(page, sortBy, mediaType) {
-  let responseSorted;
+export async function getList(page, sortBy, genre, mediaType) {
+  let requestSorted;
+
   if (sortBy !== 'vote_average.desc') {
-    responseSorted = await axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=${sortBy}&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
+    requestSorted = axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=${sortBy}${genre ? `&with_genres=${genre}` : ''}&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
   } else {
-    responseSorted = await axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=${sortBy}&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=200&with_original_language=en`);
+    requestSorted = axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=${sortBy}${genre ? `&with_genres=${genre}` : ''}&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=200&with_original_language=en`);
   }
+
+  const requestGenres = axios.get(`https://api.themoviedb.org/3/genre/${mediaType}/list?api_key=${process.env.API_KEY}&language=en-US`);
+
+  const axiosResponse = await axios.all([requestSorted, requestGenres]);
+  const [responseSorted, responseGenres] = axiosResponse;
+
+
   let sorted;
 
   if (mediaType === 'movie') {
@@ -131,7 +139,8 @@ export async function getList(page, sortBy, mediaType) {
     }));
   }
 
-  return { sorted, totalPages: responseSorted.data.total_pages };
+  const genresOptions = responseGenres.data.genres.map((genre) => ({ label: genre.name, value: genre.id }));
+  return { sorted, genresOptions, totalPages: responseSorted.data.total_pages };
 }
 
 export async function getSearch(term) {
