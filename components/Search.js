@@ -49,7 +49,6 @@ function Search() {
   return (
     <SearchContainer>
       <Input
-        size="medium"
         icon={<Icon name="search" onClick={() => searchAction()} circular link />}
         placeholder="Search..."
         value={searchTerm}
