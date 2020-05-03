@@ -134,6 +134,21 @@ export async function getList(page, sortBy, mediaType) {
   return { sorted, totalPages: responseSorted.data.total_pages };
 }
 
+export async function getSearch(term) {
+  const responseSearch = await axios.get(`https://api.themoviedb.org/3/search/multi?api_key=${process.env.API_KEY}&language=en-US&query=${term}&page=1&include_adult=false`);
+  const searchResults = responseSearch.data.results.filter((e) => e.media_type !== 'person').map((e) => (
+    {
+      id: e.id,
+      imageUrl: e.poster_path,
+      title: e.media_type === 'movie' ? e.original_title : e.original_name,
+      releaseDate: e.media_type === 'movie' ? e.release_date : e.first_air_date,
+      mediaType: e.media_type === 'movie' ? 'movie' : 'show',
+    }
+  ));
+
+  return { searchResults };
+}
+
 // export async function getMovie() {
 //
 // }

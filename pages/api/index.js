@@ -1,6 +1,10 @@
 import nextConnect from 'next-connect';
-import { getAll, getDetails, getList } from '../../utils/fetchData';
-import { ALL_ROUTE, DETAILS_ROUTE, LIST_ROUTE } from './routes';
+import {
+  getAll, getDetails, getList, getSearch,
+} from '../../utils/fetchData';
+import {
+  ALL_ROUTE, DETAILS_ROUTE, LIST_ROUTE, SEARCH_ROUTE,
+} from './routes';
 import cacheApi, { redisSet, redisStatus } from './middlewares/cacheApi';
 
 function onError(err, req, res) {
@@ -14,7 +18,7 @@ handler.use(cacheApi());
 handler.get(async (req, res) => {
   const { url: key } = req;
   const {
-    id, mediaType, page, route, sortBy,
+    id, mediaType, page, route, sortBy, term,
   } = req.query;
 
   let response;
@@ -28,6 +32,9 @@ handler.get(async (req, res) => {
       break;
     case LIST_ROUTE:
       response = await getList(page, sortBy, mediaType);
+      break;
+    case SEARCH_ROUTE:
+      response = await getSearch(term);
       break;
     default:
       res.status(405).send(`Route ${route} not exist`);

@@ -47,7 +47,7 @@ export const ContentGrid = styled.div`
 
 export const GridContainer = styled.div`
    flex-direction: column;
-   max-width: 1150px;
+   max-width: 990rem;
    width: 100%;
    margin: auto;
    padding: 10rem 10rem 70rem 10rem;
