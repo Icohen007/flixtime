@@ -41,6 +41,7 @@ function Search({ onSearch }) {
   const innerOnSearch = () => {
     if (searchTerm) {
       router.push(`/${SEARCH_ROUTE}?term=${searchTerm}`).then(scrollToTop());
+      setSearchTerm('');
       onSearch();
     }
   };

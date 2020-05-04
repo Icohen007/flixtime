@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="disable redis for now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/index.js" afterDir="false" />
     </list>
@@ -100,13 +100,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="27324000" />
-    </task>
-    <task id="LOCAL‎00009" summary="adds fire movies title">
-      <created>1587488270999</created>
-      <option name="number" value="LOCAL‎00009" />
-      <option name="presentableId" value="LOCAL‎00009" />
-      <updated>1587488270999</updated>
+      <workItem from="1588440412404" duration="29219000" />
     </task>
     <task id="LOCAL‎00010" summary="add popular shows page">
       <created>1587489338454</created>
@@ -396,7 +390,13 @@
       <option name="presentableId" value="LOCAL‎00057" />
       <updated>1588537801891</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL‎00058" summary="add onSearch -&gt; toggleNav.">
+      <created>1588538517913</created>
+      <option name="number" value="LOCAL‎00058" />
+      <option name="presentableId" value="LOCAL‎00058" />
+      <updated>1588538517914</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,8 +416,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix pagination" />
-    <MESSAGE value="remove right side links." />
     <MESSAGE value="fix images sizes." />
     <MESSAGE value="change pagination" />
     <MESSAGE value="change top rated shows" />
@@ -441,6 +439,8 @@
     <MESSAGE value="add search on desktop + mobile." />
     <MESSAGE value="added spinner between routes." />
     <MESSAGE value="add filter by genre." />
-    <option name="LAST_COMMIT_MESSAGE" value="add filter by genre." />
+    <MESSAGE value="add onSearch -&gt; toggleNav." />
+    <MESSAGE value="disable redis for now" />
+    <option name="LAST_COMMIT_MESSAGE" value="disable redis for now" />
   </component>
 </project>

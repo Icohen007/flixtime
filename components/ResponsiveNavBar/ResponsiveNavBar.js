@@ -40,7 +40,7 @@ const ResponsiveNavBar = () => {
   });
 
   const toggleNav = () => setOpenNav((open) => !open);
-
+  console.log({ isMobile }, typeof window);
   return (
     <>
       {isMobile ? (
@@ -63,7 +63,7 @@ const ResponsiveNavBar = () => {
         </NavBar>
       )
         : (
-          <NavBar style={barAnimation} color={navBarColor}>
+          <NavBar style={barAnimation} navcolor={navBarColor}>
             <FlexContainer>
               <NavLinks style={linkAnimation}>
                 <Link href="/">
@@ -89,12 +89,15 @@ const NavBar = styled(animated.nav)`
   width: 100%;
   top: 0;
   left: 0;
-  background: ${(props) => props.color || 'rgba(0, 0, 0, 0.87);'} ;
-  // #272727ab
+  background: ${(props) => (props.navcolor || 'transparent')};
   font-size: 16rem;
   z-index: 200;
   
   transition: background 0.3s ease-in;
+  
+  @media only screen and (max-width: 768px) {
+  background: rgba(0, 0, 0, 0.87);
+  }
 `;
 
 const FlexContainer = styled.div`
