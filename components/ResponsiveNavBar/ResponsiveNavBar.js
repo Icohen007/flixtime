@@ -40,7 +40,6 @@ const ResponsiveNavBar = () => {
   });
 
   const toggleNav = () => setOpenNav((open) => !open);
-  console.log({ isMobile }, typeof window);
   return (
     <>
       {isMobile ? (

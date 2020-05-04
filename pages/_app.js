@@ -7,12 +7,27 @@ import Spinner from '../components/Spinner';
 import GlobalStyle from '../components/Global.style';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import styled from 'styled-components';
 const theme = {
   colors: {
     primary: '#e7f3e2',
   },
 };
+
+const Author = styled.div`
+font-size: 14rem;
+color: gray;
+text-align: center;
+padding: 30rem 0;
+
+img {
+display: inline-block;
+width: 80rem;
+filter: brightness(0.8);
+margin-left: 2rem;
+}
+
+`;
 
 
 export default class MyApp extends App {
@@ -49,6 +64,7 @@ export default class MyApp extends App {
         {isLoading && <Spinner />}
         <Layout>
           <Component {...pageProps} />
+          <Author> Made by Itamar Cohen with <img src="/tmdb.svg" alt="tmdb"/></Author>
         </Layout>
       </ThemeProvider>
     );
