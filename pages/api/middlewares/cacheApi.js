@@ -26,19 +26,24 @@ function cacheApi() {
   return (req, res, next) => {
     const { url: key } = req;
 
-    redisClient.get(key, (err, data) => {
-      if (err) {
-        console.log('redis get error: ', err);
-        redisStatus.isOk = false;
-        next();
-      }
-      if (data !== null) {
-        console.log(`cache hit at ${key}`);
-        res.status(200).json(JSON.parse(data));
-      } else {
-        next();
-      }
-    });
+    try {
+      redisClient.get(key, (err, data) => {
+        if (err) {
+          console.log('redis get error: ', err);
+          redisStatus.isOk = false;
+          next();
+        }
+        if (data !== null) {
+          console.log(`cache hit at ${key}`);
+          res.status(200).json(JSON.parse(data));
+        } else {
+          next();
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      next();
+    }
   };
 }
 

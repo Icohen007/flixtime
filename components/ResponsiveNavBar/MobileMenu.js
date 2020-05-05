@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { useSpring, animated } from 'react-spring';
 import Link from 'next/link';
-import Search from '../Search';
+import Search from './Search';
 
 const MobileMenu = ({ toggleNav, openNav }) => {
   const { open } = useSpring({ open: openNav ? 0 : 1 });

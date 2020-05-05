@@ -4,7 +4,7 @@ import baseUrl from '../utils/baseUrl';
 import { SEARCH_ROUTE } from './api/routes';
 import redirect from '../utils/redirect';
 import * as S from '../components/PopularPage.style';
-import ContentItem from '../components/ContentItem';
+import ContentItem from '../components/Shared/ContentItem/ContentItem';
 import { getYear } from '../utils/formatUtils';
 
 const SearchTitle = styled.div`

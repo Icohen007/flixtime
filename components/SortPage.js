@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import scrollToTop from '../utils/scrollToTop';
 import * as S from './PopularPage.style';
-import ContentItem from './ContentItem';
+import ContentItem from './Shared/ContentItem/ContentItem';
 import { getYear } from '../utils/formatUtils';
 
 const customStyles = {

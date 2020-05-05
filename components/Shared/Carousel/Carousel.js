@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
-import ContentItem from './ContentItem';
-import { getYear } from '../utils/formatUtils';
+import ContentItem from '../ContentItem/ContentItem';
+import { getYear } from '../../../utils/formatUtils';
 import {useEffect, useState} from "react";
 
 function Carousel({ content, mediaType }) {

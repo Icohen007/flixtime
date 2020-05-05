@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledClientItem = styled.div`
+const StyledContentItem = styled.div`
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -44,4 +44,4 @@ border: 0.8rem solid darkorange;
 }
 `;
 
-export default StyledClientItem;
+export default StyledContentItem;

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { Icon, Input } from 'semantic-ui-react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { SEARCH_ROUTE } from '../pages/api/routes';
-import scrollToTop from '../utils/scrollToTop';
+import { SEARCH_ROUTE } from '../../pages/api/routes';
+import scrollToTop from '../../utils/scrollToTop';
 
 const SearchContainer = styled.div`
 

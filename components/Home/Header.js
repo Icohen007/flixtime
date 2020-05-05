@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getYearAndMonth } from '../utils/formatUtils';
+import { getYearAndMonth } from '../../utils/formatUtils';
 import FeaturedButton from './FeaturedButton';
 import SwipeSVG from './SwipeSVG';
 

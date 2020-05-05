@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import StyledClientItem from './ClientItem.style';
+import StyledContentItem from './ContentItem.style';
 
 const CarouselItemText = styled.div`
 margin-top: 8px;
@@ -35,7 +35,7 @@ function ContentItem({
   clientName, clientUrl, mediaType, releaseDate, id,
 }) {
   return (
-    <StyledClientItem>
+    <StyledContentItem>
       <Link href={`/${mediaType}?id=${id}`}>
         <img alt={clientName} src={clientUrl} />
       </Link>
@@ -47,7 +47,7 @@ function ContentItem({
           {releaseDate}
         </LowerText>
       </CarouselItemText>
-    </StyledClientItem>
+    </StyledContentItem>
 
   );
 }

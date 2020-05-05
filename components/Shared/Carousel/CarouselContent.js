@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import Carousel from './Carousel';
-import FancyButton from './FancyButton/FancyButton';
+import FancyButton from '../../Home/FancyButton/FancyButton';
 
 const CarouselContainer = styled.div`
  max-width: 1130rem;

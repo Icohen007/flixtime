@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { animated, config, useSpring } from 'react-spring';
 import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link';
-import Search from '../Search';
+import Search from './Search';
 import BurgerButton from './BurgerButton';
 import MobileMenu from './MobileMenu';
 

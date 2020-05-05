@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="fix navbar + clear search after search.">
-      <change afterPath="$PROJECT_DIR$/public/tmdb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="move files and clean some code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/Carousel/Carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/CarouselContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/Carousel/CarouselContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/CarouselTrending.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home/CarouselTrending.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ClientItem.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/ContentItem/ContentItem.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ContentItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/ContentItem/ContentItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FancyButton/FancyButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home/FancyButton/FancyButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FancyButton/fancyButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home/FancyButton/fancyButton.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FeaturedButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home/FeaturedButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Global.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/_App/Global.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/HeadContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/_App/HeadContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/_App/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SortPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/SortPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Spinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/_App/Spinner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SwipeSVG.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home/SwipeSVG.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/middlewares/cacheApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/middlewares/cacheApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/baseUrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/baseUrl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/useDidMountEffect.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +94,11 @@
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\FancyButton" />
+      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\Shared\ContentItem" />
+      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\Shared\Carousel" />
+      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\_App" />
+      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\Home" />
+      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\ResponsiveNavBar" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -102,13 +125,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="30946000" />
-    </task>
-    <task id="LOCAL‎00011" summary="add movie page.&#10;&#10;export date parsing.&#10;use linke in carousel to movie page.&#10;use API_KEY.">
-      <created>1587566740015</created>
-      <option name="number" value="LOCAL‎00011" />
-      <option name="presentableId" value="LOCAL‎00011" />
-      <updated>1587566740017</updated>
+      <workItem from="1588440412404" duration="36109000" />
     </task>
     <task id="LOCAL‎00012" summary="add cast and crew to movie page.&#10;make movies page responsive.">
       <created>1587588369998</created>
@@ -398,7 +415,13 @@
       <option name="presentableId" value="LOCAL‎00059" />
       <updated>1588623759919</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL‎00060" summary="add Author part.">
+      <created>1588625492109</created>
+      <option name="number" value="LOCAL‎00060" />
+      <option name="presentableId" value="LOCAL‎00060" />
+      <updated>1588625492109</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,8 +441,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change pagination" />
-    <MESSAGE value="change top rated shows" />
     <MESSAGE value="add responsiveness to cover trending picture" />
     <MESSAGE value="change carousel breakpoints" />
     <MESSAGE value="add redis cache middleware to api calls" />
@@ -443,6 +464,8 @@
     <MESSAGE value="add onSearch -&gt; toggleNav." />
     <MESSAGE value="disable redis for now" />
     <MESSAGE value="fix navbar + clear search after search." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix navbar + clear search after search." />
+    <MESSAGE value="add Author part." />
+    <MESSAGE value="move files and clean some code" />
+    <option name="LAST_COMMIT_MESSAGE" value="move files and clean some code" />
   </component>
 </project>
