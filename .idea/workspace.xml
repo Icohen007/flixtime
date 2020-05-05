@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/middlewares/cacheApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/middlewares/cacheApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/show.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/show.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/fetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/fetchData.js" afterDir="false" />
-    </list>
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,13 +99,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="38471000" />
-    </task>
-    <task id="LOCAL‎00013" summary="add trailer.&#10;add responsiveness to movie page.">
-      <created>1587672431959</created>
-      <option name="number" value="LOCAL‎00013" />
-      <option name="presentableId" value="LOCAL‎00013" />
-      <updated>1587672431960</updated>
+      <workItem from="1588440412404" duration="39119000" />
     </task>
     <task id="LOCAL‎00014" summary="make carousel responsive">
       <created>1587674422067</created>
@@ -405,7 +389,13 @@
       <option name="presentableId" value="LOCAL‎00061" />
       <updated>1588699587403</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL‎00062" summary="clean code and use urlSearchParams.">
+      <created>1588701993433</created>
+      <option name="number" value="LOCAL‎00062" />
+      <option name="presentableId" value="LOCAL‎00062" />
+      <updated>1588701993434</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +415,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add responsiveness to cover trending picture" />
     <MESSAGE value="change carousel breakpoints" />
     <MESSAGE value="add redis cache middleware to api calls" />
     <MESSAGE value="fix react-slick bug with ssr" />
@@ -450,6 +439,7 @@
     <MESSAGE value="fix navbar + clear search after search." />
     <MESSAGE value="add Author part." />
     <MESSAGE value="move files and clean some code" />
-    <option name="LAST_COMMIT_MESSAGE" value="move files and clean some code" />
+    <MESSAGE value="clean code and use urlSearchParams." />
+    <option name="LAST_COMMIT_MESSAGE" value="clean code and use urlSearchParams." />
   </component>
 </project>
