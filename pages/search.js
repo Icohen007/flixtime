@@ -44,7 +44,14 @@ Search.getInitialProps = async (ctx) => {
   if (!term) {
     redirect(ctx, '/');
   }
-  const responseSearch = await axios.get(`${baseUrl}/api?route=${SEARCH_ROUTE}&term=${term}&page=1`);
+
+  const url = new URL(baseUrl);
+  url.searchParams.append('route', SEARCH_ROUTE);
+  url.searchParams.append('term', term);
+  url.searchParams.append('page', '1');
+
+  const responseSearch = await axios.get(url.href);
+
   const { searchResults } = responseSearch.data;
   return { results: searchResults, term };
 };

@@ -62,7 +62,9 @@ function Home({
 // }
 
 Home.getInitialProps = async () => {
-  const responseAll = await axios.get(`${baseUrl}/api?route=${ALL_ROUTE}`);
+  const url = new URL(baseUrl);
+  url.searchParams.append('route', ALL_ROUTE);
+  const responseAll = await axios.get(url.href);
   return responseAll.data;
 };
 

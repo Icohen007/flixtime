@@ -30,8 +30,20 @@ Shows.getInitialProps = async (ctx) => {
   if (!sortOption) {
     redirect(ctx, '/shows');
   }
-  const responseSorted = await axios.get(`${baseUrl}/api?route=${LIST_ROUTE}&mediaType=tv&sortBy=${sortOption.value}${genre ? `&genre=${genre}` : ''}&page=${page}`);
+
+  const url = new URL(baseUrl);
+  url.searchParams.append('route', LIST_ROUTE);
+  url.searchParams.append('mediaType', 'tv');
+  url.searchParams.append('sortBy', sortOption.value);
+  if (genre) {
+    url.searchParams.append('genre', genre);
+  }
+  url.searchParams.append('page', page);
+
+  const responseSorted = await axios.get(url.href);
+
   const { sorted, genresOptions, totalPages } = responseSorted.data;
+
   if (!sorted.length) {
     redirect(ctx, '/movies');
   }

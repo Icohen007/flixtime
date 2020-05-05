@@ -151,7 +151,12 @@ Show.getInitialProps = async (ctx) => {
   const { id } = ctx.query;
   const mediaType = 'tv';
 
-  const responseShow = await axios.get(`${baseUrl}/api?route=${DETAILS_ROUTE}&mediaType=${mediaType}&id=${id}`);
+  const url = new URL(baseUrl);
+  url.searchParams.append('route', DETAILS_ROUTE);
+  url.searchParams.append('mediaType', mediaType);
+  url.searchParams.append('id', id);
+
+  const responseShow = await axios.get(url.href);
   return responseShow.data;
 };
 

@@ -17,7 +17,7 @@ if (!redisStatus.isOk) {
     }
     redisStatus.isOk = true;
     // redisClient.flushdb((err, succeeded) => {
-    //   console.log(succeeded); // will be true if successfull
+    //   console.log({ succeeded }); // will be true if successfull
     // });
   });
 }

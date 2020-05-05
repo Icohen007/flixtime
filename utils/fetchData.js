@@ -1,5 +1,15 @@
 import axios from 'axios';
 
+const responseToObject = (mediaType) => (response) => response.data.results.map((e) => ({
+  id: e.id,
+  imageUrl: e.poster_path,
+  title: mediaType === 'movie' ? e.original_title : e.original_name,
+  releaseDate: mediaType === 'movie' ? e.release_date : e.first_air_date,
+}));
+
+const transformResponseMovie = responseToObject('movie');
+const transformResponseShow = responseToObject('tv');
+
 export async function getAll() {
   const requestPopularMovies = axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
   const requestTopRatedMovies = axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=vote_average.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=2000&with_original_language=en&page=1`);
@@ -9,7 +19,6 @@ export async function getAll() {
   const requestPopularShows = axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
   const requestTopRatedShows = axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=vote_average.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=2000&with_original_language=en&page=1`);
   const requestNewReleaseShows = axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=primary_release_date.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
-  // const requestTrendingShows = axios.get(`https://api.themoviedb.org/3/trending/tv/week?api_key=${process.env.API_KEY}&language=en-US&page=1`);
   const requestMovieGenres = axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_KEY}&language=en-US`);
 
   const axiosResponse = await axios.all([
@@ -19,7 +28,6 @@ export async function getAll() {
     requestNewReleaseMovies,
     requestPopularShows,
     requestTopRatedShows,
-    // requestTrendingShows,
     requestNewReleaseShows,
     requestMovieGenres,
   ]);
@@ -33,13 +41,8 @@ export async function getAll() {
   const responseNewReleaseShows = axiosResponse[6];
   const responseMovieGenres = axiosResponse[7];
 
-  const popularMovies = responsePopularMovies.data.results.map((e) => ({
-    imageUrl: e.poster_path, title: e.original_title, id: e.id, releaseDate: e.release_date,
-  }));
-
-  const topRatedMovies = responseTopRatedMovies.data.results.map((e) => ({
-    imageUrl: e.poster_path, title: e.original_title, id: e.id, releaseDate: e.release_date,
-  }));
+  const popularMovies = transformResponseMovie(responsePopularMovies);
+  const topRatedMovies = transformResponseMovie(responseTopRatedMovies);
 
   const trendingMovies = responseTrendingMovies.data.results.map((e) => ({
     coverImageUrl: e.backdrop_path,
@@ -50,22 +53,11 @@ export async function getAll() {
     genreIds: e.genre_ids,
   }));
 
-  const newReleaseMovies = responseNewReleaseMovies.data.results.map((e) => ({
-    imageUrl: e.poster_path, title: e.original_title, id: e.id, releaseDate: e.release_date,
-  }));
+  const newReleaseMovies = transformResponseMovie(responseNewReleaseMovies);
 
-  const popularShows = responsePopularShows.data.results.map((e) => ({
-    imageUrl: e.poster_path, title: e.original_name, releaseDate: e.first_air_date, id: e.id,
-  }));
-  const topRatedShows = responseTopRatedShows.data.results.map((e) => ({
-    imageUrl: e.poster_path, title: e.original_name, releaseDate: e.first_air_date, id: e.id,
-  }));
-  const newReleaseShows = responseNewReleaseShows.data.results.map((e) => ({
-    imageUrl: e.poster_path, title: e.original_name, releaseDate: e.first_air_date, id: e.id,
-  }));
-  // const trendingShows = responseTrendingShows.data.results.map((e) => ({
-  //   imageUrl: e.backdrop_path, title: e.original_name, releaseDate: e.first_air_date, id: e.id,
-  // }));
+  const popularShows = transformResponseShow(responsePopularShows);
+  const topRatedShows = transformResponseShow(responseTopRatedShows);
+  const newReleaseShows = transformResponseShow(responseNewReleaseShows);
 
   const genresMovieMap = responseMovieGenres.data.genres.reduce((acc, cur) => {
     acc[cur.id] = cur.name;
@@ -80,7 +72,6 @@ export async function getAll() {
     popularShows,
     topRatedShows,
     newReleaseShows,
-    // trendingShows,
     genresMovieMap,
   };
 }
@@ -126,20 +117,8 @@ export async function getList(page, sortBy, genre, mediaType) {
   const axiosResponse = await axios.all([requestSorted, requestGenres]);
   const [responseSorted, responseGenres] = axiosResponse;
 
-
-  let sorted;
-
-  if (mediaType === 'movie') {
-    sorted = responseSorted.data.results.map((e) => ({
-      imageUrl: e.poster_path, title: e.original_title, id: e.id, releaseDate: e.release_date,
-    }));
-  } else {
-    sorted = responseSorted.data.results.map((e) => ({
-      imageUrl: e.poster_path, title: e.original_name, id: e.id, releaseDate: e.first_air_date,
-    }));
-  }
-
-  const genresOptions = responseGenres.data.genres.map((genre) => ({ label: genre.name, value: genre.id }));
+  const sorted = responseToObject(mediaType)(responseSorted);
+  const genresOptions = responseGenres.data.genres.map((gen) => ({ label: gen.name, value: gen.id }));
   return { sorted, genresOptions, totalPages: responseSorted.data.total_pages };
 }
 
@@ -157,15 +136,3 @@ export async function getSearch(term) {
 
   return { searchResults };
 }
-
-// export async function getMovie() {
-//
-// }
-//
-// export async function getMovie() {
-//
-// }
-//
-// export async function getMovie() {
-//
-// }
