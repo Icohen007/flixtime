@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="change color navbar moblie">
-      <change afterPath="$PROJECT_DIR$/public/favicon/android-chrome-96x96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/browserconfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/mstile-150x150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/safari-pinned-tab.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/site.webmanifest" afterDir="false" />
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/_App/HeadContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/_App/HeadContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon/apple-touch-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/apple-touch-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,11 +73,11 @@
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\public" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\Shared\ContentItem" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\Shared\Carousel" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\_App" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\Home" />
-      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\ResponsiveNavBar" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -113,13 +104,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="40741000" />
-    </task>
-    <task id="LOCAL‎00015" summary="add scroll event listener to nav bar on scroll.">
-      <created>1587675585380</created>
-      <option name="number" value="LOCAL‎00015" />
-      <option name="presentableId" value="LOCAL‎00015" />
-      <updated>1587675585381</updated>
+      <workItem from="1588440412404" duration="41278000" />
     </task>
     <task id="LOCAL‎00016" summary="add logo to navbar">
       <created>1587737083124</created>
@@ -409,7 +394,13 @@
       <option name="presentableId" value="LOCAL‎00063" />
       <updated>1588703215358</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL‎00064" summary="added favicon and change navbar mobile color">
+      <created>1588704861619</created>
+      <option name="number" value="LOCAL‎00064" />
+      <option name="presentableId" value="LOCAL‎00064" />
+      <updated>1588704861619</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +420,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add redis cache middleware to api calls" />
     <MESSAGE value="fix react-slick bug with ssr" />
     <MESSAGE value="add redisStatus check." />
     <MESSAGE value="fix cover size" />
@@ -454,6 +444,7 @@
     <MESSAGE value="move files and clean some code" />
     <MESSAGE value="clean code and use urlSearchParams." />
     <MESSAGE value="fix prefix 'api' in production url" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix prefix 'api' in production url" />
+    <MESSAGE value="added favicon and change navbar mobile color" />
+    <option name="LAST_COMMIT_MESSAGE" value="added favicon and change navbar mobile color" />
   </component>
 </project>
