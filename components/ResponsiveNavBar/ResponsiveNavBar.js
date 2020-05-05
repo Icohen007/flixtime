@@ -95,7 +95,7 @@ const NavBar = styled(animated.nav)`
   transition: background 0.3s ease-in;
   
   @media only screen and (max-width: 768px) {
-  background: rgba(0, 0, 0, 0.87);
+  background: rgba(0, 0, 0, 0.92);
   }
 `;
 

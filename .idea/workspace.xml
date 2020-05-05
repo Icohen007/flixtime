@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="" />
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="change color navbar moblie">
+      <change afterPath="$PROJECT_DIR$/public/favicon/android-chrome-96x96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon/browserconfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon/favicon-16x16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon/favicon-32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon/mstile-150x150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon/safari-pinned-tab.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon/site.webmanifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/_App/HeadContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/_App/HeadContent.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +59,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/favicon" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -61,11 +75,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\public\favicon" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\public" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\pages" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\utils" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime" />
-      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\Shared\ContentItem" />
@@ -99,13 +113,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="39119000" />
-    </task>
-    <task id="LOCAL‎00014" summary="make carousel responsive">
-      <created>1587674422067</created>
-      <option name="number" value="LOCAL‎00014" />
-      <option name="presentableId" value="LOCAL‎00014" />
-      <updated>1587674422068</updated>
+      <workItem from="1588440412404" duration="40741000" />
     </task>
     <task id="LOCAL‎00015" summary="add scroll event listener to nav bar on scroll.">
       <created>1587675585380</created>
@@ -395,7 +403,13 @@
       <option name="presentableId" value="LOCAL‎00062" />
       <updated>1588701993434</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL‎00063" summary="fix prefix 'api' in production url">
+      <created>1588703215358</created>
+      <option name="number" value="LOCAL‎00063" />
+      <option name="presentableId" value="LOCAL‎00063" />
+      <updated>1588703215358</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +429,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change carousel breakpoints" />
     <MESSAGE value="add redis cache middleware to api calls" />
     <MESSAGE value="fix react-slick bug with ssr" />
     <MESSAGE value="add redisStatus check." />
@@ -440,6 +453,7 @@
     <MESSAGE value="add Author part." />
     <MESSAGE value="move files and clean some code" />
     <MESSAGE value="clean code and use urlSearchParams." />
-    <option name="LAST_COMMIT_MESSAGE" value="clean code and use urlSearchParams." />
+    <MESSAGE value="fix prefix 'api' in production url" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix prefix 'api' in production url" />
   </component>
 </project>

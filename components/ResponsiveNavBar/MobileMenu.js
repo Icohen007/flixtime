@@ -40,7 +40,7 @@ const MobileMenu = ({ toggleNav, openNav }) => {
 export default MobileMenu;
 
 const CollapseWrapper = styled(animated.div)`
-  background: #0d0d0d;
+  background: rgba(0, 0, 0, 0.92);
   position: fixed;
   top: 45rem;
   left: 0;
