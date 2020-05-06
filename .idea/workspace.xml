@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/Flixtime-showcase200.png" afterDir="false" />
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="fix title shows">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/_App/HeadContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/_App/HeadContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Home/FancyButton/FancyButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home/FancyButton/FancyButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Shared/Carousel/CarouselContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/Carousel/CarouselContent.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,13 +103,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="54752000" />
-    </task>
-    <task id="LOCAL‎00023" summary="fix responsivness of movie\show page">
-      <created>1587994283593</created>
-      <option name="number" value="LOCAL‎00023" />
-      <option name="presentableId" value="LOCAL‎00023" />
-      <updated>1587994283593</updated>
+      <workItem from="1588440412404" duration="55624000" />
     </task>
     <task id="LOCAL‎00024" summary="add topRated + trending">
       <created>1587996757577</created>
@@ -399,7 +393,13 @@
       <option name="presentableId" value="LOCAL‎00071" />
       <updated>1588782660489</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL‎00072" summary="change the meta fb pic">
+      <created>1588783056868</created>
+      <option name="number" value="LOCAL‎00072" />
+      <option name="presentableId" value="LOCAL‎00072" />
+      <updated>1588783056868</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +419,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="infinite false for mobile" />
     <MESSAGE value="fix carousel responsiveness" />
     <MESSAGE value="fix get all api.&#10;remove trending.&#10;add not_available placeholder." />
     <MESSAGE value="fix back button." />
@@ -444,6 +443,7 @@
     <MESSAGE value="moved from getInitialProps to getServerSideProps. some advantages:&#10;&#10;* in SSR : they act the same, both run server side code.&#10;* in client side navigation: GIP run on client side, goes to my defined api endpoint. GSP goes to Directly to the server side code! NextJs generated json and send back to browser.&#10;&#10;* no need for baseUrl anymore.&#10;* no need for the internal api + api routes anymore + no need for url params parsing.&#10;* one less network hop in client side navigation." />
     <MESSAGE value="remove getInitialProps comments." />
     <MESSAGE value="add facebook meta tags." />
-    <option name="LAST_COMMIT_MESSAGE" value="add facebook meta tags." />
+    <MESSAGE value="change the meta fb pic" />
+    <option name="LAST_COMMIT_MESSAGE" value="change the meta fb pic" />
   </component>
 </project>

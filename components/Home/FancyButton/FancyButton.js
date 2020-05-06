@@ -48,7 +48,7 @@ const FancyButtonStyled = styled.div`
 #text p {
     color: #9f9f9f;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15rem;
 }
 
 `;

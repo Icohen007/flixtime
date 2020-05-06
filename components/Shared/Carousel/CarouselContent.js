@@ -25,6 +25,10 @@ const LeftSideDiv = styled.div`
     @media only screen and (max-width: 768px) {
         font-size: 25rem;
     }
+    
+        @media only screen and (max-width: 500px) {
+        font-size: 20rem;
+    }
 `;
 
 const ShowCaseContainer = styled.div`
