@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/show.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/show.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/_App/HeadContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/_App/HeadContent.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,13 +102,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="52096000" />
-    </task>
-    <task id="LOCAL‎00021" summary="add styling to pagination.&#10;&#10;add cursor grab to slick slider">
-      <created>1587941145290</created>
-      <option name="number" value="LOCAL‎00021" />
-      <option name="presentableId" value="LOCAL‎00021" />
-      <updated>1587941145290</updated>
+      <workItem from="1588440412404" duration="54282000" />
     </task>
     <task id="LOCAL‎00022" summary="add text-border + genres in homepage">
       <created>1587943423713</created>
@@ -402,7 +392,13 @@
       <option name="presentableId" value="LOCAL‎00069" />
       <updated>1588779678685</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL‎00070" summary="remove getInitialProps comments.">
+      <created>1588779742806</created>
+      <option name="number" value="LOCAL‎00070" />
+      <option name="presentableId" value="LOCAL‎00070" />
+      <updated>1588779742806</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +418,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix dropdown ui&#10;make it not searchable." />
     <MESSAGE value="fix carousel." />
     <MESSAGE value="infinite false for mobile" />
     <MESSAGE value="fix carousel responsiveness" />
@@ -447,6 +442,7 @@
     <MESSAGE value="add google analytics&#10;&#10;https://github.com/zeit/next.js/tree/canary/examples/with-google-analytics" />
     <MESSAGE value="shows -&gt; tv shows&#10;&#10;fix responsiveness of slick." />
     <MESSAGE value="moved from getInitialProps to getServerSideProps. some advantages:&#10;&#10;* in SSR : they act the same, both run server side code.&#10;* in client side navigation: GIP run on client side, goes to my defined api endpoint. GSP goes to Directly to the server side code! NextJs generated json and send back to browser.&#10;&#10;* no need for baseUrl anymore.&#10;* no need for the internal api + api routes anymore + no need for url params parsing.&#10;* one less network hop in client side navigation." />
-    <option name="LAST_COMMIT_MESSAGE" value="moved from getInitialProps to getServerSideProps. some advantages:&#10;&#10;* in SSR : they act the same, both run server side code.&#10;* in client side navigation: GIP run on client side, goes to my defined api endpoint. GSP goes to Directly to the server side code! NextJs generated json and send back to browser.&#10;&#10;* no need for baseUrl anymore.&#10;* no need for the internal api + api routes anymore + no need for url params parsing.&#10;* one less network hop in client side navigation." />
+    <MESSAGE value="remove getInitialProps comments." />
+    <option name="LAST_COMMIT_MESSAGE" value="remove getInitialProps comments." />
   </component>
 </project>
