@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import axios from 'axios';
 import {
   getActors, getCreators, getReviews, getTrailer,
 } from '../utils/mediaDetailsGetters';
@@ -9,8 +8,7 @@ import SemanticUiEmbedded from '../components/MediaDetails/SemanticUiEmbedded';
 import CreditList from '../components/MediaDetails/CreditList';
 import Credit from '../components/MediaDetails/Credit';
 import Review from '../components/MediaDetails/Review';
-import baseUrl from '../utils/baseUrl';
-import { DETAILS_ROUTE } from './api/routes';
+import { getDetails } from '../utils/fetchData';
 
 
 const MovieContainer = styled.div`
@@ -147,17 +145,24 @@ function Show({
   );
 }
 
-Show.getInitialProps = async (ctx) => {
+export async function getServerSideProps(ctx) {
   const { id } = ctx.query;
   const mediaType = 'tv';
+  const responseShow = await getDetails(id, mediaType);
+  return { props: responseShow };
+}
 
-  const url = new URL(baseUrl);
-  url.searchParams.append('route', DETAILS_ROUTE);
-  url.searchParams.append('mediaType', mediaType);
-  url.searchParams.append('id', id);
-
-  const responseShow = await axios.get(url.href);
-  return responseShow.data;
-};
+// Show.getInitialProps = async (ctx) => {
+//   const { id } = ctx.query;
+//   const mediaType = 'tv';
+//
+//   const url = new URL(baseUrl);
+//   url.searchParams.append('route', DETAILS_ROUTE);
+//   url.searchParams.append('mediaType', mediaType);
+//   url.searchParams.append('id', id);
+//
+//   const responseShow = await axios.get(url.href);
+//   return responseShow.data;
+// };
 
 export default Show;

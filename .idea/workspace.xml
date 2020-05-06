@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="shows -&gt; tv shows&#10;&#10;fix responsiveness of slick.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Shared/Carousel/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/Carousel/Carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Shared/Carousel/CarouselContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/Carousel/CarouselContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SortPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/SortPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/_App/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/_App/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/gtag.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/gtag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/show.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/show.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,13 +108,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="48482000" />
-    </task>
-    <task id="LOCAL‎00019" summary="add main buttons to choose between shows and movies">
-      <created>1587908900535</created>
-      <option name="number" value="LOCAL‎00019" />
-      <option name="presentableId" value="LOCAL‎00019" />
-      <updated>1587908900535</updated>
+      <workItem from="1588440412404" duration="51506000" />
     </task>
     <task id="LOCAL‎00020" summary="add swipe icon&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick">
       <created>1587923815991</created>
@@ -405,7 +398,13 @@
       <option name="presentableId" value="LOCAL‎00067" />
       <updated>1588760273673</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL‎00068" summary="shows -&gt; tv shows&#10;&#10;fix responsiveness of slick.">
+      <created>1588771262935</created>
+      <option name="number" value="LOCAL‎00068" />
+      <option name="presentableId" value="LOCAL‎00068" />
+      <updated>1588771262936</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +424,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix margin credits" />
     <MESSAGE value="- add sorting to movies and shows.&#10;- create shared SortPage.&#10;- change runningDate -&gt; releaseDate.&#10;&#10;&#10;// TODO: &#10;* homepage links.&#10;* homepage carousel content.&#10;* drop down design.&#10;* add genre.&#10;* add search." />
     <MESSAGE value="fix dropdown ui&#10;make it not searchable." />
     <MESSAGE value="fix carousel." />
@@ -450,6 +448,7 @@
     <MESSAGE value="move icons" />
     <MESSAGE value="disabled redis.&#10;&#10;add header cache-control.&#10;&#10;change cover size to w1280." />
     <MESSAGE value="add google analytics&#10;&#10;https://github.com/zeit/next.js/tree/canary/examples/with-google-analytics" />
-    <option name="LAST_COMMIT_MESSAGE" value="add google analytics&#10;&#10;https://github.com/zeit/next.js/tree/canary/examples/with-google-analytics" />
+    <MESSAGE value="shows -&gt; tv shows&#10;&#10;fix responsiveness of slick." />
+    <option name="LAST_COMMIT_MESSAGE" value="shows -&gt; tv shows&#10;&#10;fix responsiveness of slick." />
   </component>
 </project>

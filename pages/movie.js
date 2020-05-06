@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import axios from 'axios';
 import HeaderDetails from '../components/MediaDetails/HeaderDetails';
 import {
   getActors, getDirectors, getProducers, getReviews, getTrailer, getWriters,
@@ -9,8 +8,7 @@ import SemanticUiEmbedded from '../components/MediaDetails/SemanticUiEmbedded';
 import CreditList from '../components/MediaDetails/CreditList';
 import Credit from '../components/MediaDetails/Credit';
 import Review from '../components/MediaDetails/Review';
-import baseUrl from '../utils/baseUrl';
-import { DETAILS_ROUTE } from './api/routes';
+import { getDetails } from '../utils/fetchData';
 
 const MovieContainer = styled.div`
 max-width: 1400rem;
@@ -164,15 +162,22 @@ function Movie({
   );
 }
 
-Movie.getInitialProps = async (ctx) => {
+export async function getServerSideProps(ctx) {
   const { id } = ctx.query;
   const mediaType = 'movie';
-  const url = new URL(baseUrl);
-  url.searchParams.append('route', DETAILS_ROUTE);
-  url.searchParams.append('mediaType', mediaType);
-  url.searchParams.append('id', id);
-  const responseMovie = await axios.get(url.href);
-  return responseMovie.data;
-};
+  const responseMovie = await getDetails(id, mediaType);
+  return { props: responseMovie };
+}
+
+// Movie.getInitialProps = async (ctx) => {
+//   const { id } = ctx.query;
+//   const mediaType = 'movie';
+//   const url = new URL(baseUrl);
+//   url.searchParams.append('route', DETAILS_ROUTE);
+//   url.searchParams.append('mediaType', mediaType);
+//   url.searchParams.append('id', id);
+//   const responseMovie = await axios.get(url.href);
+//   return responseMovie.data;
+// };
 
 export default Movie;

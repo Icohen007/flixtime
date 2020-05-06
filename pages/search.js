@@ -1,11 +1,9 @@
-import axios from 'axios';
 import styled from 'styled-components';
-import baseUrl from '../utils/baseUrl';
-import { SEARCH_ROUTE } from './api/routes';
 import redirect from '../utils/redirect';
 import * as S from '../components/PopularPage.style';
 import ContentItem from '../components/Shared/ContentItem/ContentItem';
 import { getYear } from '../utils/formatUtils';
+import { getSearch } from '../utils/fetchData';
 
 const SearchTitle = styled.div`
 margin: 100rem auto 30rem;
@@ -21,7 +19,7 @@ function Search({ results, term }) {
   return (
     <S.GridContainer>
       <SearchTitle>
-        {results.length ? `Search results for "${term}"` : 'Sorry, no results.'}
+        {results.length ? `Search results for "${term}"` : `Sorry, no results for "${term}"`}
       </SearchTitle>
       <S.ContentGrid>
         {results.map((elem) => (
@@ -39,21 +37,32 @@ function Search({ results, term }) {
   );
 }
 
-Search.getInitialProps = async (ctx) => {
+export async function getServerSideProps(ctx) {
   const { term = '' } = ctx.query;
   if (!term) {
     redirect(ctx, '/');
   }
 
-  const url = new URL(baseUrl);
-  url.searchParams.append('route', SEARCH_ROUTE);
-  url.searchParams.append('term', term);
-  url.searchParams.append('page', '1');
+  const responseSearch = await getSearch(term);
+  const { searchResults } = responseSearch;
 
-  const responseSearch = await axios.get(url.href);
+  return { props: { results: searchResults, term } };
+}
 
-  const { searchResults } = responseSearch.data;
-  return { results: searchResults, term };
-};
+// Search.getInitialProps = async (ctx) => {
+//   const { term = '' } = ctx.query;
+//   if (!term) {
+//     redirect(ctx, '/');
+//   }
+//
+//   const url = new URL(baseUrl);
+//   url.searchParams.append('route', SEARCH_ROUTE);
+//   url.searchParams.append('term', term);
+//
+//   const responseSearch = await axios.get(url.href);
+//
+//   const { searchResults } = responseSearch.data;
+//   return { results: searchResults, term };
+// };
 
 export default Search;

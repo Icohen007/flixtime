@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { Button } from 'semantic-ui-react';
 import styled from 'styled-components';
 import CarouselContent from '../components/Shared/Carousel/CarouselContent';
 import CarouselTrending from '../components/Home/CarouselTrending';
-import baseUrl from '../utils/baseUrl';
-import { ALL_ROUTE } from './api/routes';
+import { getAll } from '../utils/fetchData';
 
 const ButtonGroupContainer = styled.div`
 display: flex;
@@ -52,20 +50,16 @@ function Home({
   );
 }
 //
-// export async function getServerSideProps(context) {
-//   console.time('getServerSide');
-//   const responseAll = await getAll();
-//   console.timeEnd('getServerSide');
-//   return {
-//     props: responseAll, // will be passed to the page component as props
-//   };
-// }
+export async function getServerSideProps() {
+  const responseAll = await getAll();
+  return { props: responseAll };
+}
 
-Home.getInitialProps = async () => {
-  const url = new URL(baseUrl);
-  url.searchParams.append('route', ALL_ROUTE);
-  const responseAll = await axios.get(url.href);
-  return responseAll.data;
-};
+// Home.getInitialProps = async () => {
+//   const url = new URL(baseUrl);
+//   url.searchParams.append('route', ALL_ROUTE);
+//   const responseAll = await axios.get(url.href);
+//   return responseAll.data;
+// };
 
 export default Home;
