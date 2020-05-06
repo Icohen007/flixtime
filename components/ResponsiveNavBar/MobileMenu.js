@@ -25,7 +25,7 @@ const MobileMenu = ({ toggleNav, openNav }) => {
             <Link href="/movies"><span onClick={toggleNav}>Movies</span></Link>
           </li>
           <li>
-            <Link href="/shows"><span onClick={toggleNav}>Shows</span></Link>
+            <Link href="/shows"><span onClick={toggleNav}>TV Shows</span></Link>
           </li>
           <li>
             <Search onSearch={toggleNav} />

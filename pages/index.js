@@ -31,7 +31,7 @@ function Home({
       <ButtonGroupContainer>
         <Button.Group>
           <Button active={showMovies} onClick={() => setShowMovies(true)}>Movies</Button>
-          <Button active={!showMovies} onClick={() => setShowMovies(false)}>Shows</Button>
+          <Button active={!showMovies} onClick={() => setShowMovies(false)}>TV Shows</Button>
         </Button.Group>
       </ButtonGroupContainer>
       {showMovies ? (
@@ -43,9 +43,9 @@ function Home({
       )
         : (
           <>
-            <CarouselContent header="Popular Shows" linkPath="/shows" content={popularShows} mediaType="show" />
-            <CarouselContent header="Top Rated Shows" linkPath="/shows?sortBy=vote_average.desc&page=1" content={topRatedShows} mediaType="show" />
-            <CarouselContent header="New Release Shows" linkPath="/shows?sortBy=primary_release_date.desc&page=1" content={newReleaseShows} mediaType="show" />
+            <CarouselContent header="Popular TV Shows" linkPath="/shows" content={popularShows} mediaType="show" />
+            <CarouselContent header="Top Rated TV Shows" linkPath="/shows?sortBy=vote_average.desc&page=1" content={topRatedShows} mediaType="show" />
+            <CarouselContent header="New Release TV Shows" linkPath="/shows?sortBy=primary_release_date.desc&page=1" content={newReleaseShows} mediaType="show" />
           </>
         )}
     </>

@@ -89,7 +89,7 @@ function SortPage({
     <S.GridContainer>
       <S.FireText>
         <h2>
-          <span>{mediaPath(mediaType)}</span>
+          <span>{mediaType === 'movie' ? 'movies' : 'tv shows'}</span>
         </h2>
       </S.FireText>
       <FiltersContainer>

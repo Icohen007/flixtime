@@ -11,18 +11,39 @@ function Carousel({ content, mediaType }) {
   const settings = {
     dots: false,
     infinite: true,
+      slidesToShow: 7,
     slidesToScroll: 3,
     speed: 500,
     autoplay: false,
     touchThreshold: 15,
-    variableWidth: true,
+
     responsive: [
+        {
+            breakpoint: 1245,
+            settings: {
+                slidesToShow: 6,
+                slidesToScroll: 3,
+            }
+        },
+        {
+            breakpoint: 1090,
+            settings: {
+                slidesToShow: 5,
+                slidesToScroll: 2,
+            }
+        },
+        {
+            breakpoint: 920,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 2,
+            }
+        },
         {
             breakpoint: 768,
             settings: {
                 arrows: false,
                 infinite: false,
-                variableWidth: false,
                 slidesToShow: 5,
                 slidesToScroll: 2,
             }
@@ -32,7 +53,6 @@ function Carousel({ content, mediaType }) {
             settings: {
                 arrows: false,
                 infinite: false,
-                variableWidth: false,
                 slidesToShow: 4,
                 slidesToScroll: 2,
             }
@@ -42,7 +62,6 @@ function Carousel({ content, mediaType }) {
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 2,
-                variableWidth: false,
                 arrows: false,
                 infinite: false,
             },

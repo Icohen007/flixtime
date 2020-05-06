@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/utils/gtag.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/MobileMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ResponsiveNavBar/ResponsiveNavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Shared/Carousel/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/Carousel/Carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Shared/Carousel/CarouselContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/Carousel/CarouselContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SortPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/SortPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/_App/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/_App/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/gtag.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/gtag.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,13 +109,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="45797000" />
-    </task>
-    <task id="LOCAL‎00018" summary="add FancyButton to See All&#10;&#10;add FeaturedButton&#10;&#10;add dates to shows and movies.&#10;&#10;fix links">
-      <created>1587905047296</created>
-      <option name="number" value="LOCAL‎00018" />
-      <option name="presentableId" value="LOCAL‎00018" />
-      <updated>1587905047296</updated>
+      <workItem from="1588440412404" duration="48482000" />
     </task>
     <task id="LOCAL‎00019" summary="add main buttons to choose between shows and movies">
       <created>1587908900535</created>
@@ -401,7 +399,13 @@
       <option name="presentableId" value="LOCAL‎00066" />
       <updated>1588758940760</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL‎00067" summary="add google analytics&#10;&#10;https://github.com/zeit/next.js/tree/canary/examples/with-google-analytics">
+      <created>1588760273672</created>
+      <option name="number" value="LOCAL‎00067" />
+      <option name="presentableId" value="LOCAL‎00067" />
+      <updated>1588760273673</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,7 +425,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix cover size" />
     <MESSAGE value="fix margin credits" />
     <MESSAGE value="- add sorting to movies and shows.&#10;- create shared SortPage.&#10;- change runningDate -&gt; releaseDate.&#10;&#10;&#10;// TODO: &#10;* homepage links.&#10;* homepage carousel content.&#10;* drop down design.&#10;* add genre.&#10;* add search." />
     <MESSAGE value="fix dropdown ui&#10;make it not searchable." />
@@ -446,6 +449,7 @@
     <MESSAGE value="added favicon and change navbar mobile color" />
     <MESSAGE value="move icons" />
     <MESSAGE value="disabled redis.&#10;&#10;add header cache-control.&#10;&#10;change cover size to w1280." />
-    <option name="LAST_COMMIT_MESSAGE" value="disabled redis.&#10;&#10;add header cache-control.&#10;&#10;change cover size to w1280." />
+    <MESSAGE value="add google analytics&#10;&#10;https://github.com/zeit/next.js/tree/canary/examples/with-google-analytics" />
+    <option name="LAST_COMMIT_MESSAGE" value="add google analytics&#10;&#10;https://github.com/zeit/next.js/tree/canary/examples/with-google-analytics" />
   </component>
 </project>

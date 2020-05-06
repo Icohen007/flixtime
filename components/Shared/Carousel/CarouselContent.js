@@ -4,13 +4,17 @@ import Carousel from './Carousel';
 import FancyButton from '../../Home/FancyButton/FancyButton';
 
 const CarouselContainer = styled.div`
- max-width: 1130rem;
+ max-width: 1280rem;
  width: 100%;
  padding-bottom: 25rem;
  
  .slick-slider {
  cursor: grab;
  }
+ 
+     @media only screen and (min-width: 769px) {
+        padding: 0 35rem 25rem;
+    }
 `;
 
 const LeftSideDiv = styled.div`

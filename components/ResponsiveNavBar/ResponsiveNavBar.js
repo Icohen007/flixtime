@@ -69,7 +69,7 @@ const ResponsiveNavBar = () => {
                   <img src="/new_logo_dark.png" alt="FlixTime" style={{ maxHeight: '40rem', cursor: 'pointer' }} />
                 </Link>
                 <Link href="/movies"><a>Movies</a></Link>
-                <Link href="/shows"><a>Shows</a></Link>
+                <Link href="/shows"><a>TV Shows</a></Link>
               </NavLinks>
               <NavLinks style={linkAnimation}>
                 <Search />
