@@ -8,6 +8,8 @@ import GlobalStyle from '../components/_App/Global.style';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
+import * as gtag from "../utils/gtag";
+
 const theme = {
   colors: {
     primary: '#e7f3e2',
@@ -38,7 +40,8 @@ export default class MyApp extends App {
       this.setState({ isLoading: true });
     });
 
-    Router.events.on('routeChangeComplete', () => {
+    Router.events.on('routeChangeComplete', (url) => {
+      gtag.pageview(url);
       this.setState({ isLoading: false });
     });
 

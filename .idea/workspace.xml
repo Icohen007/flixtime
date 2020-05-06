@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="move icons">
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/utils/gtag.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Home/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/_App/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/_App/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,13 +105,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="44426000" />
-    </task>
-    <task id="LOCAL‎00017" summary="add show details page + Big refactor to movies + show page.&#10;&#10;extract functions and components.">
-      <created>1587847774815</created>
-      <option name="number" value="LOCAL‎00017" />
-      <option name="presentableId" value="LOCAL‎00017" />
-      <updated>1587847774815</updated>
+      <workItem from="1588440412404" duration="45797000" />
     </task>
     <task id="LOCAL‎00018" summary="add FancyButton to See All&#10;&#10;add FeaturedButton&#10;&#10;add dates to shows and movies.&#10;&#10;fix links">
       <created>1587905047296</created>
@@ -399,7 +395,13 @@
       <option name="presentableId" value="LOCAL‎00065" />
       <updated>1588705363833</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL‎00066" summary="disabled redis.&#10;&#10;add header cache-control.&#10;&#10;change cover size to w1280.">
+      <created>1588758940759</created>
+      <option name="number" value="LOCAL‎00066" />
+      <option name="presentableId" value="LOCAL‎00066" />
+      <updated>1588758940760</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +421,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add redisStatus check." />
     <MESSAGE value="fix cover size" />
     <MESSAGE value="fix margin credits" />
     <MESSAGE value="- add sorting to movies and shows.&#10;- create shared SortPage.&#10;- change runningDate -&gt; releaseDate.&#10;&#10;&#10;// TODO: &#10;* homepage links.&#10;* homepage carousel content.&#10;* drop down design.&#10;* add genre.&#10;* add search." />
@@ -444,6 +445,7 @@
     <MESSAGE value="fix prefix 'api' in production url" />
     <MESSAGE value="added favicon and change navbar mobile color" />
     <MESSAGE value="move icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="move icons" />
+    <MESSAGE value="disabled redis.&#10;&#10;add header cache-control.&#10;&#10;change cover size to w1280." />
+    <option name="LAST_COMMIT_MESSAGE" value="disabled redis.&#10;&#10;add header cache-control.&#10;&#10;change cover size to w1280." />
   </component>
 </project>
