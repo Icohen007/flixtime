@@ -169,15 +169,4 @@ export async function getServerSideProps(ctx) {
   return { props: responseMovie };
 }
 
-// Movie.getInitialProps = async (ctx) => {
-//   const { id } = ctx.query;
-//   const mediaType = 'movie';
-//   const url = new URL(baseUrl);
-//   url.searchParams.append('route', DETAILS_ROUTE);
-//   url.searchParams.append('mediaType', mediaType);
-//   url.searchParams.append('id', id);
-//   const responseMovie = await axios.get(url.href);
-//   return responseMovie.data;
-// };
-
 export default Movie;

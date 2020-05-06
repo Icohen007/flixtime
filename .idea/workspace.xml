@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="shows -&gt; tv shows&#10;&#10;fix responsiveness of slick.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/index.js" afterDir="false" />
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movie.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
@@ -108,13 +106,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="51506000" />
-    </task>
-    <task id="LOCAL‎00020" summary="add swipe icon&#10;&#10;add ellipsis two lines&#10;&#10;fix arrows slick">
-      <created>1587923815991</created>
-      <option name="number" value="LOCAL‎00020" />
-      <option name="presentableId" value="LOCAL‎00020" />
-      <updated>1587923815991</updated>
+      <workItem from="1588440412404" duration="52096000" />
     </task>
     <task id="LOCAL‎00021" summary="add styling to pagination.&#10;&#10;add cursor grab to slick slider">
       <created>1587941145290</created>
@@ -404,7 +396,13 @@
       <option name="presentableId" value="LOCAL‎00068" />
       <updated>1588771262936</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL‎00069" summary="moved from getInitialProps to getServerSideProps. some advantages:&#10;&#10;* in SSR : they act the same, both run server side code.&#10;* in client side navigation: GIP run on client side, goes to my defined api endpoint. GSP goes to Directly to the server side code! NextJs generated json and send back to browser.&#10;&#10;* no need for baseUrl anymore.&#10;* no need for the internal api + api routes anymore + no need for url params parsing.&#10;* one less network hop in client side navigation.">
+      <created>1588779678685</created>
+      <option name="number" value="LOCAL‎00069" />
+      <option name="presentableId" value="LOCAL‎00069" />
+      <updated>1588779678685</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +422,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- add sorting to movies and shows.&#10;- create shared SortPage.&#10;- change runningDate -&gt; releaseDate.&#10;&#10;&#10;// TODO: &#10;* homepage links.&#10;* homepage carousel content.&#10;* drop down design.&#10;* add genre.&#10;* add search." />
     <MESSAGE value="fix dropdown ui&#10;make it not searchable." />
     <MESSAGE value="fix carousel." />
     <MESSAGE value="infinite false for mobile" />
@@ -449,6 +446,7 @@
     <MESSAGE value="disabled redis.&#10;&#10;add header cache-control.&#10;&#10;change cover size to w1280." />
     <MESSAGE value="add google analytics&#10;&#10;https://github.com/zeit/next.js/tree/canary/examples/with-google-analytics" />
     <MESSAGE value="shows -&gt; tv shows&#10;&#10;fix responsiveness of slick." />
-    <option name="LAST_COMMIT_MESSAGE" value="shows -&gt; tv shows&#10;&#10;fix responsiveness of slick." />
+    <MESSAGE value="moved from getInitialProps to getServerSideProps. some advantages:&#10;&#10;* in SSR : they act the same, both run server side code.&#10;* in client side navigation: GIP run on client side, goes to my defined api endpoint. GSP goes to Directly to the server side code! NextJs generated json and send back to browser.&#10;&#10;* no need for baseUrl anymore.&#10;* no need for the internal api + api routes anymore + no need for url params parsing.&#10;* one less network hop in client side navigation." />
+    <option name="LAST_COMMIT_MESSAGE" value="moved from getInitialProps to getServerSideProps. some advantages:&#10;&#10;* in SSR : they act the same, both run server side code.&#10;* in client side navigation: GIP run on client side, goes to my defined api endpoint. GSP goes to Directly to the server side code! NextJs generated json and send back to browser.&#10;&#10;* no need for baseUrl anymore.&#10;* no need for the internal api + api routes anymore + no need for url params parsing.&#10;* one less network hop in client side navigation." />
   </component>
 </project>

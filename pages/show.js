@@ -152,17 +152,4 @@ export async function getServerSideProps(ctx) {
   return { props: responseShow };
 }
 
-// Show.getInitialProps = async (ctx) => {
-//   const { id } = ctx.query;
-//   const mediaType = 'tv';
-//
-//   const url = new URL(baseUrl);
-//   url.searchParams.append('route', DETAILS_ROUTE);
-//   url.searchParams.append('mediaType', mediaType);
-//   url.searchParams.append('id', id);
-//
-//   const responseShow = await axios.get(url.href);
-//   return responseShow.data;
-// };
-
 export default Show;

@@ -49,20 +49,4 @@ export async function getServerSideProps(ctx) {
   return { props: { results: searchResults, term } };
 }
 
-// Search.getInitialProps = async (ctx) => {
-//   const { term = '' } = ctx.query;
-//   if (!term) {
-//     redirect(ctx, '/');
-//   }
-//
-//   const url = new URL(baseUrl);
-//   url.searchParams.append('route', SEARCH_ROUTE);
-//   url.searchParams.append('term', term);
-//
-//   const responseSearch = await axios.get(url.href);
-//
-//   const { searchResults } = responseSearch.data;
-//   return { results: searchResults, term };
-// };
-
 export default Search;

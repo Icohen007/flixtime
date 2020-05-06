@@ -55,11 +55,4 @@ export async function getServerSideProps() {
   return { props: responseAll };
 }
 
-// Home.getInitialProps = async () => {
-//   const url = new URL(baseUrl);
-//   url.searchParams.append('route', ALL_ROUTE);
-//   const responseAll = await axios.get(url.href);
-//   return responseAll.data;
-// };
-
 export default Home;
