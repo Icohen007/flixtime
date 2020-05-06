@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/Flixtime-showcase200.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/_App/HeadContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/_App/HeadContent.js" afterDir="false" />
     </list>
@@ -48,7 +49,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/favicon" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -64,8 +65,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\public\favicon" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\public" />
+      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\public\favicon" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\pages" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\utils" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime" />
@@ -102,13 +103,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="54282000" />
-    </task>
-    <task id="LOCAL‎00022" summary="add text-border + genres in homepage">
-      <created>1587943423713</created>
-      <option name="number" value="LOCAL‎00022" />
-      <option name="presentableId" value="LOCAL‎00022" />
-      <updated>1587943423713</updated>
+      <workItem from="1588440412404" duration="54752000" />
     </task>
     <task id="LOCAL‎00023" summary="fix responsivness of movie\show page">
       <created>1587994283593</created>
@@ -398,7 +393,13 @@
       <option name="presentableId" value="LOCAL‎00070" />
       <updated>1588779742806</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL‎00071" summary="add facebook meta tags.">
+      <created>1588782660489</created>
+      <option name="number" value="LOCAL‎00071" />
+      <option name="presentableId" value="LOCAL‎00071" />
+      <updated>1588782660489</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,7 +419,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix carousel." />
     <MESSAGE value="infinite false for mobile" />
     <MESSAGE value="fix carousel responsiveness" />
     <MESSAGE value="fix get all api.&#10;remove trending.&#10;add not_available placeholder." />
@@ -443,6 +443,7 @@
     <MESSAGE value="shows -&gt; tv shows&#10;&#10;fix responsiveness of slick." />
     <MESSAGE value="moved from getInitialProps to getServerSideProps. some advantages:&#10;&#10;* in SSR : they act the same, both run server side code.&#10;* in client side navigation: GIP run on client side, goes to my defined api endpoint. GSP goes to Directly to the server side code! NextJs generated json and send back to browser.&#10;&#10;* no need for baseUrl anymore.&#10;* no need for the internal api + api routes anymore + no need for url params parsing.&#10;* one less network hop in client side navigation." />
     <MESSAGE value="remove getInitialProps comments." />
-    <option name="LAST_COMMIT_MESSAGE" value="remove getInitialProps comments." />
+    <MESSAGE value="add facebook meta tags." />
+    <option name="LAST_COMMIT_MESSAGE" value="add facebook meta tags." />
   </component>
 </project>

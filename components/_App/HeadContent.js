@@ -14,6 +14,6 @@ export default () => (
     <meta property="og:type" content="website" />
     <meta property="og:title" content="FlixTime" />
     <meta property="og:description" content="Beautiful source for Movies and TV Shows content" />
-    <meta property="og:image" content="https://flixtime.now.sh/android-chrome-96x96.png" />
+    <meta property="og:image" content="https://flixtime.now.sh/Flixtime-showcase200.png" />
   </>
 );
