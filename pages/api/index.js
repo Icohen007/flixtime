@@ -5,7 +5,6 @@ import {
 import {
   ALL_ROUTE, DETAILS_ROUTE, LIST_ROUTE, SEARCH_ROUTE,
 } from './routes';
-import cacheApi, { redisSet, redisStatus } from './middlewares/cacheApi';
 
 function onError(err, req, res) {
   console.log(err);
@@ -13,10 +12,10 @@ function onError(err, req, res) {
 }
 
 const handler = nextConnect({ onError });
-handler.use(cacheApi());
+// handler.use(cacheApi());
 
 handler.get(async (req, res) => {
-  const { url: key } = req;
+  // const { url: key } = req;
   const {
     id, mediaType, page, route, sortBy, term, genre = '',
   } = req.query;
@@ -40,11 +39,11 @@ handler.get(async (req, res) => {
       res.status(405).send(`Route ${route} not exist`);
       return;
   }
-  console.log(`cache miss at ${key}, setting data`);
-  if (redisStatus.isOk) {
-    redisSet(key, response);
-  }
-  // res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate');
+  // console.log(`cache miss at ${key}, setting data`);
+  // if (redisStatus.isOk) {
+  //   redisSet(key, response);
+  // }
+  res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate');
   res.status(200).json(response);
 });
 
