@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import redirect from '../utils/redirect';
-import * as S from '../components/PopularPage.style';
+import * as S from '../components/Shared/SortPage/SortPage.style';
 import ContentItem from '../components/Shared/ContentItem/ContentItem';
 import { getYear } from '../utils/formatUtils';
 import { getSearch } from '../utils/fetchData';

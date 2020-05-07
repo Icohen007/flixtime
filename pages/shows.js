@@ -1,4 +1,4 @@
-import SortPage, { getOption } from '../components/SortPage';
+import SortPage, { getOption } from '../components/Shared/SortPage/SortPage';
 import redirect from '../utils/redirect';
 import { getList } from '../utils/fetchData';
 

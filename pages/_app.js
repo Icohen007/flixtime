@@ -31,7 +31,6 @@ margin-left: 2rem;
 
 `;
 
-
 export default class MyApp extends App {
   state = { isLoading: false };
 

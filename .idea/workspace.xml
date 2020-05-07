@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="fix title shows">
+    <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Home/FancyButton/FancyButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home/FancyButton/FancyButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Shared/Carousel/CarouselContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/Carousel/CarouselContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/PopularPage.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/SortPage/SortPage.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SortPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/SortPage/SortPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shows.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,11 +76,11 @@
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\Shared\SortPage" />
+      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\Shared" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\public" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\public\favicon" />
       <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\Shared\ContentItem" />
-      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\Shared\Carousel" />
-      <recent name="C:\Users\Itamar Cohen\IdeaProjects\flixtime\components\_App" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -103,13 +107,7 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="55624000" />
-    </task>
-    <task id="LOCAL‎00024" summary="add topRated + trending">
-      <created>1587996757577</created>
-      <option name="number" value="LOCAL‎00024" />
-      <option name="presentableId" value="LOCAL‎00024" />
-      <updated>1587996757577</updated>
+      <workItem from="1588440412404" duration="57422000" />
     </task>
     <task id="LOCAL‎00025" summary="boost performance with axios.all">
       <created>1587997949892</created>
@@ -399,7 +397,13 @@
       <option name="presentableId" value="LOCAL‎00072" />
       <updated>1588783056868</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL‎00073" summary="fix title shows">
+      <created>1588785288202</created>
+      <option name="number" value="LOCAL‎00073" />
+      <option name="presentableId" value="LOCAL‎00073" />
+      <updated>1588785288203</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +423,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix carousel responsiveness" />
     <MESSAGE value="fix get all api.&#10;remove trending.&#10;add not_available placeholder." />
     <MESSAGE value="fix back button." />
     <MESSAGE value="fix back button.&#10;remove state from drop down." />
@@ -444,6 +447,7 @@
     <MESSAGE value="remove getInitialProps comments." />
     <MESSAGE value="add facebook meta tags." />
     <MESSAGE value="change the meta fb pic" />
-    <option name="LAST_COMMIT_MESSAGE" value="change the meta fb pic" />
+    <MESSAGE value="fix title shows" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix title shows" />
   </component>
 </project>

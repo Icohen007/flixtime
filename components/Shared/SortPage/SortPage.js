@@ -3,10 +3,10 @@ import Select from 'react-select';
 import { Icon, Pagination } from 'semantic-ui-react';
 import styled from 'styled-components';
 
-import scrollToTop from '../utils/scrollToTop';
-import * as S from './PopularPage.style';
-import ContentItem from './Shared/ContentItem/ContentItem';
-import { getYear } from '../utils/formatUtils';
+import scrollToTop from '../../../utils/scrollToTop';
+import * as S from './SortPage.style';
+import ContentItem from '../ContentItem/ContentItem';
+import { getYear } from '../../../utils/formatUtils';
 
 const customStyles = {
   container: (provided) => ({
