@@ -6,17 +6,17 @@ const FancyButtonStyled = styled.div`
 
     margin-top: 0;
     position: relative;
-    width: 110px;
-    height: 35px;
+    width: 110rem;
+    height: 35rem;
     display: inline-block;
-    border-radius: 3px;
-    margin-left: 5px;
-    margin-right: 5px;
+    border-radius: 3rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
     cursor: pointer;
 
 &:hover #shape {
     stroke-dasharray: 50 0;
-    stroke-width: 3px;
+    stroke-width: 3rem;
     stroke-dashoffset: 0;
     stroke: #06D6A0;
 }
@@ -31,7 +31,7 @@ const FancyButtonStyled = styled.div`
 }
 
 #shape {
-    stroke-width: 6px;
+    stroke-width: 6rem;
     fill: transparent;
     stroke: #007fcd;
     stroke-dasharray: 70 400;
@@ -40,7 +40,7 @@ const FancyButtonStyled = styled.div`
 }
 
 #text {
-    margin-top: -35px;
+    margin-top: -35rem;
     text-align: center;
     user-select: none;
 }

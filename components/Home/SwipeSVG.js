@@ -18,7 +18,7 @@ display: none;
 
 &.cover {
     position: absolute;
-    bottom: 35px;
+    bottom: 35rem;
     svg {
 width: 40rem;
 }

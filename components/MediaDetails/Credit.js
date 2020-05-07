@@ -1,30 +1,30 @@
 import styled from 'styled-components';
 
 const CreditContainer = styled.div`
-    padding-top: 10px;
-    margin-bottom: 10px;
-    max-width: 110px;
+    padding-top: 10rem;
+    margin-bottom: 10rem;
+    max-width: 110rem;
     justify-self: center;
 `;
 
 const CreditImageContainer = styled.div`
 overflow: hidden;
-    max-height: 110px;
-    max-width: 110px;
+    max-height: 110rem;
+    max-width: 110rem;
     border-radius: 50%;
 `;
 
 const CreditImage = styled.img`
-    width: 110px;
-    height: 110px;
+    width: 110rem;
+    height: 110rem;
     object-fit: cover;
     ${(props) => props.imageDefined && 'object-position: 0px -14.5px;'}
 `;
 
 const CreditText = styled.div`
-    margin-top: 9px;
+    margin-top: 9rem;
     font-weight: 500;
-    font-size: 13px;
+    font-size: 13rem;
     opacity: .85;
     color: #bdbdbd;
 `;

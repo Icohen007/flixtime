@@ -4,12 +4,12 @@ import Link from 'next/link';
 import StyledContentItem from './ContentItem.style';
 
 const CarouselItemText = styled.div`
-margin-top: 8px;
+margin-top: 8rem;
 `;
 
 const UpperText = styled.p`
     color: #fff;
-    font-size: 15px;
+    font-size: 15rem;
     font-weight: 600;
     line-height: 1.4;
     margin: 0;
@@ -24,7 +24,7 @@ const UpperText = styled.p`
 
 const LowerText = styled.p`
 color: grey;
-    font-size: 13px;
+    font-size: 13rem;
     font-weight: 400;
     margin: 0;
     padding-top: 3rem;

@@ -38,8 +38,8 @@ background-position: 100% -50%;
 export const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-column-gap: 15px;
-  grid-row-gap: 30px;
+  grid-column-gap: 15rem;
+  grid-row-gap: 30rem;
   align-items: baseline;
   justify-content: space-evenly;
   margin: 0 auto;

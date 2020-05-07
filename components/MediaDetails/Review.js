@@ -20,7 +20,7 @@ function Review({ review }) {
       inverted
       raised
       style={{
-        fontSize: '15rem', padding: '20rem 0', maxWidth: '100%', margin: '20rem auto', boxShadow: '-3px 3px 5px 0 rgba(193, 196, 199, 0.28), 1px -1px 5px 0px rgba(193, 196, 199, 0.28)',
+        fontSize: '15rem', padding: '20rem 0', maxWidth: '100%', margin: '20rem auto', boxShadow: '-3rem 3rem 5rem 0 rgba(193, 196, 199, 0.28), 1px -1px 5px 0px rgba(193, 196, 199, 0.28)',
       }}
     >
       <Label color="orange" ribbon style={{ fontSize: '14px', marginBottom: '20rem' }}>
