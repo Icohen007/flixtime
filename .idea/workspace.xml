@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="08869cd6-704f-4dd2-a48b-cb06d9023a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Home/FancyButton/FancyButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home/FancyButton/FancyButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Home/FancyButton/fancyButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home/FancyButton/fancyButton.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Home/SwipeSVG.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home/SwipeSVG.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MediaDetails/Credit.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MediaDetails/Credit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MediaDetails/Review.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MediaDetails/Review.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Ribbon.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Ribbon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Shared/ContentItem/ContentItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/ContentItem/ContentItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Shared/SortPage/SortPage.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shared/SortPage/SortPage.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/_App/Spinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/_App/Spinner.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,13 +102,9 @@
       <updated>1587318724612</updated>
       <workItem from="1587318729989" duration="92568000" />
       <workItem from="1587841277492" duration="92705000" />
-      <workItem from="1588440412404" duration="58404000" />
-    </task>
-    <task id="LOCAL‎00026" summary="try remove variable width">
-      <created>1587999185714</created>
-      <option name="number" value="LOCAL‎00026" />
-      <option name="presentableId" value="LOCAL‎00026" />
-      <updated>1587999185714</updated>
+      <workItem from="1588440412404" duration="59066000" />
+      <workItem from="1589143808788" duration="2055000" />
+      <workItem from="1589312285063" duration="147000" />
     </task>
     <task id="LOCAL‎00027" summary="SwipeSvg smaller.&#10;fix grid popular page.&#10;responsive carousel title.">
       <created>1588007551814</created>
@@ -405,7 +394,13 @@
       <option name="presentableId" value="LOCAL‎00074" />
       <updated>1588854284434</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL‎00075" summary="px to rem.">
+      <created>1588855362370</created>
+      <option name="number" value="LOCAL‎00075" />
+      <option name="presentableId" value="LOCAL‎00075" />
+      <updated>1588855362370</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +420,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix back button." />
     <MESSAGE value="fix back button.&#10;remove state from drop down." />
     <MESSAGE value="add search - api + ui (without bar yet)." />
     <MESSAGE value="fix pagination + navbar mobile" />
@@ -450,6 +444,7 @@
     <MESSAGE value="change the meta fb pic" />
     <MESSAGE value="fix title shows" />
     <MESSAGE value="clean some code." />
-    <option name="LAST_COMMIT_MESSAGE" value="clean some code." />
+    <MESSAGE value="px to rem." />
+    <option name="LAST_COMMIT_MESSAGE" value="px to rem." />
   </component>
 </project>

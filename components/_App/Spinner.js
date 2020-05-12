@@ -5,6 +5,7 @@ import { Dimmer, Loader } from 'semantic-ui-react';
 const StyledSpinner = styled.div`
 .ui.dimmer {
 background-color: rgba(0,0,0,0.5) !important;
+position: fixed;
 }
 
 .ui.loader {
