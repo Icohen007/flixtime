@@ -1,6 +1,6 @@
 # FlixTime
 
-This is the repository for https://flixtime.now.sh website
+This is the repository for https://flixtime.now.sh website.
 
 you can get all the movies and tv shows you ever wanted in a beautiful design.
 
@@ -15,7 +15,7 @@ made with NextJS, React, styled-components and TMDB API.
 - Functionality: Searching, Filtering and Sorting
 
 ### How to use
-Clone the repo, Install it and run:
+Clone the repo, and run:
 
 ```bash
 npm install
