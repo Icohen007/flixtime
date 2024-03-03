@@ -4,7 +4,7 @@ import { getList } from '../utils/fetchData';
 
 export const sortOptions = [
   { label: 'Popularity', value: 'popularity.desc' },
-  { label: 'Release date', value: 'primary_release_date.desc' },
+  { label: 'Release date', value: 'first_air_date.desc' },
   { label: 'Rating', value: 'vote_average.desc' },
 ];
 
