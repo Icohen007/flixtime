@@ -4,6 +4,8 @@ import * as S from '../components/Shared/SortPage/SortPage.style';
 import ContentItem from '../components/Shared/ContentItem/ContentItem';
 import { getYear } from '../utils/formatUtils';
 import { getSearch } from '../utils/fetchData';
+import ServiceUnavailable from '../components/_App/ServiceUnavailable';
+import unavailableProps from '../utils/serverResponse';
 
 const SearchTitle = styled.div`
 margin: 100rem auto 30rem;
@@ -15,7 +17,9 @@ background: linear-gradient(180deg, #ffffff, #ff9600);
 -webkit-text-fill-color: transparent;
 `;
 
-function Search({ results, term }) {
+function Search({ results, term, tmdbUnavailable }) {
+  if (tmdbUnavailable) return <ServiceUnavailable />;
+
   return (
     <S.GridContainer>
       <SearchTitle>
@@ -41,12 +45,15 @@ export async function getServerSideProps(ctx) {
   const { term = '' } = ctx.query;
   if (!term) {
     redirect(ctx, '/');
+    return { props: { results: [], term: '' } };
   }
 
-  const responseSearch = await getSearch(term);
-  const { searchResults } = responseSearch;
-
-  return { props: { results: searchResults, term } };
+  try {
+    const { searchResults } = await getSearch(term);
+    return { props: { results: searchResults, term } };
+  } catch (error) {
+    return unavailableProps(ctx);
+  }
 }
 
 export default Search;

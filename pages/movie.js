@@ -9,6 +9,8 @@ import CreditList from '../components/MediaDetails/CreditList';
 import Credit from '../components/MediaDetails/Credit';
 import Review from '../components/MediaDetails/Review';
 import { getDetails } from '../utils/fetchData';
+import ServiceUnavailable from '../components/_App/ServiceUnavailable';
+import unavailableProps from '../utils/serverResponse';
 
 const MovieContainer = styled.div`
 max-width: 1400rem;
@@ -72,8 +74,10 @@ font-size: 20rem;
 
 
 function Movie({
-  details, credits, trailers, reviews,
+  details, credits, trailers, reviews, tmdbUnavailable,
 }) {
+  if (tmdbUnavailable) return <ServiceUnavailable />;
+
   const trailerId = getTrailer(trailers);
   return (
     <>
@@ -165,8 +169,12 @@ function Movie({
 export async function getServerSideProps(ctx) {
   const { id } = ctx.query;
   const mediaType = 'movie';
-  const responseMovie = await getDetails(id, mediaType);
-  return { props: responseMovie };
+  try {
+    const responseMovie = await getDetails(id, mediaType);
+    return { props: responseMovie };
+  } catch (error) {
+    return unavailableProps(ctx);
+  }
 }
 
 export default Movie;

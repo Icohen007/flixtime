@@ -1,138 +1,139 @@
 import axios from 'axios';
 
-const responseToObject = (mediaType) => (response) => response.data.results.map((e) => ({
-  id: e.id,
-  imageUrl: e.poster_path,
-  title: mediaType === 'movie' ? e.original_title : e.original_name,
-  releaseDate: mediaType === 'movie' ? e.release_date : e.first_air_date,
+const TMDB_URL = 'https://api.themoviedb.org/3';
+const LANGUAGE = 'en-US';
+
+async function tmdbGet(path, params = {}) {
+  if (!process.env.API_KEY) {
+    throw new Error('TMDB API key is not configured');
+  }
+
+  try {
+    const response = await axios.get(`${TMDB_URL}/${path}`, {
+      params: { api_key: process.env.API_KEY, language: LANGUAGE, ...params },
+      timeout: 10000,
+    });
+    return response.data;
+  } catch (error) {
+    // Axios errors contain the full request URL, including the API key.
+    console.error(`TMDB ${path} failed (HTTP ${error.response ? error.response.status : 'unavailable'})`);
+    throw new Error(`TMDB ${path} is unavailable`);
+  }
+}
+
+const responseToObject = (mediaType) => (data) => data.results.map((item) => ({
+  id: item.id,
+  imageUrl: item.poster_path,
+  title: mediaType === 'movie' ? item.original_title : item.original_name,
+  releaseDate: mediaType === 'movie' ? item.release_date : item.first_air_date,
 }));
 
 const transformResponseMovie = responseToObject('movie');
 const transformResponseShow = responseToObject('tv');
 
+function discoverParams(mediaType, sortBy, voteCount, extra = {}) {
+  return {
+    sort_by: sortBy,
+    'vote_count.gte': voteCount,
+    ...(mediaType === 'tv' ? { timezone: 'America/New_York', include_null_first_air_dates: false } : {}),
+    ...extra,
+  };
+}
+
 export async function getAll() {
-  const requestPopularMovies = axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
-  const requestTopRatedMovies = axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=vote_average.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=2000&with_original_language=en&page=1`);
-  const requestNewReleaseMovies = axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=primary_release_date.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
+  const requests = [
+    tmdbGet('discover/movie', discoverParams('movie', 'popularity.desc', 50, { page: 1 })),
+    tmdbGet('discover/movie', discoverParams('movie', 'vote_average.desc', 2000, { with_original_language: 'en', page: 1 })),
+    tmdbGet('trending/movie/week', { page: 1 }),
+    tmdbGet('discover/movie', discoverParams('movie', 'primary_release_date.desc', 50, { page: 1 })),
+    tmdbGet('discover/tv', discoverParams('tv', 'popularity.desc', 50, { page: 1 })),
+    tmdbGet('discover/tv', discoverParams('tv', 'vote_average.desc', 2000, { with_original_language: 'en', page: 1 })),
+    tmdbGet('discover/tv', discoverParams('tv', 'first_air_date.desc', 50, { page: 1 })),
+    tmdbGet('genre/movie/list'),
+  ];
 
-  const requestTrendingMovies = axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.API_KEY}&language=en-US&page=1`);
-  const requestPopularShows = axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=popularity.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
-  const requestTopRatedShows = axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=vote_average.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=2000&with_original_language=en&page=1`);
-  const requestNewReleaseShows = axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=first_air_date.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50&page=1`);
-  const requestMovieGenres = axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_KEY}&language=en-US`);
+  // A single failed list should not hide all the other home-page sections.
+  const responses = await Promise.all(requests.map((request) => request.catch(() => null)));
+  const [popularMoviesData, topRatedMoviesData, trendingMoviesData, newReleaseMoviesData,
+    popularShowsData, topRatedShowsData, newReleaseShowsData, movieGenresData] = responses;
 
-  const axiosResponse = await axios.all([
-    requestPopularMovies,
-    requestTopRatedMovies,
-    requestTrendingMovies,
-    requestNewReleaseMovies,
-    requestPopularShows,
-    requestTopRatedShows,
-    requestNewReleaseShows,
-    requestMovieGenres,
-  ]);
+  if (responses.slice(0, 7).every((data) => !data)) {
+    throw new Error('TMDB home-page data is unavailable');
+  }
 
-  const responsePopularMovies = axiosResponse[0];
-  const responseTopRatedMovies = axiosResponse[1];
-  const responseTrendingMovies = axiosResponse[2];
-  const responseNewReleaseMovies = axiosResponse[3];
-  const responsePopularShows = axiosResponse[4];
-  const responseTopRatedShows = axiosResponse[5];
-  const responseNewReleaseShows = axiosResponse[6];
-  const responseMovieGenres = axiosResponse[7];
-
-  const popularMovies = transformResponseMovie(responsePopularMovies);
-  const topRatedMovies = transformResponseMovie(responseTopRatedMovies);
-
-  const trendingMovies = responseTrendingMovies.data.results.map((e) => ({
-    coverImageUrl: e.backdrop_path,
-    imageUrl: e.poster_path,
-    title: e.original_title,
-    releaseDate: e.release_date,
-    id: e.id,
-    genreIds: e.genre_ids,
-  }));
-
-  const newReleaseMovies = transformResponseMovie(responseNewReleaseMovies);
-
-  const popularShows = transformResponseShow(responsePopularShows);
-  const topRatedShows = transformResponseShow(responseTopRatedShows);
-  const newReleaseShows = transformResponseShow(responseNewReleaseShows);
-
-  const genresMovieMap = responseMovieGenres.data.genres.reduce((acc, cur) => {
-    acc[cur.id] = cur.name;
+  const movieResults = (data) => (data ? transformResponseMovie(data) : []);
+  const showResults = (data) => (data ? transformResponseShow(data) : []);
+  const trendingMovies = trendingMoviesData ? trendingMoviesData.results.map((item) => ({
+    coverImageUrl: item.backdrop_path,
+    imageUrl: item.poster_path,
+    title: item.original_title,
+    releaseDate: item.release_date,
+    id: item.id,
+    genreIds: item.genre_ids,
+  })) : [];
+  const genresMovieMap = movieGenresData ? movieGenresData.genres.reduce((acc, genre) => {
+    acc[genre.id] = genre.name;
     return acc;
-  }, {});
+  }, {}) : {};
 
   return {
-    popularMovies,
-    topRatedMovies,
+    popularMovies: movieResults(popularMoviesData),
+    topRatedMovies: movieResults(topRatedMoviesData),
     trendingMovies,
-    newReleaseMovies,
-    popularShows,
-    topRatedShows,
-    newReleaseShows,
+    newReleaseMovies: movieResults(newReleaseMoviesData),
+    popularShows: showResults(popularShowsData),
+    topRatedShows: showResults(topRatedShowsData),
+    newReleaseShows: showResults(newReleaseShowsData),
     genresMovieMap,
+    isPartial: responses.some((data) => !data),
   };
 }
 
 export async function getDetails(id, mediaType) {
-  const requestDetails = axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}?api_key=${process.env.API_KEY}&language=en-US`);
-  const requestCredits = axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}/credits?api_key=${process.env.API_KEY}`);
-  const requestTrailers = axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}/videos?api_key=${process.env.API_KEY}&language=en-US`);
-  const requestReviews = axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}/reviews?api_key=${process.env.API_KEY}&language=en-US&page=1`);
+  if (!['movie', 'tv'].includes(mediaType) || !/^[1-9]\d*$/.test(String(id))) {
+    throw new Error('Invalid TMDB media identifier');
+  }
 
-  const axiosResponse = await axios.all(
-    [requestDetails,
-      requestCredits,
-      requestTrailers,
-      requestReviews,
-    ],
-  );
-
-  const responseDetails = axiosResponse[0];
-  const responseCredits = axiosResponse[1];
-  const responseTrailers = axiosResponse[2];
-  const responseReviews = axiosResponse[3];
-
+  const data = await tmdbGet(`${mediaType}/${id}`, { append_to_response: 'credits,videos,reviews' });
   return {
-    details: responseDetails.data,
-    credits: responseCredits.data,
-    trailers: responseTrailers.data.results,
-    reviews: responseReviews.data.results,
+    details: data,
+    credits: data.credits,
+    trailers: data.videos.results,
+    reviews: data.reviews.results,
   };
 }
 
 export async function getList(page, sortBy, genre, mediaType) {
-  let requestSorted;
+  const [data, genres] = await Promise.all([
+    tmdbGet(`discover/${mediaType}`, discoverParams(
+      mediaType,
+      sortBy,
+      sortBy === 'vote_average.desc' ? 200 : 50,
+      {
+        page,
+        ...(genre ? { with_genres: genre } : {}),
+        ...(sortBy === 'vote_average.desc' ? { with_original_language: 'en' } : {}),
+      },
+    )),
+    tmdbGet(`genre/${mediaType}/list`),
+  ]);
 
-  if (sortBy !== 'vote_average.desc') {
-    requestSorted = axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=${sortBy}${genre ? `&with_genres=${genre}` : ''}&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=50`);
-  } else {
-    requestSorted = axios.get(`https://api.themoviedb.org/3/discover/${mediaType}?api_key=${process.env.API_KEY}&language&language=en-US&sort_by=${sortBy}${genre ? `&with_genres=${genre}` : ''}&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&vote_count.gte=200&with_original_language=en`);
-  }
-
-  const requestGenres = axios.get(`https://api.themoviedb.org/3/genre/${mediaType}/list?api_key=${process.env.API_KEY}&language=en-US`);
-
-  const axiosResponse = await axios.all([requestSorted, requestGenres]);
-  const [responseSorted, responseGenres] = axiosResponse;
-
-  const sorted = responseToObject(mediaType)(responseSorted);
-  const genresOptions = responseGenres.data.genres.map((gen) => ({ label: gen.name, value: gen.id }));
-  return { sorted, genresOptions, totalPages: responseSorted.data.total_pages };
+  return {
+    sorted: responseToObject(mediaType)(data),
+    genresOptions: genres.genres.map((item) => ({ label: item.name, value: item.id })),
+    totalPages: data.total_pages,
+  };
 }
 
 export async function getSearch(term) {
-  const responseSearch = await axios.get(`https://api.themoviedb.org/3/search/multi?api_key=${process.env.API_KEY}&language=en-US&query=${term}&page=1&include_adult=false`);
-  const searchResults = responseSearch.data.results.filter((e) => e.media_type !== 'person').map((e) => (
-    {
-      id: e.id,
-      imageUrl: e.poster_path,
-      title: e.media_type === 'movie' ? e.original_title : e.original_name,
-      releaseDate: e.media_type === 'movie' ? e.release_date : e.first_air_date,
-      mediaType: e.media_type === 'movie' ? 'movie' : 'show',
-    }
-  ));
+  const data = await tmdbGet('search/multi', { query: term, page: 1, include_adult: false });
+  const searchResults = data.results.filter((item) => item.media_type === 'movie' || item.media_type === 'tv').map((item) => ({
+    id: item.id,
+    imageUrl: item.poster_path,
+    title: item.media_type === 'movie' ? item.original_title : item.original_name,
+    releaseDate: item.media_type === 'movie' ? item.release_date : item.first_air_date,
+    mediaType: item.media_type === 'movie' ? 'movie' : 'show',
+  }));
 
   return { searchResults };
 }

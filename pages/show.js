@@ -9,6 +9,8 @@ import CreditList from '../components/MediaDetails/CreditList';
 import Credit from '../components/MediaDetails/Credit';
 import Review from '../components/MediaDetails/Review';
 import { getDetails } from '../utils/fetchData';
+import ServiceUnavailable from '../components/_App/ServiceUnavailable';
+import unavailableProps from '../utils/serverResponse';
 
 
 const MovieContainer = styled.div`
@@ -71,8 +73,10 @@ font-size: 20rem;
 `;
 
 function Show({
-  details, credits, trailers, reviews,
+  details, credits, trailers, reviews, tmdbUnavailable,
 }) {
+  if (tmdbUnavailable) return <ServiceUnavailable />;
+
   const trailerId = getTrailer(trailers);
   return (
     <>
@@ -148,8 +152,12 @@ function Show({
 export async function getServerSideProps(ctx) {
   const { id } = ctx.query;
   const mediaType = 'tv';
-  const responseShow = await getDetails(id, mediaType);
-  return { props: responseShow };
+  try {
+    const responseShow = await getDetails(id, mediaType);
+    return { props: responseShow };
+  } catch (error) {
+    return unavailableProps(ctx);
+  }
 }
 
 export default Show;

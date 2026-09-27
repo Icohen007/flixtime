@@ -1,6 +1,8 @@
 import SortPage, { getOption } from '../components/Shared/SortPage/SortPage';
 import redirect from '../utils/redirect';
 import { getList } from '../utils/fetchData';
+import ServiceUnavailable from '../components/_App/ServiceUnavailable';
+import unavailableProps from '../utils/serverResponse';
 
 export const sortOptions = [
   { label: 'Popularity', value: 'popularity.desc' },
@@ -9,8 +11,10 @@ export const sortOptions = [
 ];
 
 function Shows({
-  shows, mediaType, totalPages, genresOptions,
+  shows, mediaType, totalPages, genresOptions, tmdbUnavailable,
 }) {
+  if (tmdbUnavailable) return <ServiceUnavailable />;
+
   return (
     <SortPage
       results={shows}
@@ -27,13 +31,20 @@ export async function getServerSideProps(ctx) {
   const sortOption = getOption(sortOptions, sortBy);
   if (!sortOption) {
     redirect(ctx, '/shows');
+    return { props: { shows: [], mediaType: 'show', totalPages: 0, genresOptions: [] } };
   }
 
-  const responseSorted = await getList(page, sortBy, genre, 'tv');
+  let responseSorted;
+  try {
+    responseSorted = await getList(page, sortBy, genre, 'tv');
+  } catch (error) {
+    return unavailableProps(ctx);
+  }
 
   const { sorted, genresOptions, totalPages } = responseSorted;
   if (!sorted.length) {
     redirect(ctx, '/shows');
+    return { props: { shows: [], mediaType: 'show', totalPages: 0, genresOptions: [] } };
   }
   const mediaType = 'show';
   return {
