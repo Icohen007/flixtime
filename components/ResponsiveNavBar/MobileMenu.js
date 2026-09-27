@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 import Link from 'next/link';
 import Search from './Search';
 
@@ -11,21 +11,21 @@ const MobileMenu = ({ toggleNav, openNav }) => {
   if (openNav) {
     return (
       <CollapseWrapper style={{
-        transform: open.interpolate({
+        transform: open.to({
           range: [0, 0.2, 0.3, 1],
           output: [0, -20, 0, -200],
-        }).interpolate((openValue) => `translate3d(0, ${openValue}rem, 0`),
+        }).to((openValue) => `translate3d(0, ${openValue}rem, 0)`),
       }}
       >
         <NavLinks>
           <li>
-            <Link href="/"><span onClick={toggleNav}>Home</span></Link>
+            <Link href="/" onClick={toggleNav}>Home</Link>
           </li>
           <li>
-            <Link href="/movies"><span onClick={toggleNav}>Movies</span></Link>
+            <Link href="/movies" onClick={toggleNav}>Movies</Link>
           </li>
           <li>
-            <Link href="/shows"><span onClick={toggleNav}>TV Shows</span></Link>
+            <Link href="/shows" onClick={toggleNav}>TV Shows</Link>
           </li>
           <li>
             <Search onSearch={toggleNav} />
@@ -63,7 +63,7 @@ const NavLinks = styled.ul`
     }
   }
 
-  & span {
+  & a {
     font-size: 14rem;
     line-height: 2;
     color: #dfe6e9;

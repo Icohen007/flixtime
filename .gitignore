@@ -2,16 +2,17 @@
 
 # dependencies
 /node_modules
+/package-lock.legacy.json
 /.pnp
 .pnp.js
 
 # testing
 /coverage
+/.playwright-cli/
 
 # next.js
 /.next/
 /out/
-next.config.*
 now.json
 .now
 
@@ -35,3 +36,6 @@ yarn-error.log*
 
 /.idea/
 flixtime.iml
+.vercel
+.env*
+!.env.example

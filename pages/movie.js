@@ -98,7 +98,7 @@ function Movie({
           </PropertyContainer>
           {details.budget !== 0 && (
             <PropertyContainer>
-              Bugdet
+              Budget
               <span>{`${numberWithCommas(details.budget)} $`}</span>
             </PropertyContainer>
           )}
@@ -168,11 +168,13 @@ function Movie({
 
 export async function getServerSideProps(ctx) {
   const { id } = ctx.query;
+  if (!/^[1-9]\d*$/.test(String(id))) return { notFound: true };
   const mediaType = 'movie';
   try {
     const responseMovie = await getDetails(id, mediaType);
     return { props: responseMovie };
   } catch (error) {
+    if (error.status === 404) return { notFound: true };
     return unavailableProps(ctx);
   }
 }

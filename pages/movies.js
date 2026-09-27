@@ -1,5 +1,4 @@
 import SortPage, { getOption } from '../components/Shared/SortPage/SortPage';
-import redirect from '../utils/redirect';
 import { getList } from '../utils/fetchData';
 import ServiceUnavailable from '../components/_App/ServiceUnavailable';
 import unavailableProps from '../utils/serverResponse';
@@ -32,8 +31,7 @@ export async function getServerSideProps(ctx) {
   const mediaType = 'movie';
   const sortOption = getOption(sortOptions, sortBy);
   if (!sortOption) {
-    redirect(ctx, '/movies');
-    return { props: { movies: [], mediaType: 'movie', totalPages: 0, genresOptions: [] } };
+    return { redirect: { destination: '/movies', permanent: false } };
   }
 
   let responseSorted;
@@ -44,11 +42,6 @@ export async function getServerSideProps(ctx) {
   }
 
   const { sorted, genresOptions, totalPages } = responseSorted;
-  if (!sorted.length) {
-    redirect(ctx, '/movies');
-    return { props: { movies: [], mediaType, totalPages: 0, genresOptions: [] } };
-  }
-
   return {
     props: {
       movies: sorted, mediaType, totalPages: Math.min(totalPages, 10), genresOptions,

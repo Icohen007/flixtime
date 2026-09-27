@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { GA_TRACKING_ID } from '../utils/gtag';
 
@@ -29,8 +29,13 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <Html lang="en">
         <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&display=swap" />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
@@ -53,7 +58,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

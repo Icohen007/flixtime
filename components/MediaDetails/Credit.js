@@ -18,7 +18,7 @@ const CreditImage = styled.img`
     width: 110rem;
     height: 110rem;
     object-fit: cover;
-    ${(props) => props.imageDefined && 'object-position: 0px -14.5px;'}
+    ${(props) => props.$imageDefined && 'object-position: 0px -14.5px;'}
 `;
 
 const CreditText = styled.div`
@@ -53,7 +53,7 @@ function Credit({
     <CreditContainer>
       {title && <CreditTitle>{title}</CreditTitle>}
       <CreditImageContainer>
-        <CreditImage src={crewImage} imageDefined={!!imageUrl} />
+        <CreditImage src={crewImage} $imageDefined={!!imageUrl} />
       </CreditImageContainer>
       <CreditText>{text}</CreditText>
     </CreditContainer>

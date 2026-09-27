@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BurgerButton = ({ openNav, toggleNav }) => (
-  <Wrapper onClick={toggleNav}>
+  <Wrapper type="button" onClick={toggleNav} aria-label="Toggle navigation" aria-expanded={openNav}>
     <div className={openNav ? 'open' : ''}>
       <span>&nbsp;</span>
       <span>&nbsp;</span>
@@ -13,9 +13,11 @@ const BurgerButton = ({ openNav, toggleNav }) => (
 
 export default BurgerButton;
 
-const Wrapper = styled.div`
+const Wrapper = styled.button`
   position: relative;
-  padding-top: 7rem;
+  padding: 7rem 0 0;
+  border: 0;
+  background: transparent;
   cursor: pointer;
   display: block;
 

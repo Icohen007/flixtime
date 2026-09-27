@@ -1,12 +1,8 @@
-import dynamic from 'next/dynamic';
+import Slider from 'react-slick';
 import ContentItem from '../ContentItem/ContentItem';
 import { getYear } from '../../../utils/formatUtils';
-import {useEffect, useState} from "react";
 
 function Carousel({ content, mediaType }) {
-  const [isServer, setServerState] = useState(true);
-  const Slider = dynamic(import('react-slick'), {ssr: isServer});
-  useEffect(() => setServerState(false), []);
 
   const settings = {
     dots: false,
@@ -77,7 +73,7 @@ function Carousel({ content, mediaType }) {
           clientName={elem.title}
           releaseDate={getYear(elem.releaseDate)}
           mediaType={mediaType}
-          clientUrl={`https://image.tmdb.org/t/p/w300/${elem.imageUrl}`}
+          clientUrl={elem.imageUrl ? `https://image.tmdb.org/t/p/w300/${elem.imageUrl}` : '/not_available.png'}
         />
       ))}
     </Slider>

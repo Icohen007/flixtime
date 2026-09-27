@@ -1,5 +1,4 @@
 import SortPage, { getOption } from '../components/Shared/SortPage/SortPage';
-import redirect from '../utils/redirect';
 import { getList } from '../utils/fetchData';
 import ServiceUnavailable from '../components/_App/ServiceUnavailable';
 import unavailableProps from '../utils/serverResponse';
@@ -30,8 +29,7 @@ export async function getServerSideProps(ctx) {
   const { page = '1', sortBy = 'popularity.desc', genre = '' } = ctx.query;
   const sortOption = getOption(sortOptions, sortBy);
   if (!sortOption) {
-    redirect(ctx, '/shows');
-    return { props: { shows: [], mediaType: 'show', totalPages: 0, genresOptions: [] } };
+    return { redirect: { destination: '/shows', permanent: false } };
   }
 
   let responseSorted;
@@ -42,10 +40,6 @@ export async function getServerSideProps(ctx) {
   }
 
   const { sorted, genresOptions, totalPages } = responseSorted;
-  if (!sorted.length) {
-    redirect(ctx, '/shows');
-    return { props: { shows: [], mediaType: 'show', totalPages: 0, genresOptions: [] } };
-  }
   const mediaType = 'show';
   return {
     props: {

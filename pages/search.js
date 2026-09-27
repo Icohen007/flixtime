@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import redirect from '../utils/redirect';
 import * as S from '../components/Shared/SortPage/SortPage.style';
 import ContentItem from '../components/Shared/ContentItem/ContentItem';
 import { getYear } from '../utils/formatUtils';
@@ -44,8 +43,7 @@ function Search({ results, term, tmdbUnavailable }) {
 export async function getServerSideProps(ctx) {
   const { term = '' } = ctx.query;
   if (!term) {
-    redirect(ctx, '/');
-    return { props: { results: [], term: '' } };
+    return { redirect: { destination: '/', permanent: false } };
   }
 
   try {

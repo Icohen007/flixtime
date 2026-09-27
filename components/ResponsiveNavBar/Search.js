@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Icon, Input } from 'semantic-ui-react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { SEARCH_ROUTE } from '../../pages/api/routes';
 import scrollToTop from '../../utils/scrollToTop';
 
 const SearchContainer = styled.div`
@@ -30,7 +29,7 @@ color:#000000 !important;
 }
 `;
 
-function Search({ onSearch }) {
+function Search({ onSearch = () => {} }) {
   const [searchTerm, setSearchTerm] = useState('');
   const router = useRouter();
 
@@ -39,15 +38,16 @@ function Search({ onSearch }) {
   };
 
   const innerOnSearch = () => {
-    if (searchTerm) {
-      router.push(`/${SEARCH_ROUTE}?term=${searchTerm}`).then(scrollToTop());
+    const term = searchTerm.trim();
+    if (term) {
+      router.push({ pathname: '/search', query: { term } }).then(scrollToTop);
       setSearchTerm('');
       onSearch();
     }
   };
 
   const handleKeyDown = (e) => {
-    if (e.keyCode === 13 && searchTerm) { // enter
+    if (e.key === 'Enter' && searchTerm.trim()) {
       innerOnSearch();
     }
   };
@@ -64,9 +64,5 @@ function Search({ onSearch }) {
     </SearchContainer>
   );
 }
-
-Search.defaultProps = {
-  onSearch: () => {},
-};
 
 export default Search;

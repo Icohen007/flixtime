@@ -4,7 +4,7 @@ import FeaturedButton from './FeaturedButton';
 import SwipeSVG from './SwipeSVG';
 
 const FeaturedImage = styled.div`
-background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${(props) => `https://image.tmdb.org/t/p/w1280${props.imageUrl}`}) no-repeat top center / cover;
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${(props) => `https://image.tmdb.org/t/p/w1280${props.$imageUrl}`}) no-repeat top center / cover;
 width: 100%;
 height: 100%;
 position: absolute;
@@ -12,11 +12,11 @@ z-index: -1;
 margin: 0 auto;
 
 @media only screen and (max-width: 768px) {
-background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${(props) => `https://image.tmdb.org/t/p/w1280${props.imageUrl}`}) no-repeat top center / cover;
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${(props) => `https://image.tmdb.org/t/p/w1280${props.$imageUrl}`}) no-repeat top center / cover;
 }
 
 @media only screen and (max-width: 500px) {
-background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${(props) => `https://image.tmdb.org/t/p/w780${props.imageUrl}`}) no-repeat top center / cover;
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${(props) => `https://image.tmdb.org/t/p/w780${props.$imageUrl}`}) no-repeat top center / cover;
 }
 `;
 
@@ -96,7 +96,7 @@ function Header({
   const parsedDate = getYearAndMonth(releaseDate);
   return (
     <PanelContainer>
-      <FeaturedImage imageUrl={imageUrl} />
+      <FeaturedImage $imageUrl={imageUrl} />
       <Panel>
         <PanelDiv className="panel-date">{parsedDate}</PanelDiv>
         <PanelDiv className="panel-title">{ title }</PanelDiv>

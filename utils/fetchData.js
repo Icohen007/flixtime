@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const TMDB_URL = 'https://api.themoviedb.org/3';
 const LANGUAGE = 'en-US';
 
@@ -8,16 +6,30 @@ async function tmdbGet(path, params = {}) {
     throw new Error('TMDB API key is not configured');
   }
 
+  const url = new URL(`${TMDB_URL}/${path}`);
+  Object.entries({ api_key: process.env.API_KEY, language: LANGUAGE, ...params }).forEach(([key, value]) => {
+    if (value !== undefined && value !== '') url.searchParams.set(key, String(value));
+  });
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10000);
+  let response;
+
   try {
-    const response = await axios.get(`${TMDB_URL}/${path}`, {
-      params: { api_key: process.env.API_KEY, language: LANGUAGE, ...params },
-      timeout: 10000,
+    response = await fetch(url.toString(), {
+      headers: { Accept: 'application/json' },
+      signal: controller.signal,
     });
-    return response.data;
+    if (!response.ok) throw new Error('TMDB returned an error');
+    return await response.json();
   } catch (error) {
-    // Axios errors contain the full request URL, including the API key.
-    console.error(`TMDB ${path} failed (HTTP ${error.response ? error.response.status : 'unavailable'})`);
-    throw new Error(`TMDB ${path} is unavailable`);
+    // Never log the URL or the original error: the URL contains the API key.
+    console.error(`TMDB ${path} failed (HTTP ${response && !response.ok ? response.status : 'unavailable'})`);
+    const unavailable = new Error(`TMDB ${path} is unavailable`);
+    unavailable.status = response ? response.status : undefined;
+    throw unavailable;
+  } finally {
+    clearTimeout(timeout);
   }
 }
 

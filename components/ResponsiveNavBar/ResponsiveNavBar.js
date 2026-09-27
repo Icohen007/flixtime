@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { animated, config, useSpring } from 'react-spring';
+import { animated, config, useSpring } from '@react-spring/web';
 import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link';
 import Search from './Search';
@@ -23,8 +23,9 @@ const ResponsiveNavBar = () => {
   const [navBarColor, setNavBarColor] = useState('transparent');
 
   useEffect(() => {
-    window.addEventListener('scroll', scrollEventListener(setNavBarColor));
-    window.removeEventListener('scroll', scrollEventListener(setNavBarColor));
+    const handleScroll = scrollEventListener(setNavBarColor);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const barAnimation = useSpring({
@@ -62,14 +63,14 @@ const ResponsiveNavBar = () => {
         </NavBar>
       )
         : (
-          <NavBar style={barAnimation} navcolor={navBarColor}>
+          <NavBar style={barAnimation} $navcolor={navBarColor}>
             <FlexContainer>
               <NavLinks style={linkAnimation}>
                 <Link href="/">
                   <img src="/new_logo_dark.png" alt="FlixTime" style={{ maxHeight: '40rem', cursor: 'pointer' }} />
                 </Link>
-                <Link href="/movies"><a>Movies</a></Link>
-                <Link href="/shows"><a>TV Shows</a></Link>
+                <Link href="/movies">Movies</Link>
+                <Link href="/shows">TV Shows</Link>
               </NavLinks>
               <NavLinks style={linkAnimation}>
                 <Search />
@@ -88,7 +89,7 @@ const NavBar = styled(animated.nav)`
   width: 100%;
   top: 0;
   left: 0;
-  background: ${(props) => (props.navcolor || 'transparent')};
+  background: ${(props) => (props.$navcolor || 'transparent')};
   font-size: 16rem;
   z-index: 200;
   

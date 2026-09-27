@@ -151,11 +151,13 @@ function Show({
 
 export async function getServerSideProps(ctx) {
   const { id } = ctx.query;
+  if (!/^[1-9]\d*$/.test(String(id))) return { notFound: true };
   const mediaType = 'tv';
   try {
     const responseShow = await getDetails(id, mediaType);
     return { props: responseShow };
   } catch (error) {
+    if (error.status === 404) return { notFound: true };
     return unavailableProps(ctx);
   }
 }

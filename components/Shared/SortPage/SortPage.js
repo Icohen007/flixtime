@@ -76,14 +76,14 @@ function SortPage({
 
   const handPageChange = (event, data) => {
     if (data.activePage === 1 && sortBy === sortOptions[0].value && !genre) {
-      router.push(`/${mediaPath(mediaType)}`).then(scrollToTop());
+      router.push(`/${mediaPath(mediaType)}`).then(scrollToTop);
     } else {
-      router.push(`/${mediaPath(mediaType)}?sortBy=${sortBy}${genre ? `&genre=${genre}` : ''}&page=${data.activePage}`).then(scrollToTop());
+      router.push(`/${mediaPath(mediaType)}?sortBy=${sortBy}${genre ? `&genre=${genre}` : ''}&page=${data.activePage}`).then(scrollToTop);
     }
   };
 
-  const handleSortDropdownChange = (selectedOption) => router.push(`/${mediaPath(mediaType)}?sortBy=${selectedOption.value}${genre ? `&genre=${genre}` : ''}&page=1`).then(scrollToTop());
-  const handleGenreDropdownChange = (selectedOption) => router.push(`/${mediaPath(mediaType)}?sortBy=${sortBy}${selectedOption ? `&genre=${selectedOption.value}` : ''}&page=1`).then(scrollToTop());
+  const handleSortDropdownChange = (selectedOption) => router.push(`/${mediaPath(mediaType)}?sortBy=${selectedOption.value}${genre ? `&genre=${genre}` : ''}&page=1`).then(scrollToTop);
+  const handleGenreDropdownChange = (selectedOption) => router.push(`/${mediaPath(mediaType)}?sortBy=${sortBy}${selectedOption ? `&genre=${selectedOption.value}` : ''}&page=1`).then(scrollToTop);
 
   return (
     <S.GridContainer>
@@ -129,7 +129,8 @@ function SortPage({
           />
         ))}
       </S.ContentGrid>
-      <Pagination
+      {results.length === 0 && <p role="status">No results found for these filters.</p>}
+      {totalPages > 1 && <Pagination
         activePage={page}
         totalPages={totalPages}
         onPageChange={handPageChange}
@@ -140,7 +141,7 @@ function SortPage({
         lastItem={null}
         prevItem={{ content: <Icon name="angle left" />, icon: true }}
         nextItem={{ content: <Icon name="angle right" />, icon: true }}
-      />
+      />}
     </S.GridContainer>
   );
 }

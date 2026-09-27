@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import Layout from '../components/_App/Layout';
 import Spinner from '../components/_App/Spinner';
 import GlobalStyle from '../components/_App/Global.style';
+import 'semantic-ui-css/semantic.min.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
@@ -47,14 +48,6 @@ export default class MyApp extends App {
     Router.events.on('routeChangeError', () => {
       this.setState({ isLoading: false });
     });
-  }
-
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-    return { pageProps };
   }
 
   render() {

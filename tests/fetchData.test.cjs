@@ -3,10 +3,9 @@ const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 
-// Load the actual client with a mocked Axios dependency, without requiring an
-// install of this legacy project's dependencies or contacting TMDB.
+// Exercise the actual server-side client with a fake fetch, without installing
+// dependencies or using a real API credential.
 const source = fs.readFileSync(path.join(__dirname, '../utils/fetchData.js'), 'utf8')
-  .replace("import axios from 'axios';", '')
   .replace(/export async function /g, 'async function ')
   .concat('\n({ getAll, getDetails, getList, getSearch })');
 
@@ -28,25 +27,33 @@ const show = {
 };
 
 function reply(url) {
-  if (url.includes('/genre/')) return { genres: [{ id: 18, name: 'Drama' }] };
-  if (url.includes('/search/')) return { results: [movie, show, { media_type: 'person' }] };
-  if (url.endsWith('/movie/550') || url.endsWith('/tv/1399')) {
+  if (url.pathname.includes('/genre/')) return { genres: [{ id: 18, name: 'Drama' }] };
+  if (url.pathname.includes('/search/')) return { results: [movie, show, { media_type: 'person' }] };
+  if (url.pathname.endsWith('/movie/550') || url.pathname.endsWith('/tv/1399')) {
     return { id: 550, credits: { cast: [movie], crew: [] }, videos: { results: [movie] }, reviews: { results: [movie] } };
   }
-  return { results: [url.includes('/tv') ? show : movie], total_pages: 5 };
+  return { results: [url.pathname.includes('/tv') ? show : movie], total_pages: 5 };
 }
 
 function createClient(handler = reply) {
   const calls = [];
   const errors = [];
-  const axios = {
-    get(url, config) {
-      calls.push({ url, config });
-      return Promise.resolve().then(() => handler(url, config)).then((data) => ({ data }));
-    },
+  const fetch = async (input, options) => {
+    const url = new URL(input);
+    calls.push({ url, options });
+    const data = await handler(url, options);
+    return {
+      ok: !data.__httpStatus,
+      status: data.__httpStatus || 200,
+      json: async () => data,
+    };
   };
   const client = vm.runInNewContext(source, {
-    axios,
+    fetch,
+    URL,
+    AbortController,
+    setTimeout,
+    clearTimeout,
     process: { env: { API_KEY: 'test-only-key' } },
     console: { error: (message) => errors.push(message) },
   });
@@ -62,29 +69,29 @@ async function run() {
     assert.strictEqual(result.popularShows[0].title, 'Game of Thrones');
     assert.strictEqual(result.genresMovieMap[18], 'Drama');
     assert.strictEqual(result.isPartial, false);
-    const discoverCalls = calls.filter(({ url }) => url.includes('/discover/'));
+    const discoverCalls = calls.filter(({ url }) => url.pathname.includes('/discover/'));
     assert.strictEqual(discoverCalls.length, 6);
-    discoverCalls.forEach(({ url, config }) => {
-      assert.strictEqual(config.params.api_key, 'test-only-key');
-      assert.strictEqual(config.params.language, 'en-US');
-      assert.strictEqual(Object.keys(config.params).filter((key) => key === 'language').length, 1);
-      assert.strictEqual(url.includes('api_key'), false);
-      assert.strictEqual(config.timeout, 10000);
-      if (url.endsWith('/movie')) {
-        assert.strictEqual(config.params.include_null_first_air_dates, undefined);
-        assert.strictEqual(config.params.timezone, undefined);
+    discoverCalls.forEach(({ url, options }) => {
+      assert.strictEqual(url.searchParams.get('api_key'), 'test-only-key');
+      assert.strictEqual(url.searchParams.getAll('language').length, 1);
+      assert.strictEqual(url.searchParams.get('language'), 'en-US');
+      assert.strictEqual(options.headers.Accept, 'application/json');
+      assert.strictEqual(options.signal.aborted, false);
+      if (url.pathname.endsWith('/movie')) {
+        assert.strictEqual(url.searchParams.has('include_null_first_air_dates'), false);
+        assert.strictEqual(url.searchParams.has('timezone'), false);
       } else {
-        assert.strictEqual(config.params.include_null_first_air_dates, false);
-        assert.strictEqual(config.params.timezone, 'America/New_York');
+        assert.strictEqual(url.searchParams.get('include_null_first_air_dates'), 'false');
+        assert.strictEqual(url.searchParams.get('timezone'), 'America/New_York');
       }
     });
-    assert.strictEqual(discoverCalls[5].config.params.sort_by, 'first_air_date.desc');
+    assert.strictEqual(discoverCalls[5].url.searchParams.get('sort_by'), 'first_air_date.desc');
   }
 
   {
-    const { client, errors } = createClient((url, config) => {
-      if (url.endsWith('/discover/movie') && config.params.sort_by === 'popularity.desc') {
-        return Promise.reject({ response: { status: 400 }, message: 'api_key=test-only-key' });
+    const { client, errors } = createClient((url) => {
+      if (url.pathname.endsWith('/discover/movie') && url.searchParams.get('sort_by') === 'popularity.desc') {
+        return { __httpStatus: 400 };
       }
       return reply(url);
     });
@@ -98,7 +105,7 @@ async function run() {
   }
 
   {
-    const { client, errors } = createClient(() => Promise.reject({ response: { status: 503 } }));
+    const { client, errors } = createClient(() => ({ __httpStatus: 503 }));
     await assert.rejects(client.getAll(), /home-page data is unavailable/);
     assert.strictEqual(errors.length, 8);
   }
@@ -107,8 +114,8 @@ async function run() {
     const { client, calls } = createClient();
     const details = await client.getDetails(550, 'movie');
     assert.strictEqual(calls.length, 1);
-    assert.strictEqual(calls[0].url, 'https://api.themoviedb.org/3/movie/550');
-    assert.strictEqual(calls[0].config.params.append_to_response, 'credits,videos,reviews');
+    assert.strictEqual(calls[0].url.pathname, '/3/movie/550');
+    assert.strictEqual(calls[0].url.searchParams.get('append_to_response'), 'credits,videos,reviews');
     assert.strictEqual(details.credits.cast.length, 1);
     assert.strictEqual(details.trailers.length, 1);
     assert.strictEqual(details.reviews.length, 1);
@@ -117,23 +124,25 @@ async function run() {
   }
 
   {
-    const { client, errors } = createClient(() => Promise.reject({
-      response: { status: 429 },
-      message: 'Request failed: api_key=test-only-key',
-    }));
+    const { client, errors } = createClient(() => Promise.reject(new Error('Request failed: api_key=test-only-key')));
     await assert.rejects(client.getDetails(1399, 'tv'), (error) => !error.message.includes('test-only-key'));
     assert.strictEqual(errors.length, 1);
     assert.strictEqual(errors[0].includes('test-only-key'), false);
-    assert.strictEqual(errors[0].includes('HTTP 429'), true);
+    assert.strictEqual(errors[0].includes('unavailable'), true);
+  }
+
+  {
+    const { client } = createClient(() => ({ __httpStatus: 404 }));
+    await assert.rejects(client.getDetails(1399, 'tv'), (error) => error.status === 404);
   }
 
   {
     const { client, calls } = createClient();
     const list = await client.getList('2', 'vote_average.desc', '28', 'movie');
     assert.strictEqual(calls.length, 2);
-    assert.strictEqual(calls[0].config.params['vote_count.gte'], 200);
-    assert.strictEqual(calls[0].config.params.with_genres, '28');
-    assert.strictEqual(calls[0].config.params.with_original_language, 'en');
+    assert.strictEqual(calls[0].url.searchParams.get('vote_count.gte'), '200');
+    assert.strictEqual(calls[0].url.searchParams.get('with_genres'), '28');
+    assert.strictEqual(calls[0].url.searchParams.get('with_original_language'), 'en');
     assert.strictEqual(list.totalPages, 5);
     assert.strictEqual(list.genresOptions[0].label, 'Drama');
   }
@@ -141,8 +150,8 @@ async function run() {
   {
     const { client, calls } = createClient();
     const search = await client.getSearch('Rock & Roll? #film');
-    assert.strictEqual(calls[0].url, 'https://api.themoviedb.org/3/search/multi');
-    assert.strictEqual(calls[0].config.params.query, 'Rock & Roll? #film');
+    assert.strictEqual(calls[0].url.pathname, '/3/search/multi');
+    assert.strictEqual(calls[0].url.searchParams.get('query'), 'Rock & Roll? #film');
     assert.strictEqual(search.searchResults.length, 2);
     assert.strictEqual(search.searchResults[1].mediaType, 'show');
   }
